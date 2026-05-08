@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "ISI",
+    "PPP"
+  ],
+  "result": {
+    "item": "techlitex:casing_wooden"
+  },
+  "show_notification": true
+}
