@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 160,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "techlitex:steel_dust"
+  },
+  "result": "techlitex:steel_ingot"
+}

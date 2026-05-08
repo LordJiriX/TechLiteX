@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:dusts/iron"
+    },
+    {
+      "tag": "techlitex:dusts/carbon_base"
+    }
+  ],
+  "result": {
+    "item": "techlitex:steel_dust"
+  }
+}

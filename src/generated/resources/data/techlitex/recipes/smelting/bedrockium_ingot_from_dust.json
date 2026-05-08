@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 640,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "techlitex:bedrockium_dust"
+  },
+  "result": "techlitex:bedrockium_ingot"
+}

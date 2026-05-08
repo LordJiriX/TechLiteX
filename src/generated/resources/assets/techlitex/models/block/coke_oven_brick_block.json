@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "techlitex:block/coke_oven_brick_block"
+  }
+}

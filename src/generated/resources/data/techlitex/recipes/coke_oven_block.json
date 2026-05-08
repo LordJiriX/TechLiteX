@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "techlitex:coke_oven_brick"
+    },
+    "F": {
+      "item": "minecraft:blast_furnace"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "   ",
+    "IFI",
+    "BBB"
+  ],
+  "result": {
+    "item": "techlitex:coke_oven_block"
+  },
+  "show_notification": true
+}
