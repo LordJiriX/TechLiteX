@@ -22,11 +22,15 @@ public class TLXBlocks {
   public static final RegistryObject<Block> BEDROCK_MINER_BLOCK =
       createBlock(
           "bedrock_miner_block",
-          () -> new BlockBedrockMiner(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+          () ->
+              new BlockBedrockMiner(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
   public static final RegistryObject<Block> GREENHOUSE_BLOCK_1 =
       createBlock(
           "greenhouse_block_1",
-          () -> new BlockGreenHouse(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+          () ->
+              new BlockGreenHouse(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
   public static final RegistryObject<Block> ELEVATOR_BLOCK =
       createBlock(
           "elevator_block",
@@ -34,12 +38,16 @@ public class TLXBlocks {
   public static final RegistryObject<Block> TIME_COMPRESSOR_BLOCK_1 =
       createBlock(
           "time_compressor_block_1",
-          () -> new TimeCompressorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+          () ->
+              new TimeCompressorBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
   public static final RegistryObject<Block> COKE_OVEN_BLOCK =
       createBlock(
           "coke_oven_block",
-          () -> new CokeOvenBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f)));
+          () ->
+              new CokeOvenBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f)));
 
   public static final RegistryObject<Block> MACHINE_CASING_STEEL =
       createBlock(

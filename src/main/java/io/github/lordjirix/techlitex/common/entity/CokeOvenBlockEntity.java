@@ -1,7 +1,6 @@
 package io.github.lordjirix.techlitex.common.entity;
 
 import io.github.lordjirix.techlitex.Config;
-import io.github.lordjirix.techlitex.TLXData;
 import io.github.lordjirix.techlitex.gui.menu.CokeOvenMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
@@ -16,7 +15,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -45,32 +43,33 @@ public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
     super(TLXBlockEntitys.COKE_OVEN_BLOCK_ENTITY.get(), pPos, pBlockState);
   }
 
-    public void tick() {
-        if (level.isClientSide()) return;
+  public void tick() {
+    if (level.isClientSide()) return;
 
-        isMultiblockValid = isMultiblockValid(getBlockPos());
+    isMultiblockValid = isMultiblockValid(getBlockPos());
 
-        if (!isMultiblockValid) {
-            return;
-        }
-
-        if (inventory.getStackInSlot(0).isEmpty()) {
-            currentRunTime = 0;
-            return;
-        }
-        if (inventory.getStackInSlot(0).getItem() != Items.COAL) {
-            currentRunTime = 0;
-            return;
-        };
-
-        currentRunTime++;
-        if (currentRunTime >= timeToRunRecipe) {
-            inventory.extractItem(0, 1, false);
-            inventory.insertItem(1, new ItemStack(TLXItems.COAL_COKE.get(), 1), false);
-            currentRunTime = 0;
-        }
-        setChanged();
+    if (!isMultiblockValid) {
+      return;
     }
+
+    if (inventory.getStackInSlot(0).isEmpty()) {
+      currentRunTime = 0;
+      return;
+    }
+    if (inventory.getStackInSlot(0).getItem() != Items.COAL) {
+      currentRunTime = 0;
+      return;
+    }
+    ;
+
+    currentRunTime++;
+    if (currentRunTime >= timeToRunRecipe) {
+      inventory.extractItem(0, 1, false);
+      inventory.insertItem(1, new ItemStack(TLXItems.COAL_COKE.get(), 1), false);
+      currentRunTime = 0;
+    }
+    setChanged();
+  }
 
   @Override
   public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap) {
@@ -104,35 +103,37 @@ public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
     itemHandler.invalidate();
   }
 
-    public boolean isMultiblockValid(BlockPos pos) {
-        if (level == null) return false;
-        Block brick = TLXBlocks.COKE_OVEN_BRICK_BLOCK.get();
-        Block firebox = TLXBlocks.COKE_OVEN_FIREBOX.get();
-        if (!level.getBlockState(pos.below()).is(firebox)) return false;
-        BlockPos[] requiredBricks = new BlockPos[] {
-                pos.above(),
-                pos.offset(0, -1, 1),
-                pos.offset(1, -1, 0),
-                pos.offset(0, -1, -1),
-                pos.offset(-1, -1, 0)
+  public boolean isMultiblockValid(BlockPos pos) {
+    if (level == null) return false;
+    Block brick = TLXBlocks.COKE_OVEN_BRICK_BLOCK.get();
+    Block firebox = TLXBlocks.COKE_OVEN_FIREBOX.get();
+    if (!level.getBlockState(pos.below()).is(firebox)) return false;
+    BlockPos[] requiredBricks =
+        new BlockPos[] {
+          pos.above(),
+          pos.offset(0, -1, 1),
+          pos.offset(1, -1, 0),
+          pos.offset(0, -1, -1),
+          pos.offset(-1, -1, 0)
         };
-        for (BlockPos p : requiredBricks) {
-            if (!level.getBlockState(p).is(brick)) return false;
-        }
-        return true;
+    for (BlockPos p : requiredBricks) {
+      if (!level.getBlockState(p).is(brick)) return false;
     }
+    return true;
+  }
+
   public boolean isValid() {
     return isMultiblockValid;
   }
 
-    @Override
-    public Component getDisplayName() {
-        return Component.literal("Coke Oven");
-    }
+  @Override
+  public Component getDisplayName() {
+    return Component.literal("Coke Oven");
+  }
 
-
-    @Override
-    public @Nullable AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new CokeOvenMenu(pContainerId,pPlayerInventory,inventory);
-    }
+  @Override
+  public @Nullable AbstractContainerMenu createMenu(
+      int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+    return new CokeOvenMenu(pContainerId, pPlayerInventory, inventory);
+  }
 }

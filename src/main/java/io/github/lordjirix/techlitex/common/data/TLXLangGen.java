@@ -17,7 +17,7 @@ public class TLXLangGen extends LanguageProvider {
     add("config.jade.plugin_techlitex.bedrock_miner", "Bedrock Miner");
     add("config.jade.plugin_techlitex.recipe_runner_base", "Recipe Runner (Base)");
     add("itemGroup.techlitex.techlitex_tab", "TechLiteX");
-    add("config.jade.plugin_techlitex.coke_oven_jade","Coke Oven");
+    add("config.jade.plugin_techlitex.coke_oven_jade", "Coke Oven");
 
     // MAIN
 
@@ -34,9 +34,9 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.IRON_DUST.get(), "Iron Dust");
     add(TLXItems.TIME_NUGGET.get(), "Time Nugget");
     add(TLXItems.TIME_INGOT.get(), "Time Ingot");
-    add(TLXItems.COKE_OVEN_BRICK.get(),  "Coke Oven Brick");
-    add(TLXItems.SIMPLE_HAMMER.get(),  "Simple Hammer");
-    add(TLXItems.COAL_COKE.get(),  "Coal Coke");
+    add(TLXItems.COKE_OVEN_BRICK.get(), "Coke Oven Brick");
+    add(TLXItems.SIMPLE_HAMMER.get(), "Simple Hammer");
+    add(TLXItems.COAL_COKE.get(), "Coal Coke");
     add(TLXItems.STEEL_PLATE.get(), "Steel Plate");
     // tools
     add(TLXItems.MULTI_TOOL.get(), "Multi Tool");
@@ -45,8 +45,8 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.BEDROCK_MINER_BLOCK.get()), "Bedrock Miner");
     add(new ItemStack(TLXBlocks.GREENHOUSE_BLOCK_1.get()), "Green House I");
     add(new ItemStack(TLXBlocks.TIME_COMPRESSOR_BLOCK_1.get()), "Time Compressor I");
-    add(new ItemStack(TLXBlocks.COKE_OVEN_BLOCK.get()),"Coke Oven");
-    add(new ItemStack(TLXBlocks.COKE_OVEN_BRICK_BLOCK.get()),"Coke Oven Bricks");
-    add(new ItemStack(TLXBlocks.COKE_OVEN_FIREBOX.get()),"Coke Oven Firebox");
+    add(new ItemStack(TLXBlocks.COKE_OVEN_BLOCK.get()), "Coke Oven");
+    add(new ItemStack(TLXBlocks.COKE_OVEN_BRICK_BLOCK.get()), "Coke Oven Bricks");
+    add(new ItemStack(TLXBlocks.COKE_OVEN_FIREBOX.get()), "Coke Oven Firebox");
   }
 }

@@ -19,6 +19,6 @@ public class TLXMenus {
       MENUS.register("green_house_menu", () -> IForgeMenuType.create(GreenHouseMenu::new));
   public static final RegistryObject<MenuType<SimpleOneMenu>> SIMPLE_ONESLOT_MENU =
       MENUS.register("oneslot_menu", () -> IForgeMenuType.create(SimpleOneMenu::new));
-    public static final RegistryObject<MenuType<CokeOvenMenu>> COKE_OVEN_MENU =
-            MENUS.register("coke_oven_menu", () -> IForgeMenuType.create(CokeOvenMenu::new));
+  public static final RegistryObject<MenuType<CokeOvenMenu>> COKE_OVEN_MENU =
+      MENUS.register("coke_oven_menu", () -> IForgeMenuType.create(CokeOvenMenu::new));
 }

@@ -1,13 +1,13 @@
 package io.github.lordjirix.techlitex;
 
+import static io.github.lordjirix.techlitex.loader.TLXItems.*;
+
 import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
-import static  io.github.lordjirix.techlitex.loader.TLXItems.*;
+import io.github.lordjirix.techlitex.loader.TLXItems;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import io.github.lordjirix.techlitex.loader.TLXItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 
 public class TLXData {
-    public static int timePerCokeOvenRecipe = Config.timePerCokeOvenRecipe;
+  public static int timePerCokeOvenRecipe = Config.timePerCokeOvenRecipe;
   // core
 
   public static final ArrayList<RegistryObject<Item>> allItemList =
@@ -39,7 +39,10 @@ public class TLXData {
               TLXItems.TIME_INGOT,
               TLXItems.CHARCOAL_DUST,
               TLXItems.COAL_DUST,
-                  TLXItems.COKE_OVEN_BRICK,TLXItems.COAL_COKE,TLXItems.STEEL_PLATE,TLXItems.SIMPLE_HAMMER));
+              TLXItems.COKE_OVEN_BRICK,
+              TLXItems.COAL_COKE,
+              TLXItems.STEEL_PLATE,
+              TLXItems.SIMPLE_HAMMER));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(

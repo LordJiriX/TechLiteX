@@ -26,7 +26,8 @@ public class TLXJadePlugin implements IWailaPlugin {
         RecipeRunnableProvider.INSTANCE, GreenHouseBlockEntity.class);
     registration.registerBlockDataProvider(
         RecipeRunnableProvider.INSTANCE, TimeCompressorBlockEntity.class);
-    registration.registerBlockDataProvider(CokeOvenComponentProvider.INSTANCE, CokeOvenBlockEntity.class);
+    registration.registerBlockDataProvider(
+        CokeOvenComponentProvider.INSTANCE, CokeOvenBlockEntity.class);
     // TODO register data providers
   }
 
@@ -36,8 +37,8 @@ public class TLXJadePlugin implements IWailaPlugin {
         BedrockMinerComponentProvider.INSTANCE, BlockBedrockMiner.class);
     registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, BlockGreenHouse.class);
     registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, TimeCompressorBlock.class);
-      registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, TimeCompressorBlock.class);
-      registration.registerBlockComponent(CokeOvenComponentProvider.INSTANCE, CokeOvenBlock.class);
+    registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, TimeCompressorBlock.class);
+    registration.registerBlockComponent(CokeOvenComponentProvider.INSTANCE, CokeOvenBlock.class);
     // TODO register component providers, icon providers, callbacks, and config options here
   }
 }

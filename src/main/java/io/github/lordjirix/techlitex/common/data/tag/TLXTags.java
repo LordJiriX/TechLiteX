@@ -18,19 +18,20 @@ public class TLXTags {
     public static final TagKey<Item> STEEL_INGOT =
         ItemTags.create(new ResourceLocation("forge", "ingots/steel"));
 
-      public static final TagKey<Item> STEEL_PLATE =
-              ItemTags.create(new ResourceLocation("forge", "plates/steel"));
-      public static final TagKey<Item> COAL_COKE =
-              ItemTags.create(new ResourceLocation("forge", "coal_coke"));
-      public static final TagKey<Item> COAL_COKE_DUST =
-              ItemTags.create(new ResourceLocation("forge", "coal_coke_dust"));
+    public static final TagKey<Item> STEEL_PLATE =
+        ItemTags.create(new ResourceLocation("forge", "plates/steel"));
+    public static final TagKey<Item> COAL_COKE =
+        ItemTags.create(new ResourceLocation("forge", "coal_coke"));
+    public static final TagKey<Item> COAL_COKE_DUST =
+        ItemTags.create(new ResourceLocation("forge", "coal_coke_dust"));
 
     // RC Tags
     public static final TagKey<Item> CARBON_BASE_DUST =
         ItemTags.create(new ResourceLocation(MODID, "dusts/carbon_base"));
   }
+
   public class B {
-      public static final TagKey<Block> MINEABLE_PICKAXE =
-              BlockTags.create(new ResourceLocation("minecraft","mineable/pickaxe"));
+    public static final TagKey<Block> MINEABLE_PICKAXE =
+        BlockTags.create(new ResourceLocation("minecraft", "mineable/pickaxe"));
   }
 }

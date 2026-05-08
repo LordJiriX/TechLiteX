@@ -2,6 +2,8 @@ package io.github.lordjirix.techlitex.common.data;
 
 import io.github.lordjirix.techlitex.TLXData;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
+import java.util.List;
+import java.util.Set;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
@@ -10,27 +12,29 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
-import java.util.Set;
-
 public class TLXBlockLoot extends BlockLootSubProvider {
-    public TLXBlockLoot() {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
-    }
+  public TLXBlockLoot() {
+    super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+  }
 
-    @Override
-    protected void generate() {
-        TLXData.allBlockItemsList.forEach(b -> {
-            this.dropSelf(b.get());
+  @Override
+  protected void generate() {
+    TLXData.allBlockItemsList.forEach(
+        b -> {
+          this.dropSelf(b.get());
         });
-    }
-    @Override
-    protected Iterable<Block> getKnownBlocks() {
-        return TLXBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
-    }
-    public static LootTableProvider create(PackOutput output) {
-        return new LootTableProvider(output, Set.of(), List.of(
-                new LootTableProvider.SubProviderEntry(TLXBlockLoot::new, LootContextParamSets.BLOCK)
-        ));
-    }
+  }
+
+  @Override
+  protected Iterable<Block> getKnownBlocks() {
+    return TLXBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+  }
+
+  public static LootTableProvider create(PackOutput output) {
+    return new LootTableProvider(
+        output,
+        Set.of(),
+        List.of(
+            new LootTableProvider.SubProviderEntry(TLXBlockLoot::new, LootContextParamSets.BLOCK)));
+  }
 }

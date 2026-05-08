@@ -28,7 +28,8 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .pattern(" B ")
         .define('S', Items.STICK)
         .define('B', TLXItems.BEDROCKIUM_INGOT.get())
-        .unlockedBy(getHasName(TLXItems.BEDROCKIUM_INGOT.get()), has(TLXItems.BEDROCKIUM_DUST.get()))
+        .unlockedBy(
+            getHasName(TLXItems.BEDROCKIUM_INGOT.get()), has(TLXItems.BEDROCKIUM_DUST.get()))
         .save(pw);
     ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXItems.SIMPLE_GRINDER.get())
         .pattern(" I ")
@@ -61,35 +62,35 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .requires(TLXItems.SIMPLE_GRINDER.get())
         .unlockedBy(getHasName(TLXItems.SIMPLE_GRINDER.get()), has(TLXItems.SIMPLE_GRINDER.get()))
         .save(pw, new ResourceLocation(MODID, "charcoal_dust_simple_grinder"));
-      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.STEEL_PLATE.get())
-              .requires(TLXItems.STEEL_INGOT.get())
-              .requires(TLXItems.SIMPLE_HAMMER.get())
-              .unlockedBy(getHasName(TLXItems.SIMPLE_HAMMER.get()), has(TLXItems.SIMPLE_HAMMER.get()))
-              .save(pw, new ResourceLocation(MODID, "steel_plate_simple_hammer"));
+    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.STEEL_PLATE.get())
+        .requires(TLXItems.STEEL_INGOT.get())
+        .requires(TLXItems.SIMPLE_HAMMER.get())
+        .unlockedBy(getHasName(TLXItems.SIMPLE_HAMMER.get()), has(TLXItems.SIMPLE_HAMMER.get()))
+        .save(pw, new ResourceLocation(MODID, "steel_plate_simple_hammer"));
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.STEEL_DUST.get())
         .requires(TLXTags.I.IRON_DUST)
         .requires(TLXTags.I.CARBON_BASE_DUST)
         .unlockedBy(getHasName(TLXItems.IRON_DUST.get()), has(TLXTags.I.IRON_DUST))
         .save(pw, new ResourceLocation(MODID, "steel_dust_crafting_carbonbased"));
-      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.STEEL_DUST.get(),2)
-              .requires(TLXTags.I.IRON_DUST)
-              .requires(TLXTags.I.IRON_DUST)
-              .requires(TLXTags.I.COAL_COKE_DUST)
-              .unlockedBy(getHasName(TLXItems.IRON_DUST.get()), has(TLXTags.I.IRON_DUST))
-              .save(pw, new ResourceLocation(MODID, "steel_dust_crafting_coke"));
-      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXBlocks.COKE_OVEN_BRICK_BLOCK.get())
-              .requires(TLXItems.COKE_OVEN_BRICK.get(),4)
-              .unlockedBy(getHasName(TLXItems.COKE_OVEN_BRICK.get()), has(TLXItems.COKE_OVEN_BRICK.get()))
-              .save(pw);
-      ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.COKE_OVEN_BLOCK.get())
-              .pattern("   ")
-              .pattern("IFI")
-              .pattern("BBB")
-              .define('F', Blocks.BLAST_FURNACE)
-              .define('B', TLXItems.COKE_OVEN_BRICK.get())
-              .define('I', Items.IRON_INGOT)
-              .unlockedBy(getHasName(TLXItems.COKE_OVEN_BRICK.get()), has(TLXItems.COKE_OVEN_BRICK.get()))
-              .save(pw);
+    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.STEEL_DUST.get(), 2)
+        .requires(TLXTags.I.IRON_DUST)
+        .requires(TLXTags.I.IRON_DUST)
+        .requires(TLXTags.I.COAL_COKE_DUST)
+        .unlockedBy(getHasName(TLXItems.IRON_DUST.get()), has(TLXTags.I.IRON_DUST))
+        .save(pw, new ResourceLocation(MODID, "steel_dust_crafting_coke"));
+    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXBlocks.COKE_OVEN_BRICK_BLOCK.get())
+        .requires(TLXItems.COKE_OVEN_BRICK.get(), 4)
+        .unlockedBy(getHasName(TLXItems.COKE_OVEN_BRICK.get()), has(TLXItems.COKE_OVEN_BRICK.get()))
+        .save(pw);
+    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.COKE_OVEN_BLOCK.get())
+        .pattern("   ")
+        .pattern("IFI")
+        .pattern("BBB")
+        .define('F', Blocks.BLAST_FURNACE)
+        .define('B', TLXItems.COKE_OVEN_BRICK.get())
+        .define('I', Items.IRON_INGOT)
+        .unlockedBy(getHasName(TLXItems.COKE_OVEN_BRICK.get()), has(TLXItems.COKE_OVEN_BRICK.get()))
+        .save(pw);
     SimpleCookingRecipeBuilder.smelting(
             Ingredient.of(TLXItems.BEDROCKIUM_DUST.get()),
             RecipeCategory.MISC,

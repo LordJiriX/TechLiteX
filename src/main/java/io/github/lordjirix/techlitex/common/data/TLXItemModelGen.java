@@ -31,7 +31,6 @@ public class TLXItemModelGen extends ItemModelProvider {
   private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
     //noinspection removal
     return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
-        .texture(
-            "layer0", new ResourceLocation(TechLiteX.MODID, "item/" + item.getId().getPath()));
+        .texture("layer0", new ResourceLocation(TechLiteX.MODID, "item/" + item.getId().getPath()));
   }
 }

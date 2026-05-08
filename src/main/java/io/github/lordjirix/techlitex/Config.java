@@ -57,10 +57,10 @@ public class Config {
       BUILDER
           .comment("Whether the game mode swapper should check for ownership")
           .define("gameModeSwapperOwner", false);
-    private static final ForgeConfigSpec.IntValue COKE_OVEN_RECIPE_TIME =
-            BUILDER
-                    .comment("Time (in ticks) per Coke Oven recipe (coal -> coke)")
-                    .defineInRange("coke_oven_recipe_time", 20*120, 20, Integer.MAX_VALUE);
+  private static final ForgeConfigSpec.IntValue COKE_OVEN_RECIPE_TIME =
+      BUILDER
+          .comment("Time (in ticks) per Coke Oven recipe (coal -> coke)")
+          .defineInRange("coke_oven_recipe_time", 20 * 120, 20, Integer.MAX_VALUE);
   // a list of strings that are treated as resource locations for items
   // private static final ForgeConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS =
   // BUILDER.comment("A list of items to log on common setup.").defineListAllowEmpty("items",

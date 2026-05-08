@@ -47,8 +47,11 @@ public class TLXItems {
   public static final RegistryObject<Item> IRON_DUST =
       ITEMS.register("iron_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> SIMPLE_GRINDER =
-      ITEMS.register("simple_grinder", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
-  public static final RegistryObject<Item> SIMPLE_HAMMER = ITEMS.register("simple_hammer", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
+      ITEMS.register(
+          "simple_grinder", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
+  public static final RegistryObject<Item> SIMPLE_HAMMER =
+      ITEMS.register(
+          "simple_hammer", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
   public static final RegistryObject<Item> TIME_NUGGET =
       ITEMS.register("time_nugget", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> TIME_INGOT =
@@ -59,12 +62,12 @@ public class TLXItems {
       ITEMS.register("charcoal_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> COAL_COKE =
       ITEMS.register("coal_coke", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> COKE_OVEN_BRICK =
-            ITEMS.register("coke_oven_brick", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> STEEL_PLATE =
-            ITEMS.register("steel_plate", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> COAL_COKE_DUST =
-            ITEMS.register("coke_coal_dust", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> COKE_OVEN_BRICK =
+      ITEMS.register("coke_oven_brick", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> STEEL_PLATE =
+      ITEMS.register("steel_plate", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> COAL_COKE_DUST =
+      ITEMS.register("coke_coal_dust", () -> new Item(new Item.Properties()));
 
   public static void init(IEventBus bus) {
     ITEMS.register(bus);
