@@ -1,0 +1,12 @@
+{
+  "values": [
+    "techlitex:bedrock_miner_block",
+    "techlitex:elevator_block",
+    "techlitex:greenhouse_block_1",
+    "techlitex:time_compressor_block_1",
+    "techlitex:machine_casing_steel",
+    "techlitex:coke_oven_block",
+    "techlitex:coke_oven_brick_block",
+    "techlitex:coke_oven_firebox"
+  ]
+}

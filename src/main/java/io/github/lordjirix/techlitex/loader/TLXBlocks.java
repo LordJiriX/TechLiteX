@@ -22,11 +22,11 @@ public class TLXBlocks {
   public static final RegistryObject<Block> BEDROCK_MINER_BLOCK =
       createBlock(
           "bedrock_miner_block",
-          () -> new BlockBedrockMiner(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+          () -> new BlockBedrockMiner(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
   public static final RegistryObject<Block> GREENHOUSE_BLOCK_1 =
       createBlock(
           "greenhouse_block_1",
-          () -> new BlockGreenHouse(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+          () -> new BlockGreenHouse(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
   public static final RegistryObject<Block> ELEVATOR_BLOCK =
       createBlock(
           "elevator_block",
@@ -34,27 +34,27 @@ public class TLXBlocks {
   public static final RegistryObject<Block> TIME_COMPRESSOR_BLOCK_1 =
       createBlock(
           "time_compressor_block_1",
-          () -> new TimeCompressorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+          () -> new TimeCompressorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
   public static final RegistryObject<Block> COKE_OVEN_BLOCK =
       createBlock(
           "coke_oven_block",
-          () -> new CokeOvenBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+          () -> new CokeOvenBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f)));
 
   public static final RegistryObject<Block> MACHINE_CASING_STEEL =
       createBlock(
           "machine_casing_steel",
-          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
   public static final RegistryObject<Block> COKE_OVEN_BRICK_BLOCK =
       createBlock(
           "coke_oven_brick_block",
-          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f)));
 
   public static final RegistryObject<Block> COKE_OVEN_FIREBOX =
       createBlock(
           "coke_oven_firebox",
-          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f)));
 
   private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> block) {
     RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -54,16 +54,22 @@ public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
             return;
         }
 
-        if (inventory.getStackInSlot(0).isEmpty()) return;
-        if (inventory.getStackInSlot(0).getItem() != Items.COAL) return;
+        if (inventory.getStackInSlot(0).isEmpty()) {
+            currentRunTime = 0;
+            return;
+        }
+        if (inventory.getStackInSlot(0).getItem() != Items.COAL) {
+            currentRunTime = 0;
+            return;
+        };
 
         currentRunTime++;
         if (currentRunTime >= timeToRunRecipe) {
             inventory.extractItem(0, 1, false);
             inventory.insertItem(1, new ItemStack(TLXItems.COAL_COKE.get(), 1), false);
             currentRunTime = 0;
-            setChanged();
         }
+        setChanged();
     }
 
   @Override

@@ -3,9 +3,11 @@ package io.github.lordjirix.techlitex.common.data.tag;
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class TLXTags {
   public class I {
@@ -26,5 +28,9 @@ public class TLXTags {
     // RC Tags
     public static final TagKey<Item> CARBON_BASE_DUST =
         ItemTags.create(new ResourceLocation(MODID, "dusts/carbon_base"));
+  }
+  public class B {
+      public static final TagKey<Block> MINEABLE_PICKAXE =
+              BlockTags.create(new ResourceLocation("minecraft","mineable/pickaxe"));
   }
 }

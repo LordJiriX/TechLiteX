@@ -3,6 +3,10 @@ package io.github.lordjirix.techlitex.common.data;
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
 import java.util.concurrent.CompletableFuture;
+
+import io.github.lordjirix.techlitex.TLXData;
+import io.github.lordjirix.techlitex.common.data.tag.TLXTags;
+import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -19,5 +23,9 @@ public class TLXBlockTagGen extends BlockTagsProvider {
   }
 
   @Override
-  protected void addTags(HolderLookup.Provider pProvider) {}
+  protected void addTags(HolderLookup.Provider pProvider) {
+      TLXData.allBlockItemsList.forEach(b -> {
+              this.tag(TLXTags.B.MINEABLE_PICKAXE).add(b.get());
+      });
+  }
 }

@@ -21,6 +21,7 @@ public class DataGenMain {
     PackOutput output = gen.getPackOutput();
     ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
     CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+    gen.addProvider(event.includeServer(), TLXBlockLoot.create(output));
     gen.addProvider(event.includeServer(), new TLXRecipeGen(output));
     gen.addProvider(event.includeClient(), new TLXBlockModelGen(output, existingFileHelper));
     gen.addProvider(
