@@ -35,6 +35,9 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.TIME_NUGGET.get(), "Time Nugget");
     add(TLXItems.TIME_INGOT.get(), "Time Ingot");
     add(TLXItems.COKE_OVEN_BRICK.get(),  "Coke Oven Brick");
+    add(TLXItems.SIMPLE_HAMMER.get(),  "Simple Hammer");
+    add(TLXItems.COAL_COKE.get(),  "Coal Coke");
+    add(TLXItems.STEEL_PLATE.get(), "Steel Plate");
     // tools
     add(TLXItems.MULTI_TOOL.get(), "Multi Tool");
     add(TLXItems.SIMPLE_GRINDER.get(), "Simple Grinder");

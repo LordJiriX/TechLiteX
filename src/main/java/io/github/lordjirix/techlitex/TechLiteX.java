@@ -41,9 +41,9 @@ public class TechLiteX {
   public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
       DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-  public static final RegistryObject<CreativeModeTab> RANDOM_CONTENT_TAB =
+  public static final RegistryObject<CreativeModeTab> TECHLITEX_TAB =
       CREATIVE_MODE_TABS.register(
-          "TECHLITEX_TAB".toLowerCase(),
+          "techlitex_tab".toLowerCase(),
           () ->
               CreativeModeTab.builder()
                   .withTabsBefore(CreativeModeTabs.COMBAT)

@@ -2,7 +2,7 @@ package io.github.lordjirix.techlitex.common.data;
 
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
-import io.github.lordjirix.techlitex.common.data.tag.RCTags;
+import io.github.lordjirix.techlitex.common.data.tag.TLXTags;
 import io.github.lordjirix.techlitex.loader.TLXItems;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
@@ -24,11 +24,14 @@ public class TLXItemTagGen extends ItemTagsProvider {
 
   @Override
   protected void addTags(HolderLookup.Provider pProvider) {
-    this.tag(RCTags.I.IRON_DUST).add(TLXItems.IRON_DUST.get());
-    this.tag(RCTags.I.STEEL_INGOT).add(TLXItems.STEEL_INGOT.get());
+    this.tag(TLXTags.I.IRON_DUST).add(TLXItems.IRON_DUST.get());
+    this.tag(TLXTags.I.STEEL_INGOT).add(TLXItems.STEEL_INGOT.get());
 
-    this.tag(RCTags.I.CARBON_BASE_DUST)
+    this.tag(TLXTags.I.CARBON_BASE_DUST)
         .add(TLXItems.COAL_DUST.get())
         .add(TLXItems.CHARCOAL_DUST.get());
+    this.tag(TLXTags.I.STEEL_PLATE).add(TLXItems.STEEL_PLATE.get());
+    this.tag(TLXTags.I.COAL_COKE).add(TLXItems.COAL_COKE.get());
+    this.tag(TLXTags.I.COAL_COKE_DUST).add(TLXItems.COAL_COKE_DUST.get());
   }
 }

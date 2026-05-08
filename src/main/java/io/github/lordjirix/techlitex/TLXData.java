@@ -2,10 +2,12 @@ package io.github.lordjirix.techlitex;
 
 import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
-import io.github.lordjirix.techlitex.loader.TLXItems;
+import static  io.github.lordjirix.techlitex.loader.TLXItems.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import io.github.lordjirix.techlitex.loader.TLXItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -37,7 +39,7 @@ public class TLXData {
               TLXItems.TIME_INGOT,
               TLXItems.CHARCOAL_DUST,
               TLXItems.COAL_DUST,
-                  TLXItems.COKE_OVEN_BRICK));
+                  TLXItems.COKE_OVEN_BRICK,TLXItems.COAL_COKE,TLXItems.STEEL_PLATE,TLXItems.SIMPLE_HAMMER));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(

@@ -1,5 +1,6 @@
 package io.github.lordjirix.techlitex.common.entity;
 
+import io.github.lordjirix.techlitex.Config;
 import io.github.lordjirix.techlitex.TLXData;
 import io.github.lordjirix.techlitex.gui.menu.CokeOvenMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
@@ -15,6 +16,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -28,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 // TODO: Remake structure
 public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
   public boolean isMultiblockValid = false;
-  public int timeToRunRecipe = TLXData.timePerCokeOvenRecipe;
+  public int timeToRunRecipe = Config.timePerCokeOvenRecipe;
   public int currentRunTime = 0;
   private final ItemStackHandler inventory =
       new ItemStackHandler(2) {
@@ -56,7 +58,6 @@ public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
         if (inventory.getStackInSlot(0).getItem() != Items.COAL) return;
 
         currentRunTime++;
-
         if (currentRunTime >= timeToRunRecipe) {
             inventory.extractItem(0, 1, false);
             inventory.insertItem(1, new ItemStack(TLXItems.COAL_COKE.get(), 1), false);

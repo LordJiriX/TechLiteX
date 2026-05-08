@@ -11,6 +11,7 @@
   "item.techlitex.bedrockium_drill": "Bedrockium Drill",
   "item.techlitex.bedrockium_dust": "Bedrockium Dust",
   "item.techlitex.bedrockium_ingot": "Bedrockium Ingot",
+  "item.techlitex.coal_coke": "Coal Coke",
   "item.techlitex.coke_oven_brick": "Coke Oven Brick",
   "item.techlitex.diamond_drill": "Diamond Drill",
   "item.techlitex.iron_dust": "Iron Dust",
@@ -19,8 +20,10 @@
   "item.techlitex.processing_core_t1": "Processing Core T1",
   "item.techlitex.processing_core_t2": "Processing Core T2",
   "item.techlitex.simple_grinder": "Simple Grinder",
+  "item.techlitex.simple_hammer": "Simple Hammer",
   "item.techlitex.steel_dust": "Steel Dust",
   "item.techlitex.steel_ingot": "Steel Ingot",
+  "item.techlitex.steel_plate": "Steel Plate",
   "item.techlitex.time_ingot": "Time Ingot",
   "item.techlitex.time_nugget": "Time Nugget",
   "itemGroup.techlitex.techlitex_tab": "TechLiteX"
