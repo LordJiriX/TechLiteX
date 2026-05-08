@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "techlitex:steel_ingot"
+    },
+    {
+      "item": "techlitex:simple_hammer"
+    }
+  ],
+  "result": {
+    "item": "techlitex:steel_plate"
+  }
+}

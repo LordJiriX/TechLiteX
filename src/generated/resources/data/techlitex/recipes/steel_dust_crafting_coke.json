@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:dusts/iron"
+    },
+    {
+      "tag": "forge:dusts/iron"
+    },
+    {
+      "tag": "forge:coal_coke_dust"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "techlitex:steel_dust"
+  }
+}
