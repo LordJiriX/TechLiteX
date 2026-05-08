@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "north": "randomcontent:block/coke_oven_firebox",
+    "south": "randomcontent:block/coke_oven_firebox",
+    "east": "randomcontent:block/coke_oven_firebox",
+    "west": "randomcontent:block/coke_oven_firebox",
+    "up": "randomcontent:block/coke_oven_brick_block",
+    "down": "randomcontent:block/coke_oven_brick_block"
+  }
+}

@@ -2,10 +2,7 @@ package io.github.lordjirix.randomcontent.loader;
 
 import static io.github.lordjirix.randomcontent.Randomcontent.MODID;
 
-import io.github.lordjirix.randomcontent.common.block.BlockBedrockMiner;
-import io.github.lordjirix.randomcontent.common.block.BlockElevator;
-import io.github.lordjirix.randomcontent.common.block.BlockGreenHouse;
-import io.github.lordjirix.randomcontent.common.block.TimeCompressorBlock;
+import io.github.lordjirix.randomcontent.common.block.*;
 import java.util.function.Supplier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -39,9 +36,24 @@ public class RCBlocks {
           "time_compressor_block_1",
           () -> new TimeCompressorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
 
+  public static final RegistryObject<Block> COKE_OVEN_BLOCK =
+      createBlock(
+          "coke_oven_block",
+          () -> new CokeOvenBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+
   public static final RegistryObject<Block> MACHINE_CASING_STEEL =
       createBlock(
           "machine_casing_steel",
+          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+
+  public static final RegistryObject<Block> COKE_OVEN_BRICK_BLOCK =
+      createBlock(
+          "coke_oven_brick_block",
+          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+
+  public static final RegistryObject<Block> COKE_OVEN_FIREBOX =
+      createBlock(
+          "coke_oven_firebox",
           () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
 
   private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> block) {

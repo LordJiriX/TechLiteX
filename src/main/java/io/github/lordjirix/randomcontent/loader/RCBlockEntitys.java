@@ -3,6 +3,7 @@ package io.github.lordjirix.randomcontent.loader;
 import static io.github.lordjirix.randomcontent.Randomcontent.MODID;
 
 import io.github.lordjirix.randomcontent.common.entity.BedrockMinerBlockEntity;
+import io.github.lordjirix.randomcontent.common.entity.CokeOvenBlockEntity;
 import io.github.lordjirix.randomcontent.common.entity.GreenHouseBlockEntity;
 import io.github.lordjirix.randomcontent.common.entity.TimeCompressorBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -39,6 +40,12 @@ public class RCBlockEntitys {
                   BlockEntityType.Builder.of(
                           TimeCompressorBlockEntity::new, RCBlocks.TIME_COMPRESSOR_BLOCK_1.get())
                       .build(null));
+  public static final RegistryObject<BlockEntityType<CokeOvenBlockEntity>> COKE_OVEN_BLOCK_ENTITY =
+      BLOCK_ENTITIES.register(
+          "coke_oven_block",
+          () ->
+              BlockEntityType.Builder.of(CokeOvenBlockEntity::new, RCBlocks.COKE_OVEN_BLOCK.get())
+                  .build(null));
 
   public static void init(IEventBus bus) {
     BLOCK_ENTITIES.register(bus);

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "randomcontent:coke_oven_brick"
+    },
+    {
+      "item": "randomcontent:coke_oven_brick"
+    },
+    {
+      "item": "randomcontent:coke_oven_brick"
+    },
+    {
+      "item": "randomcontent:coke_oven_brick"
+    }
+  ],
+  "result": {
+    "item": "randomcontent:coke_oven_brick_block"
+  }
+}

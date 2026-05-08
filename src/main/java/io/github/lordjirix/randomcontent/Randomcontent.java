@@ -3,6 +3,7 @@ package io.github.lordjirix.randomcontent;
 import static io.github.lordjirix.randomcontent.loader.RCItems.*;
 
 import com.mojang.logging.LogUtils;
+import io.github.lordjirix.randomcontent.gui.screen.CokeOvenScreen;
 import io.github.lordjirix.randomcontent.gui.screen.GreenHouseScreen;
 import io.github.lordjirix.randomcontent.gui.screen.SimpleOneScreen;
 import io.github.lordjirix.randomcontent.loader.*;
@@ -109,6 +110,7 @@ public class Randomcontent {
           () -> {
             MenuScreens.register(RCMenus.GREEN_HOUSE.get(), GreenHouseScreen::new);
             MenuScreens.register(RCMenus.SIMPLE_ONESLOT_MENU.get(), SimpleOneScreen::new);
+            MenuScreens.register(RCMenus.COKE_OVEN_MENU.get(), CokeOvenScreen::new);
           });
     }
   }

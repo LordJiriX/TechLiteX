@@ -66,6 +66,19 @@ public class RCRecipeGen extends RecipeProvider implements IConditionBuilder {
         .requires(RCTags.I.CARBON_BASE_DUST)
         .unlockedBy(getHasName(RCItems.IRON_DUST.get()), has(RCTags.I.IRON_DUST))
         .save(pw, new ResourceLocation(MODID, "steel_dust_crafting"));
+      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RCBlocks.COKE_OVEN_BRICK_BLOCK.get())
+              .requires(RCItems.COKE_OVEN_BRICK.get(),4)
+              .unlockedBy(getHasName(RCItems.COKE_OVEN_BRICK.get()), has(RCItems.COKE_OVEN_BRICK.get()))
+              .save(pw);
+      ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RCBlocks.COKE_OVEN_BLOCK.get())
+              .pattern("   ")
+              .pattern("IFI")
+              .pattern("BBB")
+              .define('F', Blocks.BLAST_FURNACE)
+              .define('B', RCItems.COKE_OVEN_BRICK.get())
+              .define('I', Items.IRON_INGOT)
+              .unlockedBy(getHasName(RCItems.COKE_OVEN_BRICK.get()), has(RCItems.COKE_OVEN_BRICK.get()))
+              .save(pw);
     SimpleCookingRecipeBuilder.smelting(
             Ingredient.of(RCItems.BEDROCKIUM_DUST.get()),
             RecipeCategory.MISC,

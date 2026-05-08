@@ -57,6 +57,10 @@ public class Config {
       BUILDER
           .comment("Whether the game mode swapper should check for ownership")
           .define("gameModeSwapperOwner", false);
+    private static final ForgeConfigSpec.IntValue COKE_OVEN_RECIPE_TIME =
+            BUILDER
+                    .comment("Time (in ticks) per Coke Oven recipe (coal -> coke)")
+                    .defineInRange("coke_oven_recipe_time", 20*120, 20, Integer.MAX_VALUE);
   // a list of strings that are treated as resource locations for items
   // private static final ForgeConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS =
   // BUILDER.comment("A list of items to log on common setup.").defineListAllowEmpty("items",
@@ -75,6 +79,7 @@ public class Config {
   public static int greenHouseGrowTime;
   public static int timeCompressorRfUsage;
   public static int timePerTimeNugget;
+  public static int timePerCokeOvenRecipe;
 
   private static boolean validateItemName(final Object obj) {
     return obj instanceof final String itemName
@@ -97,5 +102,6 @@ public class Config {
     greenHouseGrowTime = GREEN_HOUSE_GROW_TIME.get();
     timeCompressorRfUsage = TIMECOMPRESSOR_RF_USAGE.get();
     timePerTimeNugget = TIME_PER_TIME_NUGGET.get();
+    timePerCokeOvenRecipe = COKE_OVEN_RECIPE_TIME.get();
   }
 }

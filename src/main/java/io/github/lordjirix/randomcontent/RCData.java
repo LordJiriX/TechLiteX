@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 
 public class RCData {
+    public static int timePerCokeOvenRecipe = Config.timePerCokeOvenRecipe;
   // core
 
   public static final ArrayList<RegistryObject<Item>> allItemList =
@@ -35,7 +36,8 @@ public class RCData {
               RCItems.TIME_NUGGET,
               RCItems.TIME_INGOT,
               RCItems.CHARCOAL_DUST,
-              RCItems.COAL_DUST));
+              RCItems.COAL_DUST,
+                  RCItems.COKE_OVEN_BRICK));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
@@ -44,7 +46,10 @@ public class RCData {
               RCBlocks.ELEVATOR_BLOCK,
               RCBlocks.GREENHOUSE_BLOCK_1,
               RCBlocks.TIME_COMPRESSOR_BLOCK_1,
-              RCBlocks.MACHINE_CASING_STEEL));
+              RCBlocks.MACHINE_CASING_STEEL,
+              RCBlocks.COKE_OVEN_BLOCK,
+              RCBlocks.COKE_OVEN_BRICK_BLOCK,
+              RCBlocks.COKE_OVEN_FIREBOX));
 
   // Lootbags data
   public static List<Item> exampleLootbagDrops =

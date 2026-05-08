@@ -2,6 +2,7 @@ package io.github.lordjirix.randomcontent.loader;
 
 import static io.github.lordjirix.randomcontent.Randomcontent.MODID;
 
+import io.github.lordjirix.randomcontent.gui.menu.CokeOvenMenu;
 import io.github.lordjirix.randomcontent.gui.menu.GreenHouseMenu;
 import io.github.lordjirix.randomcontent.gui.menu.SimpleOneMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -15,7 +16,9 @@ public class RCMenus {
       DeferredRegister.create(ForgeRegistries.MENU_TYPES, MODID);
 
   public static final RegistryObject<MenuType<GreenHouseMenu>> GREEN_HOUSE =
-      MENUS.register("green_house", () -> IForgeMenuType.create(GreenHouseMenu::new));
+      MENUS.register("green_house_menu", () -> IForgeMenuType.create(GreenHouseMenu::new));
   public static final RegistryObject<MenuType<SimpleOneMenu>> SIMPLE_ONESLOT_MENU =
       MENUS.register("oneslot_menu", () -> IForgeMenuType.create(SimpleOneMenu::new));
+    public static final RegistryObject<MenuType<CokeOvenMenu>> COKE_OVEN_MENU =
+            MENUS.register("coke_oven_menu", () -> IForgeMenuType.create(CokeOvenMenu::new));
 }

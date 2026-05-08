@@ -18,6 +18,7 @@ public class RCBlockModelGen extends BlockStateProvider {
   @Override
   protected void registerStatesAndModels() {
     blockWithItem(RCBlocks.MACHINE_CASING_STEEL);
+    blockWithItem(RCBlocks.COKE_OVEN_BRICK_BLOCK);
   }
 
   private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

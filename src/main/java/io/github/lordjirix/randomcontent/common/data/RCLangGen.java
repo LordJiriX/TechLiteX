@@ -17,6 +17,7 @@ public class RCLangGen extends LanguageProvider {
     add("config.jade.plugin_randomcontent.bedrock_miner", "Bedrock Miner");
     add("config.jade.plugin_randomcontent.recipe_runner_base", "RC Recipe Runner (Base)");
     add("itemGroup.randomcontent.random_content_tab", "Random Content");
+    add("config.jade.plugin_randomcontent.coke_oven_jade","Coke Oven");
 
     // MAIN
 
@@ -33,6 +34,7 @@ public class RCLangGen extends LanguageProvider {
     add(RCItems.IRON_DUST.get(), "Iron Dust");
     add(RCItems.TIME_NUGGET.get(), "Time Nugget");
     add(RCItems.TIME_INGOT.get(), "Time Ingot");
+    add(RCItems.COKE_OVEN_BRICK.get(),  "Coke Oven Brick");
     // tools
     add(RCItems.MULTI_TOOL.get(), "Multi Tool");
     add(RCItems.SIMPLE_GRINDER.get(), "Simple Grinder");
@@ -40,5 +42,8 @@ public class RCLangGen extends LanguageProvider {
     add(new ItemStack(RCBlocks.BEDROCK_MINER_BLOCK.get()), "Bedrock Miner");
     add(new ItemStack(RCBlocks.GREENHOUSE_BLOCK_1.get()), "Green House I");
     add(new ItemStack(RCBlocks.TIME_COMPRESSOR_BLOCK_1.get()), "Time Compressor I");
+    add(new ItemStack(RCBlocks.COKE_OVEN_BLOCK.get()),"Coke Oven");
+    add(new ItemStack(RCBlocks.COKE_OVEN_BRICK_BLOCK.get()),"Coke Oven Bricks");
+    add(new ItemStack(RCBlocks.COKE_OVEN_FIREBOX.get()),"Coke Oven Firebox");
   }
 }

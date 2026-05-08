@@ -2,11 +2,14 @@ package io.github.lordjirix.randomcontent.compact.jade;
 
 import io.github.lordjirix.randomcontent.common.block.BlockBedrockMiner;
 import io.github.lordjirix.randomcontent.common.block.BlockGreenHouse;
+import io.github.lordjirix.randomcontent.common.block.CokeOvenBlock;
 import io.github.lordjirix.randomcontent.common.block.TimeCompressorBlock;
 import io.github.lordjirix.randomcontent.common.entity.BedrockMinerBlockEntity;
+import io.github.lordjirix.randomcontent.common.entity.CokeOvenBlockEntity;
 import io.github.lordjirix.randomcontent.common.entity.GreenHouseBlockEntity;
 import io.github.lordjirix.randomcontent.common.entity.TimeCompressorBlockEntity;
 import io.github.lordjirix.randomcontent.compact.jade.provider.BedrockMinerComponentProvider;
+import io.github.lordjirix.randomcontent.compact.jade.provider.CokeOvenComponentProvider;
 import io.github.lordjirix.randomcontent.compact.jade.provider.RecipeRunnableProvider;
 import snownee.jade.api.IWailaClientRegistration;
 import snownee.jade.api.IWailaCommonRegistration;
@@ -23,6 +26,7 @@ public class RandomcontentJadePlugin implements IWailaPlugin {
         RecipeRunnableProvider.INSTANCE, GreenHouseBlockEntity.class);
     registration.registerBlockDataProvider(
         RecipeRunnableProvider.INSTANCE, TimeCompressorBlockEntity.class);
+    registration.registerBlockDataProvider(CokeOvenComponentProvider.INSTANCE, CokeOvenBlockEntity.class);
     // TODO register data providers
   }
 
@@ -32,6 +36,8 @@ public class RandomcontentJadePlugin implements IWailaPlugin {
         BedrockMinerComponentProvider.INSTANCE, BlockBedrockMiner.class);
     registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, BlockGreenHouse.class);
     registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, TimeCompressorBlock.class);
+      registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, TimeCompressorBlock.class);
+      registration.registerBlockComponent(CokeOvenComponentProvider.INSTANCE, CokeOvenBlock.class);
     // TODO register component providers, icon providers, callbacks, and config options here
   }
 }
