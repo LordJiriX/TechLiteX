@@ -19,6 +19,7 @@ public class TLXBlockModelGen extends BlockStateProvider {
   protected void registerStatesAndModels() {
     blockWithItem(TLXBlocks.MACHINE_CASING_STEEL);
     blockWithItem(TLXBlocks.COKE_OVEN_BRICK_BLOCK);
+    blockWithItem(TLXBlocks.CASING_WOODEN);
   }
 
   private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

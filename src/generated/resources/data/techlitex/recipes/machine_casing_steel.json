@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "minecraft:stone"
+    "B": {
+      "item": "techlitex:casing_wooden"
     },
     "S": {
       "tag": "forge:plates/steel"
@@ -11,7 +11,7 @@
   },
   "pattern": [
     "SSS",
-    "SIS",
+    "SBS",
     "SSS"
   ],
   "result": {

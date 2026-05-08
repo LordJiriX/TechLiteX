@@ -54,7 +54,8 @@ public class TLXData {
               TLXBlocks.MACHINE_CASING_STEEL,
               TLXBlocks.COKE_OVEN_BLOCK,
               TLXBlocks.COKE_OVEN_BRICK_BLOCK,
-              TLXBlocks.COKE_OVEN_FIREBOX));
+              TLXBlocks.COKE_OVEN_FIREBOX,
+              TLXBlocks.CASING_WOODEN));
 
   // Lootbags data
   public static List<Item> exampleLootbagDrops =

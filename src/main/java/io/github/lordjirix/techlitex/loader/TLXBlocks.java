@@ -54,6 +54,11 @@ public class TLXBlocks {
           "machine_casing_steel",
           () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
+  public static final RegistryObject<Block> CASING_WOODEN =
+      createBlock(
+          "casing_wooden",
+          () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+
   public static final RegistryObject<Block> COKE_OVEN_BRICK_BLOCK =
       createBlock(
           "coke_oven_brick_block",

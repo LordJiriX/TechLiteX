@@ -41,11 +41,20 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .save(pw);
     ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.MACHINE_CASING_STEEL.get())
         .pattern("SSS")
-        .pattern("SIS")
+        .pattern("SBS")
         .pattern("SSS")
         .define('S', TLXTags.I.STEEL_PLATE)
-        .define('I', Blocks.STONE)
+        .define('B', TLXBlocks.CASING_WOODEN.get())
         .unlockedBy(getHasName(TLXItems.STEEL_INGOT.get()), has(TLXTags.I.STEEL_INGOT))
+        .save(pw);
+    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.CASING_WOODEN.get())
+        .pattern("PPP")
+        .pattern("ISI")
+        .pattern("PPP")
+        .define('P', Items.STICK)
+        .define('I', Items.IRON_INGOT)
+        .define('S', Blocks.STONE)
+        .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
         .save(pw);
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.IRON_DUST.get())
         .requires(Items.IRON_INGOT)
