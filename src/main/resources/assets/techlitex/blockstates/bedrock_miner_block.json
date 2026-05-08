@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "techlitex:block/bedrock_miner_block" }
+  }
+}

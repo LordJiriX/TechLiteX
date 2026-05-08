@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "randomcontent:block/machine_casing_steel"
-  }
-}

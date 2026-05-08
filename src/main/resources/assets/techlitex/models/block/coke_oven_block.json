@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "north": "techlitex:block/coke_oven_block",
+    "south": "techlitex:block/coke_oven_block",
+    "east": "techlitex:block/coke_oven_block",
+    "west": "techlitex:block/coke_oven_block",
+    "up": "techlitex:block/coke_oven_brick_block",
+    "down": "techlitex:block/coke_oven_brick_block"
+  }
+}

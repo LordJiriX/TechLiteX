@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "north": "techlitex:block/bedrock_miner_block_side",
+    "south": "techlitex:block/bedrock_miner_block_side",
+    "east": "techlitex:block/bedrock_miner_block_side",
+    "west": "techlitex:block/bedrock_miner_block_side",
+    "up": "techlitex:block/bedrock_miner_block_top",
+    "down": "techlitex:block/bedrock_miner_block_down"
+  }
+}
