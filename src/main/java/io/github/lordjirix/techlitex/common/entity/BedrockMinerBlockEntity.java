@@ -106,6 +106,7 @@ public class BedrockMinerBlockEntity extends BlockEntity implements MenuProvider
     tag.putInt("timeToRunRecipe", timeToRunRecipe);
     tag.putBoolean("isValid", isValid);
     tag.put("inventory", inventory.serializeNBT());
+    tag.put("energy", energy.serializeNBT());
     super.saveAdditional(tag);
   }
 

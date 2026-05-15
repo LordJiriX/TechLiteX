@@ -119,6 +119,7 @@ public class GrinderBlockEntity extends BlockEntity implements MenuProvider, IRe
     pTag.putInt("currentRunTime", currentRunTime);
     pTag.putInt("energyPerTick", energyPerTick);
     pTag.put("inventory", inventory.serializeNBT());
+    pTag.put("energy", energy.serializeNBT());
   }
 
   @Override
@@ -128,6 +129,7 @@ public class GrinderBlockEntity extends BlockEntity implements MenuProvider, IRe
     currentRunTime = pTag.getInt("currentRunTime");
     timeToRunRecipe = pTag.getInt("timeToRunRecipe");
     energyPerTick = pTag.getInt("energyPerTick");
+    energy.deserializeNBT(pTag.get("energy"));
   }
 
   @Override

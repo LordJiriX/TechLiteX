@@ -108,6 +108,7 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
     timeToRunRecipe = pTag.getInt("timeToRunRecipe");
     currentRunTime = pTag.getInt("currentRunTime");
     inventory.deserializeNBT(pTag.getCompound("inventory"));
+    energy.deserializeNBT(pTag.get("energy"));
     super.load(pTag);
   }
 
@@ -121,6 +122,7 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
     pTag.putInt("timeToRunRecipe", timeToRunRecipe);
     pTag.putInt("currentRunTime", currentRunTime);
     pTag.put("inventory", inventory.serializeNBT());
+    pTag.put("energy", energy.serializeNBT());
     super.saveAdditional(pTag);
   }
 

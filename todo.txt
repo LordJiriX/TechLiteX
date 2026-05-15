@@ -1,6 +1,6 @@
 
      *   IMPROVE   *
- - Add energy to NBT
+ -
 
      *   CONTENT   *
  - Add todo

@@ -98,6 +98,7 @@ public class TimeCompressorBlockEntity extends BlockEntity
     pTag.putInt("currentRunTime", currentRunTime);
     pTag.putInt("energyPerTick", energyPerTick);
     pTag.put("inventory", inventory.serializeNBT());
+    pTag.put("energy", energy.serializeNBT());
     super.saveAdditional(pTag);
   }
 
@@ -107,6 +108,7 @@ public class TimeCompressorBlockEntity extends BlockEntity
     currentRunTime = pTag.getInt("currentRunTime");
     energyPerTick = pTag.getInt("energyPerTick");
     inventory.deserializeNBT(pTag.getCompound("inventory"));
+    energy.deserializeNBT(pTag.get("energy"));
     super.load(pTag);
   }
 
