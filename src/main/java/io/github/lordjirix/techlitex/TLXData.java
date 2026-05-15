@@ -3,6 +3,7 @@ package io.github.lordjirix.techlitex;
 import static io.github.lordjirix.techlitex.loader.TLXItems.*;
 
 import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
+import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import io.github.lordjirix.techlitex.loader.TLXItems;
 import java.util.ArrayList;
@@ -23,7 +24,6 @@ public class TLXData {
           List.of(
               TLXItems.GAME_MODE_SWAPPER,
               TLXItems.GAME_MODE_SWAPPER,
-              TLXItems.EXAMPLE_LOOTBAG,
               TLXItems.BEDROCKIUM_INGOT,
               TLXItems.BEDROCKIUM_DRILL,
               TLXItems.DIAMOND_DRILL,
@@ -51,11 +51,18 @@ public class TLXData {
               TLXBlocks.ELEVATOR_BLOCK,
               TLXBlocks.GREENHOUSE_BLOCK_1,
               TLXBlocks.TIME_COMPRESSOR_BLOCK_1,
+              TLXBlocks.GRINDER_BLOCK_1,
               TLXBlocks.MACHINE_CASING_STEEL,
               TLXBlocks.COKE_OVEN_BLOCK,
               TLXBlocks.COKE_OVEN_BRICK_BLOCK,
               TLXBlocks.COKE_OVEN_FIREBOX,
               TLXBlocks.CASING_WOODEN));
+  public static ArrayList<RegistryObject<Block>> allDefJadeProvider =
+      new ArrayList<>(
+          List.of(
+              TLXBlocks.GREENHOUSE_BLOCK_1,
+              TLXBlocks.GRINDER_BLOCK_1,
+              TLXBlocks.TIME_COMPRESSOR_BLOCK_1));
 
   // Lootbags data
   public static List<Item> exampleLootbagDrops =
@@ -115,6 +122,24 @@ public class TLXData {
                   },
                   60,
                   200));
+        }
+      };
+  public static HashMap<Item, GrinderRecipe> grinderRecipes =
+      new HashMap<>() {
+        {
+          put(
+              Items.COAL,
+              new GrinderRecipe(new ItemStack[] {new ItemStack(COAL_DUST.get())}, 40, 20 * 20));
+          put(
+              Items.CHARCOAL,
+              new GrinderRecipe(new ItemStack[] {new ItemStack(CHARCOAL_DUST.get())}, 40, 20 * 20));
+          put(
+              Items.IRON_INGOT,
+              new GrinderRecipe(new ItemStack[] {new ItemStack(IRON_DUST.get())}, 40, 20 * 30));
+          put(
+              COAL_COKE.get(),
+              new GrinderRecipe(
+                  new ItemStack[] {new ItemStack(COAL_COKE_DUST.get())}, 40, 20 * 30));
         }
       };
 }

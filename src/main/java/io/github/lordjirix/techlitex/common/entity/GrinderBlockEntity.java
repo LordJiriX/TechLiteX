@@ -2,9 +2,10 @@ package io.github.lordjirix.techlitex.common.entity;
 
 import io.github.lordjirix.techlitex.TLXData;
 import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
-import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
-import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
+import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
+import io.github.lordjirix.techlitex.gui.menu.SimpleInOutMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
+import java.util.HashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -13,6 +14,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,12 +28,13 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnable, MenuProvider {
+public class GrinderBlockEntity extends BlockEntity implements MenuProvider, IRecipeRunnable {
   public int timeToRunRecipe = 0;
   public int currentRunTime = 0;
   public int energyPerTick = 0;
+  public HashMap<Item, GrinderRecipe> recipes = TLXData.grinderRecipes;
   private final ItemStackHandler inventory =
-      new ItemStackHandler(10) {
+      new ItemStackHandler(2) {
         @Override
         protected void onContentsChanged(int slot) {
           setChanged();
@@ -41,8 +44,48 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
   private final LazyOptional<IEnergyStorage> energyCap = LazyOptional.of(() -> energy);
   private final LazyOptional<IItemHandler> itemHandler = LazyOptional.of(() -> inventory);
 
-  public GreenHouseBlockEntity(BlockPos pos, BlockState state) {
-    super(TLXBlockEntitys.GREENHOUSE_BLOCK_ENTITY.get(), pos, state);
+  public GrinderBlockEntity(BlockPos pPos, BlockState pBlockState) {
+    super(TLXBlockEntitys.GRINDER_BLOCK_ENTITY.get(), pPos, pBlockState);
+  }
+
+  public void tick() {
+    if (level == null || level.isClientSide()) return;
+    if (energy.getEnergyStored() <= energyPerTick) {
+      return;
+    }
+    if (inventory.getStackInSlot(0).isEmpty()) {
+      currentRunTime = 0;
+      timeToRunRecipe = 0;
+      return;
+    }
+    if (!hasRecipe(inventory.getStackInSlot(0))) {
+      currentRunTime = 0;
+      timeToRunRecipe = 0;
+      return;
+    }
+
+    GrinderRecipe recipe = recipes.get(inventory.getStackInSlot(0).getItem());
+    if (recipe == null) {
+      return;
+    }
+    energyPerTick = recipe.getRFPerTick();
+    timeToRunRecipe = recipe.getTimePerRecipe();
+    energy.extractEnergy(energyPerTick, false);
+    currentRunTime++;
+    if (currentRunTime >= timeToRunRecipe) {
+      ItemStack[] output = null;
+      try {
+        output = recipes.get(inventory.getStackInSlot(0).getItem()).getOutput();
+      } catch (Exception e) {
+      }
+      for (int i = 0; i < output.length; i++) {
+        inventory.insertItem(i + 1, output[i].copy(), false);
+      }
+      inventory.extractItem(0, 1, false);
+      currentRunTime = 0;
+      timeToRunRecipe = 0;
+      return;
+    }
   }
 
   @Override
@@ -64,69 +107,38 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
     energyCap.invalidate();
   }
 
-  public void tick() {
-    if (level == null || level.isClientSide()) return;
-    if (energy.getEnergyStored() <= energyPerTick) {
-      return;
-    }
-    if (inventory.getStackInSlot(0).isEmpty()) {
-      currentRunTime = 0;
-      timeToRunRecipe = 0;
-      return;
-    }
-    if (!hasRecipe(inventory.getStackInSlot(0))) {
-      currentRunTime = 0;
-      timeToRunRecipe = 0;
-      return;
-    }
-
-    GreenHouseRecipe recipe = TLXData.greenHouseRecipes.get(inventory.getStackInSlot(0).getItem());
-    if (recipe == null) {
-      return;
-    }
-    energyPerTick = recipe.getRFPerTick();
-    timeToRunRecipe = recipe.getTimePerRecipe();
-    energy.extractEnergy(energyPerTick, false);
-    currentRunTime++;
-    if (currentRunTime >= timeToRunRecipe) {
-      ItemStack[] output = null;
-      try {
-        output = TLXData.greenHouseRecipes.get(inventory.getStackInSlot(0).getItem()).getOutput();
-      } catch (Exception e) {
-      }
-      for (int i = 0; i < output.length; i++) {
-        inventory.insertItem(i + 1, output[i].copy(), false);
-      }
-      currentRunTime = 0;
-      timeToRunRecipe = 0;
-      return;
-    }
-  }
-
   @Override
-  public void load(CompoundTag pTag) {
-    timeToRunRecipe = pTag.getInt("timeToRunRecipe");
-    currentRunTime = pTag.getInt("currentRunTime");
-    inventory.deserializeNBT(pTag.getCompound("inventory"));
-    super.load(pTag);
-  }
-
-  @Override
-  public CompoundTag getUpdateTag() {
-    return saveWithoutMetadata();
+  public Component getDisplayName() {
+    return Component.literal("Grinder");
   }
 
   @Override
   protected void saveAdditional(CompoundTag pTag) {
+    super.saveAdditional(pTag);
     pTag.putInt("timeToRunRecipe", timeToRunRecipe);
     pTag.putInt("currentRunTime", currentRunTime);
+    pTag.putInt("energyPerTick", energyPerTick);
     pTag.put("inventory", inventory.serializeNBT());
-    super.saveAdditional(pTag);
   }
 
   @Override
-  public int getCurrentRunTime() {
-    return currentRunTime;
+  public void load(CompoundTag pTag) {
+    super.load(pTag);
+    inventory.deserializeNBT(pTag.getCompound("inventory"));
+    currentRunTime = pTag.getInt("currentRunTime");
+    timeToRunRecipe = pTag.getInt("timeToRunRecipe");
+    energyPerTick = pTag.getInt("energyPerTick");
+  }
+
+  @Override
+  public @Nullable AbstractContainerMenu createMenu(
+      int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+    return new SimpleInOutMenu(pContainerId, pPlayerInventory, inventory);
+  }
+
+  public boolean hasRecipe(ItemStack stack) {
+    if (stack == null || stack.isEmpty()) return false;
+    return recipes.containsKey(stack.getItem());
   }
 
   @Override
@@ -135,23 +147,12 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
   }
 
   @Override
+  public int getCurrentRunTime() {
+    return currentRunTime;
+  }
+
+  @Override
   public int getRFPerTick() {
     return energyPerTick;
-  }
-
-  @Override
-  public Component getDisplayName() {
-    return Component.literal("Green House");
-  }
-
-  @Nullable
-  @Override
-  public AbstractContainerMenu createMenu(int id, Inventory inv, Player player) {
-    return new MultipleOutSlotMenu(id, inv, inventory);
-  }
-
-  public boolean hasRecipe(ItemStack stack) {
-    if (stack == null || stack.isEmpty()) return false;
-    return TLXData.greenHouseRecipes.containsKey(stack.getItem());
   }
 }

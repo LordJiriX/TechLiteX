@@ -2,18 +2,18 @@ package io.github.lordjirix.techlitex.gui.screen;
 
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
-import io.github.lordjirix.techlitex.gui.menu.GreenHouseMenu;
+import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class GreenHouseScreen extends AbstractContainerScreen<GreenHouseMenu> {
+public class MultipleInOutSlotScreen extends AbstractContainerScreen<MultipleOutSlotMenu> {
   private static final ResourceLocation TEXTURE =
       new ResourceLocation(MODID, "textures/gui/greenhouse_gui.png");
 
-  public GreenHouseScreen(GreenHouseMenu menu, Inventory inv, Component title) {
+  public MultipleInOutSlotScreen(MultipleOutSlotMenu menu, Inventory inv, Component title) {
     super(menu, inv, title);
     this.imageWidth = 176;
     this.imageHeight = 166;

@@ -10,26 +10,19 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class GreenHouseMenu extends AbstractContainerMenu {
+public class SimpleInOutMenu extends AbstractContainerMenu {
+
   private final ItemStackHandler handler;
 
-  public GreenHouseMenu(int id, Inventory inv, FriendlyByteBuf buf) {
-    this(id, inv, new ItemStackHandler(10));
+  public SimpleInOutMenu(int id, Inventory inv, FriendlyByteBuf buf) {
+    this(id, inv, new ItemStackHandler(2));
   }
 
-  public GreenHouseMenu(int id, Inventory playerInv, ItemStackHandler handler) {
-    super(TLXMenus.GREEN_HOUSE.get(), id);
+  public SimpleInOutMenu(int id, Inventory playerInv, ItemStackHandler handler) {
+    super(TLXMenus.SIMPLE_INOUT_MENU.get(), id);
     this.handler = handler;
     this.addSlot(new SlotItemHandler(handler, 0, 24, 35));
-    this.addSlot(new SlotItemHandler(handler, 1, 62, 35 - 18));
-    this.addSlot(new SlotItemHandler(handler, 2, 62, 35));
-    this.addSlot(new SlotItemHandler(handler, 3, 62, 53));
-    this.addSlot(new SlotItemHandler(handler, 5, 62 + 18, 35));
-    this.addSlot(new SlotItemHandler(handler, 8, 62 + 18 + 18, 35));
-    this.addSlot(new SlotItemHandler(handler, 4, 62 + 18, 35 - 18));
-    this.addSlot(new SlotItemHandler(handler, 7, 62 + 18 + 18, 35 - 18));
-    this.addSlot(new SlotItemHandler(handler, 6, 62 + 18, 53));
-    this.addSlot(new SlotItemHandler(handler, 9, 62 + 18 + 18, 53));
+    this.addSlot(new SlotItemHandler(handler, 1, 80, 35));
 
     addPlayerInventory(playerInv);
     addPlayerHotbar(playerInv);
@@ -60,7 +53,7 @@ public class GreenHouseMenu extends AbstractContainerMenu {
     if (slot == null || !slot.hasItem()) return ItemStack.EMPTY;
     ItemStack stack = slot.getItem();
     ItemStack copy = stack.copy();
-    int machineSlots = 9;
+    int machineSlots = 1;
     if (index < machineSlots) {
       if (!this.moveItemStackTo(stack, machineSlots, this.slots.size(), true)) {
         return ItemStack.EMPTY;

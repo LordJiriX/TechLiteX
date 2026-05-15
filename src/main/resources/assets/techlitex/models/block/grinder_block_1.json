@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "north": "techlitex:block/grinder_block_1_side",
+    "south": "techlitex:block/grinder_block_1_side",
+    "east": "techlitex:block/grinder_block_1_side",
+    "west": "techlitex:block/grinder_block_1_side",
+    "up": "techlitex:block/machine_casing_steel",
+    "down": "techlitex:block/machine_casing_steel"
+  }
+}

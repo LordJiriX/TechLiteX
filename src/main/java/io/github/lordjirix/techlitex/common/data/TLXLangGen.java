@@ -38,6 +38,9 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.SIMPLE_HAMMER.get(), "Simple Hammer");
     add(TLXItems.COAL_COKE.get(), "Coal Coke");
     add(TLXItems.STEEL_PLATE.get(), "Steel Plate");
+    add(TLXItems.COAL_DUST.get(), "Coal Dust");
+    add(TLXItems.CHARCOAL_DUST.get(), "Charcoal Dust");
+    add(TLXItems.COAL_COKE_DUST.get(), "Coal Coke Dust");
     // tools
     add(TLXItems.MULTI_TOOL.get(), "Multi Tool");
     add(TLXItems.SIMPLE_GRINDER.get(), "Simple Grinder");
@@ -48,5 +51,6 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.COKE_OVEN_BLOCK.get()), "Coke Oven");
     add(new ItemStack(TLXBlocks.COKE_OVEN_BRICK_BLOCK.get()), "Coke Oven Bricks");
     add(new ItemStack(TLXBlocks.COKE_OVEN_FIREBOX.get()), "Coke Oven Firebox");
+    add(new ItemStack(TLXBlocks.GRINDER_BLOCK_1.get()), "Grinder I");
   }
 }

@@ -41,6 +41,12 @@ public class TLXBlocks {
           () ->
               new TimeCompressorBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+  public static final RegistryObject<Block> GRINDER_BLOCK_1 =
+      createBlock(
+          "grinder_block_1",
+          () ->
+              new GrinderBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
   public static final RegistryObject<Block> COKE_OVEN_BLOCK =
       createBlock(
