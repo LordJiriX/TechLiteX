@@ -42,7 +42,10 @@ public class TLXData {
               TLXItems.COKE_OVEN_BRICK,
               TLXItems.COAL_COKE,
               TLXItems.STEEL_PLATE,
-              TLXItems.SIMPLE_HAMMER));
+              TLXItems.SIMPLE_HAMMER,
+              ALUMINIUM_INGOT,
+              ALUMINIUM_DUST,
+              CLAY_DUST));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
@@ -140,6 +143,16 @@ public class TLXData {
               COAL_COKE.get(),
               new GrinderRecipe(
                   new ItemStack[] {new ItemStack(COAL_COKE_DUST.get())}, 40, 20 * 30));
+          put(
+              ALUMINIUM_INGOT.get(),
+              new GrinderRecipe(
+                  new ItemStack[] {new ItemStack(ALUMINIUM_DUST.get())}, 40, 20 * 15));
+          put(
+              STEEL_INGOT.get(),
+              new GrinderRecipe(new ItemStack[] {new ItemStack(STEEL_DUST.get())}, 40, 20 * 35));
+          put(
+              STEEL_PLATE.get(),
+              new GrinderRecipe(new ItemStack[] {new ItemStack(STEEL_DUST.get())}, 40, 20 * 35));
         }
       };
 }

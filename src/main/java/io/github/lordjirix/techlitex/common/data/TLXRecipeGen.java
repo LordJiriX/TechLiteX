@@ -109,11 +109,27 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .unlockedBy(getHasName(TLXItems.BEDROCKIUM_DUST.get()), has(TLXItems.BEDROCKIUM_DUST.get()))
         .save(pw, new ResourceLocation(MODID, "smelting/bedrockium_ingot_from_dust"));
     SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(TLXItems.ALUMINIUM_DUST.get()),
+            RecipeCategory.MISC,
+            TLXItems.ALUMINIUM_INGOT.get(),
+            1.0f,
+            20 * 20)
+        .unlockedBy(getHasName(TLXItems.ALUMINIUM_DUST.get()), has(TLXItems.ALUMINIUM_DUST.get()))
+        .save(pw, new ResourceLocation(MODID, "smelting/aluminium_ingot_from_dust"));
+    SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(TLXItems.IRON_DUST.get()),
+            RecipeCategory.MISC,
+            Items.IRON_INGOT,
+            1.0f,
+            20 * 10)
+        .unlockedBy(getHasName(TLXItems.IRON_DUST.get()), has(TLXItems.IRON_DUST.get()))
+        .save(pw, new ResourceLocation(MODID, "smelting/iron_ingot_from_dust"));
+    SimpleCookingRecipeBuilder.smelting(
             Ingredient.of(TLXItems.STEEL_DUST.get()),
             RecipeCategory.MISC,
             TLXItems.STEEL_INGOT.get(),
             1.0f,
-            20 * 8)
+            20 * 16)
         .unlockedBy(getHasName(TLXItems.STEEL_DUST.get()), has(TLXItems.STEEL_DUST.get()))
         .save(pw, new ResourceLocation(MODID, "smelting/steel_ingot_from_dust"));
   }

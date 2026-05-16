@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "cookingtime": 320,
+  "cookingtime": 400,
   "experience": 1.0,
   "ingredient": {
-    "item": "techlitex:steel_dust"
+    "item": "techlitex:aluminium_dust"
   },
-  "result": "techlitex:steel_ingot"
+  "result": "techlitex:aluminium_ingot"
 }

@@ -41,6 +41,10 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.COAL_DUST.get(), "Coal Dust");
     add(TLXItems.CHARCOAL_DUST.get(), "Charcoal Dust");
     add(TLXItems.COAL_COKE_DUST.get(), "Coal Coke Dust");
+    add(TLXItems.ALUMINIUM_INGOT.get(),  "Aluminium Ingot");
+      add(TLXItems.ALUMINIUM_DUST.get(),  "Aluminium Dust");
+      add(TLXItems.CLAY_DUST.get(),  "Clay Dust");
+
     // tools
     add(TLXItems.MULTI_TOOL.get(), "Multi Tool");
     add(TLXItems.SIMPLE_GRINDER.get(), "Simple Grinder");
@@ -52,5 +56,7 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.COKE_OVEN_BRICK_BLOCK.get()), "Coke Oven Bricks");
     add(new ItemStack(TLXBlocks.COKE_OVEN_FIREBOX.get()), "Coke Oven Firebox");
     add(new ItemStack(TLXBlocks.GRINDER_BLOCK_1.get()), "Grinder I");
+    add(new ItemStack(TLXBlocks.CASING_WOODEN.get()), "Casing Wooden");
+    add(new ItemStack(TLXBlocks.MACHINE_CASING_STEEL.get()), "Machine Casing Steel");
   }
 }

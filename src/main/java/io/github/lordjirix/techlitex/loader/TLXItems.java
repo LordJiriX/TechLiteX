@@ -44,6 +44,10 @@ public class TLXItems {
       ITEMS.register("steel_ingot", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> IRON_DUST =
       ITEMS.register("iron_dust", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> CLAY_DUST =
+      ITEMS.register("clay_dust", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> ALUMINIUM_DUST =
+      ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> SIMPLE_GRINDER =
       ITEMS.register(
           "simple_grinder", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
@@ -54,6 +58,8 @@ public class TLXItems {
       ITEMS.register("time_nugget", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> TIME_INGOT =
       ITEMS.register("time_ingot", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> ALUMINIUM_INGOT =
+      ITEMS.register("aluminium_ingot", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> COAL_DUST =
       ITEMS.register("coal_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> CHARCOAL_DUST =
