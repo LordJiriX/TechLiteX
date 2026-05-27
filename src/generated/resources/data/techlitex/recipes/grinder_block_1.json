@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "techlitex:machine_casing_steel"
+    },
+    "P": {
+      "item": "techlitex:processor"
+    },
+    "S": {
+      "item": "techlitex:diamond_sawblade"
+    },
+    "W": {
+      "item": "techlitex:copper_wire"
+    }
+  },
+  "pattern": [
+    "WSW",
+    "PBP",
+    "WSW"
+  ],
+  "result": {
+    "item": "techlitex:grinder_block_1"
+  },
+  "show_notification": true
+}

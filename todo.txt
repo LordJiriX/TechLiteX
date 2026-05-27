@@ -7,3 +7,6 @@
  - Add Aluminum chain   {}
  - Add recipes   {}
  - Sawblades [Dia,Netherite,...]   {}
+     *   LAZY   *
+ - Change basic board recipe to use any::planks   {}
+ - Remake processor recipe   {}

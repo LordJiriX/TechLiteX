@@ -4,14 +4,18 @@ import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
 import io.github.lordjirix.techlitex.common.data.tag.TLXTags;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
+import io.github.lordjirix.techlitex.loader.TLXBlocks.*;
 import io.github.lordjirix.techlitex.loader.TLXItems;
+import io.github.lordjirix.techlitex.loader.TLXItems.*;
 import java.util.function.Consumer;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Items.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Blocks.*;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
@@ -47,14 +51,52 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .define('B', TLXBlocks.CASING_WOODEN.get())
         .unlockedBy(getHasName(TLXItems.STEEL_INGOT.get()), has(TLXTags.I.STEEL_INGOT))
         .save(pw);
-      ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.MACHINE_CASING_ALUMINIUM.get())
-              .pattern("AAA")
-              .pattern("ABA")
-              .pattern("AAA")
-              .define('A', TLXItems.ALUMINIUM_PLATE.get())
-              .define('B', TLXBlocks.CASING_WOODEN.get())
-              .unlockedBy(getHasName(TLXItems.ALUMINIUM_PLATE.get()), has(TLXItems.ALUMINIUM_PLATE.get()))
+    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.MACHINE_CASING_ALUMINIUM.get())
+        .pattern("AAA")
+        .pattern("ABA")
+        .pattern("AAA")
+        .define('A', TLXItems.ALUMINIUM_PLATE.get())
+        .define('B', TLXBlocks.CASING_WOODEN.get())
+        .unlockedBy(getHasName(TLXItems.ALUMINIUM_PLATE.get()), has(TLXItems.ALUMINIUM_PLATE.get()))
+        .save(pw);
+      ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXItems.BASIC_BOARD.get())
+              .pattern("SSS")
+              .pattern("PPP")
+              .pattern("SSS")
+              .define('P', Blocks.OAK_PLANKS)
+              .define('S', Items.STICK)
+              .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
               .save(pw);
+      ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXItems.PROCESSOR.get())
+              .pattern("WRW")
+              .pattern("RBR")
+              .pattern("WRW")
+              .define('B', TLXItems.BASIC_BOARD.get())
+              .define('R', Items.REDSTONE)
+              .define('W', TLXItems.COPPER_WIRE.get())
+              .unlockedBy(getHasName(TLXItems.BASIC_BOARD.get()), has(TLXItems.BASIC_BOARD.get()))
+              .save(pw);
+    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.GRINDER_BLOCK_1.get())
+        .pattern("WSW")
+        .pattern("PBP")
+        .pattern("WSW")
+        .define('W', TLXItems.COPPER_WIRE.get())
+        .define('S', TLXItems.DIAMOND_SAWBLADE.get())
+        .define('P', TLXItems.PROCESSOR.get())
+        .define('B', TLXBlocks.MACHINE_CASING_STEEL.get())
+        .unlockedBy(getHasName(TLXItems.PROCESSOR.get()), has(TLXItems.PROCESSOR.get()))
+        .save(pw);
+    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.GREENHOUSE_BLOCK_1.get())
+        .pattern("WSW")
+        .pattern("PBP")
+        .pattern("WDW")
+        .define('W', TLXItems.COPPER_WIRE.get())
+        .define('S', TLXItems.DIAMOND_SAWBLADE.get())
+        .define('P', TLXItems.PROCESSOR.get())
+        .define('D', Blocks.DIRT)
+        .define('B', TLXBlocks.MACHINE_CASING_STEEL.get())
+        .unlockedBy(getHasName(TLXItems.PROCESSOR.get()), has(TLXItems.PROCESSOR.get()))
+        .save(pw);
     ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.CASING_WOODEN.get())
         .pattern("PPP")
         .pattern("ISI")
@@ -84,16 +126,16 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .requires(TLXItems.SIMPLE_HAMMER.get())
         .unlockedBy(getHasName(TLXItems.SIMPLE_HAMMER.get()), has(TLXItems.SIMPLE_HAMMER.get()))
         .save(pw, new ResourceLocation(MODID, "steel_plate_simple_hammer"));
-      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.ALUMINIUM_PLATE.get())
-              .requires(TLXItems.ALUMINIUM_INGOT.get())
-              .requires(TLXItems.SIMPLE_HAMMER.get())
-              .unlockedBy(getHasName(TLXItems.ALUMINIUM_INGOT.get()), has(TLXItems.ALUMINIUM_INGOT.get()))
-              .save(pw, new ResourceLocation(MODID, "aluminium_plate_simple_hammer"));
-      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.COPPER_WIRE.get())
-              .requires(Items.COPPER_INGOT)
-              .requires(TLXItems.WIRECUTTER.get())
-              .unlockedBy(getHasName(TLXItems.WIRECUTTER.get()), has(TLXItems.WIRECUTTER.get()))
-              .save(pw, new ResourceLocation(MODID, "copper_wire_wirecutter"));
+    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.ALUMINIUM_PLATE.get())
+        .requires(TLXItems.ALUMINIUM_INGOT.get())
+        .requires(TLXItems.SIMPLE_HAMMER.get())
+        .unlockedBy(getHasName(TLXItems.ALUMINIUM_INGOT.get()), has(TLXItems.ALUMINIUM_INGOT.get()))
+        .save(pw, new ResourceLocation(MODID, "aluminium_plate_simple_hammer"));
+    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.COPPER_WIRE.get())
+        .requires(Items.COPPER_INGOT)
+        .requires(TLXItems.WIRECUTTER.get())
+        .unlockedBy(getHasName(TLXItems.WIRECUTTER.get()), has(TLXItems.WIRECUTTER.get()))
+        .save(pw, new ResourceLocation(MODID, "copper_wire_wirecutter"));
 
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.STEEL_DUST.get())
         .requires(TLXTags.I.IRON_DUST)

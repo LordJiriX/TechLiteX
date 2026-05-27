@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "techlitex:machine_casing_steel"
+    },
+    "D": {
+      "item": "minecraft:dirt"
+    },
+    "P": {
+      "item": "techlitex:processor"
+    },
+    "S": {
+      "item": "techlitex:diamond_sawblade"
+    },
+    "W": {
+      "item": "techlitex:copper_wire"
+    }
+  },
+  "pattern": [
+    "WSW",
+    "PBP",
+    "WDW"
+  ],
+  "result": {
+    "item": "techlitex:greenhouse_block_1"
+  },
+  "show_notification": true
+}

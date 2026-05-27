@@ -28,8 +28,8 @@ public class TLXData {
               TLXItems.BEDROCKIUM_DRILL,
               TLXItems.DIAMOND_DRILL,
               TLXItems.LASER_CORE,
-              //TLXItems.PROCESSOR,
-              //TLXItems.INTEGRATED_PROCESSOR,
+              TLXItems.PROCESSOR,
+              // TLXItems.INTEGRATED_PROCESSOR,
               TLXItems.BEDROCKIUM_DUST,
               TLXItems.STEEL_DUST,
               TLXItems.STEEL_INGOT,
@@ -45,7 +45,12 @@ public class TLXData {
               TLXItems.SIMPLE_HAMMER,
               ALUMINIUM_INGOT,
               ALUMINIUM_DUST,
-              CLAY_DUST,DIAMOND_SAWBLADE,COPPER_WIRE,ALUMINIUM_PLATE,WIRECUTTER));
+              CLAY_DUST,
+              DIAMOND_SAWBLADE,
+              COPPER_WIRE,
+              ALUMINIUM_PLATE,
+              WIRECUTTER,
+              BASIC_BOARD,REDSTONE_BOARD));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
@@ -61,7 +66,8 @@ public class TLXData {
               TLXBlocks.COKE_OVEN_BLOCK,
               TLXBlocks.COKE_OVEN_BRICK_BLOCK,
               TLXBlocks.COKE_OVEN_FIREBOX,
-              TLXBlocks.CASING_WOODEN,TLXBlocks.MACHINE_CASING_ALUMINIUM));
+              TLXBlocks.CASING_WOODEN,
+              TLXBlocks.MACHINE_CASING_ALUMINIUM));
   public static ArrayList<RegistryObject<Block>> allDefJadeProvider =
       new ArrayList<>(
           List.of(
