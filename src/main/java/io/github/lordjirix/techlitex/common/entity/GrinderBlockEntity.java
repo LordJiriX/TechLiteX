@@ -6,6 +6,8 @@ import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
 import io.github.lordjirix.techlitex.gui.menu.SimpleInOutMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
 import java.util.HashMap;
+
+import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -32,6 +34,8 @@ public class GrinderBlockEntity extends BlockEntity implements MenuProvider, IRe
   public int timeToRunRecipe = 0;
   public int currentRunTime = 0;
   public int energyPerTick = 0;
+  public int xTimeToRunRecipe = 1;
+  public int xRfUsage = 1;
   public HashMap<Item, GrinderRecipe> recipes = TLXData.grinderRecipes;
   private final ItemStackHandler inventory =
       new ItemStackHandler(2) {
@@ -46,7 +50,17 @@ public class GrinderBlockEntity extends BlockEntity implements MenuProvider, IRe
 
   public GrinderBlockEntity(BlockPos pPos, BlockState pBlockState) {
     super(TLXBlockEntitys.GRINDER_BLOCK_ENTITY.get(), pPos, pBlockState);
+      // maybe need rework
+      if (pBlockState.getBlock() == TLXBlocks.GRINDER_BLOCK_1.get()) {
+          this.xRfUsage = 1;
+          this.xTimeToRunRecipe = 1;
+      }
+      if (pBlockState.getBlock() == TLXBlocks.GRINDER_BLOCK_2.get()) {
+          this.xRfUsage = 4;
+          this.xTimeToRunRecipe = 2;
+      }
   }
+
 
   public void tick() {
     if (level == null || level.isClientSide()) return;
@@ -68,8 +82,8 @@ public class GrinderBlockEntity extends BlockEntity implements MenuProvider, IRe
     if (recipe == null) {
       return;
     }
-    energyPerTick = recipe.getRFPerTick();
-    timeToRunRecipe = recipe.getTimePerRecipe();
+    energyPerTick = recipe.getRFPerTick() * xRfUsage;
+    timeToRunRecipe = recipe.getTimePerRecipe() / xTimeToRunRecipe;
     energy.extractEnergy(energyPerTick, false);
     currentRunTime++;
     if (currentRunTime >= timeToRunRecipe) {

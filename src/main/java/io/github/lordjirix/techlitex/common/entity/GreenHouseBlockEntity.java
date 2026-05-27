@@ -5,6 +5,7 @@ import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
 import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
 import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
+import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -30,6 +31,8 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
   public int timeToRunRecipe = 0;
   public int currentRunTime = 0;
   public int energyPerTick = 0;
+    public int xTimeToRunRecipe = 1;
+    public int xRfUsage = 1;
   private final ItemStackHandler inventory =
       new ItemStackHandler(10) {
         @Override
@@ -41,9 +44,19 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
   private final LazyOptional<IEnergyStorage> energyCap = LazyOptional.of(() -> energy);
   private final LazyOptional<IItemHandler> itemHandler = LazyOptional.of(() -> inventory);
 
-  public GreenHouseBlockEntity(BlockPos pos, BlockState state) {
-    super(TLXBlockEntitys.GREENHOUSE_BLOCK_ENTITY.get(), pos, state);
+  public GreenHouseBlockEntity(BlockPos pos, BlockState pBlockState) {
+    super(TLXBlockEntitys.GREENHOUSE_BLOCK_ENTITY.get(), pos, pBlockState);
+      // maybe need rework
+      if (pBlockState.getBlock() == TLXBlocks.GREENHOUSE_BLOCK_1.get()) {
+          this.xRfUsage = 1;
+          this.xTimeToRunRecipe = 1;
+      }
+      if (pBlockState.getBlock() == TLXBlocks.GREENHOUSE_BLOCK_2.get()) {
+          this.xRfUsage = 4;
+          this.xTimeToRunRecipe = 2;
+      }
   }
+
 
   @Override
   public @NotNull <T> LazyOptional<T> getCapability(
@@ -84,8 +97,8 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
     if (recipe == null) {
       return;
     }
-    energyPerTick = recipe.getRFPerTick();
-    timeToRunRecipe = recipe.getTimePerRecipe();
+    energyPerTick = recipe.getRFPerTick() * xRfUsage;
+    timeToRunRecipe = recipe.getTimePerRecipe() / xTimeToRunRecipe;
     energy.extractEnergy(energyPerTick, false);
     currentRunTime++;
     if (currentRunTime >= timeToRunRecipe) {

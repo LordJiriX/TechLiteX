@@ -52,9 +52,9 @@ public class TLXData {
           List.of(
               TLXBlocks.BEDROCK_MINER_BLOCK,
               TLXBlocks.ELEVATOR_BLOCK,
-              TLXBlocks.GREENHOUSE_BLOCK_1,
+              TLXBlocks.GREENHOUSE_BLOCK_1,TLXBlocks.GREENHOUSE_BLOCK_2,
               TLXBlocks.TIME_COMPRESSOR_BLOCK_1,
-              TLXBlocks.GRINDER_BLOCK_1,
+              TLXBlocks.GRINDER_BLOCK_1,TLXBlocks.GRINDER_BLOCK_2,
               TLXBlocks.MACHINE_CASING_STEEL,
               TLXBlocks.COKE_OVEN_BLOCK,
               TLXBlocks.COKE_OVEN_BRICK_BLOCK,

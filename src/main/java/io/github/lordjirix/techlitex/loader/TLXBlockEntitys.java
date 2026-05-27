@@ -27,7 +27,7 @@ public class TLXBlockEntitys {
               "greenhouse_block",
               () ->
                   BlockEntityType.Builder.of(
-                          GreenHouseBlockEntity::new, TLXBlocks.GREENHOUSE_BLOCK_1.get())
+                          GreenHouseBlockEntity::new, TLXBlocks.GREENHOUSE_BLOCK_1.get(),TLXBlocks.GREENHOUSE_BLOCK_2.get())
                       .build(null));
   public static final RegistryObject<BlockEntityType<TimeCompressorBlockEntity>>
       TIME_COMPRESSOR_BLOCK_ENTITY =
@@ -41,7 +41,7 @@ public class TLXBlockEntitys {
       BLOCK_ENTITIES.register(
           "grinder_block",
           () ->
-              BlockEntityType.Builder.of(GrinderBlockEntity::new, TLXBlocks.GRINDER_BLOCK_1.get())
+              BlockEntityType.Builder.of(GrinderBlockEntity::new, TLXBlocks.GRINDER_BLOCK_1.get(),TLXBlocks.GRINDER_BLOCK_2.get())
                   .build(null));
   public static final RegistryObject<BlockEntityType<CokeOvenBlockEntity>> COKE_OVEN_BLOCK_ENTITY =
       BLOCK_ENTITIES.register(

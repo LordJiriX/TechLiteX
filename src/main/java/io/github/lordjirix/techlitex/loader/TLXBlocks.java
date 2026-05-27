@@ -31,6 +31,12 @@ public class TLXBlocks {
           () ->
               new BlockGreenHouse(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+    public static final RegistryObject<Block> GREENHOUSE_BLOCK_2 =
+            createBlock(
+                    "greenhouse_block_2",
+                    () ->
+                            new BlockGreenHouse(
+                                    BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
   public static final RegistryObject<Block> ELEVATOR_BLOCK =
       createBlock(
           "elevator_block",
@@ -45,10 +51,14 @@ public class TLXBlocks {
       createBlock(
           "grinder_block_1",
           () ->
-              new GrinderBlock(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+              new GrinderBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+    public static final RegistryObject<Block> GRINDER_BLOCK_2 =
+            createBlock(
+                    "grinder_block_2",
+                    () ->
+                            new GrinderBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
-  public static final RegistryObject<Block> COKE_OVEN_BLOCK =
+    public static final RegistryObject<Block> COKE_OVEN_BLOCK =
       createBlock(
           "coke_oven_block",
           () ->
