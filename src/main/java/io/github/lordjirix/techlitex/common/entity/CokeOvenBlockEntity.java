@@ -60,7 +60,11 @@ public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
       currentRunTime = 0;
       return;
     }
-    ;
+    if (inventory.getStackInSlot(1).getCount() >= inventory.getStackInSlot(1).getMaxStackSize()) {
+      currentRunTime = 0;
+      timeToRunRecipe = 0;
+      return;
+    }
 
     currentRunTime++;
     if (currentRunTime >= timeToRunRecipe) {

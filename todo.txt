@@ -6,3 +6,4 @@
  - Add Separator (to get Aluminium only rn)   {}
  - Add Aluminum chain   {}
  - Add recipes   {}
+ - Sawblades [Dia,Netherite,...]   {}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "techlitex:wirecutter"
+    }
+  ],
+  "result": {
+    "item": "techlitex:copper_wire"
+  }
+}

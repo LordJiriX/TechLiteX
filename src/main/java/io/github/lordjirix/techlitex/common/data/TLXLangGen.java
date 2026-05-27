@@ -25,8 +25,8 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.BEDROCKIUM_INGOT.get(), "Bedrockium Ingot");
     add(TLXItems.BEDROCKIUM_DUST.get(), "Bedrockium Dust");
     add(TLXItems.LASER_CORE.get(), "Laser Core");
-    add(TLXItems.PROCESSING_CORE_T1.get(), "Processing Core T1");
-    add(TLXItems.PROCESSING_CORE_T2.get(), "Processing Core T2");
+    add(TLXItems.PROCESSOR.get(), "Processing Core T1");
+    add(TLXItems.INTEGRATED_PROCESSOR.get(), "Processing Core T2");
     add(TLXItems.BEDROCKIUM_DRILL.get(), "Bedrockium Drill");
     add(TLXItems.DIAMOND_DRILL.get(), "Diamond Drill");
     add(TLXItems.STEEL_DUST.get(), "Steel Dust");
@@ -41,9 +41,9 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.COAL_DUST.get(), "Coal Dust");
     add(TLXItems.CHARCOAL_DUST.get(), "Charcoal Dust");
     add(TLXItems.COAL_COKE_DUST.get(), "Coal Coke Dust");
-    add(TLXItems.ALUMINIUM_INGOT.get(),  "Aluminium Ingot");
-      add(TLXItems.ALUMINIUM_DUST.get(),  "Aluminium Dust");
-      add(TLXItems.CLAY_DUST.get(),  "Clay Dust");
+    add(TLXItems.ALUMINIUM_INGOT.get(), "Aluminium Ingot");
+    add(TLXItems.ALUMINIUM_DUST.get(), "Aluminium Dust");
+    add(TLXItems.CLAY_DUST.get(), "Clay Dust");
 
     // tools
     add(TLXItems.MULTI_TOOL.get(), "Multi Tool");

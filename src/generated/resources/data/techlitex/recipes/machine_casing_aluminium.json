@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "techlitex:aluminium_plate"
+    },
+    "B": {
+      "item": "techlitex:casing_wooden"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "item": "techlitex:machine_casing_aluminium"
+  },
+  "show_notification": true
+}

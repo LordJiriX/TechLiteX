@@ -5,9 +5,8 @@ import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
 import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
 import io.github.lordjirix.techlitex.gui.menu.SimpleInOutMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
-import java.util.HashMap;
-
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
+import java.util.HashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -50,17 +49,16 @@ public class GrinderBlockEntity extends BlockEntity implements MenuProvider, IRe
 
   public GrinderBlockEntity(BlockPos pPos, BlockState pBlockState) {
     super(TLXBlockEntitys.GRINDER_BLOCK_ENTITY.get(), pPos, pBlockState);
-      // maybe need rework
-      if (pBlockState.getBlock() == TLXBlocks.GRINDER_BLOCK_1.get()) {
-          this.xRfUsage = 1;
-          this.xTimeToRunRecipe = 1;
-      }
-      if (pBlockState.getBlock() == TLXBlocks.GRINDER_BLOCK_2.get()) {
-          this.xRfUsage = 4;
-          this.xTimeToRunRecipe = 2;
-      }
+    // maybe need rework
+    if (pBlockState.getBlock() == TLXBlocks.GRINDER_BLOCK_1.get()) {
+      this.xRfUsage = 1;
+      this.xTimeToRunRecipe = 1;
+    }
+    if (pBlockState.getBlock() == TLXBlocks.GRINDER_BLOCK_2.get()) {
+      this.xRfUsage = 4;
+      this.xTimeToRunRecipe = 2;
+    }
   }
-
 
   public void tick() {
     if (level == null || level.isClientSide()) return;
@@ -68,6 +66,11 @@ public class GrinderBlockEntity extends BlockEntity implements MenuProvider, IRe
       return;
     }
     if (inventory.getStackInSlot(0).isEmpty()) {
+      currentRunTime = 0;
+      timeToRunRecipe = 0;
+      return;
+    }
+    if (inventory.getStackInSlot(1).getCount() >= inventory.getStackInSlot(1).getMaxStackSize()) {
       currentRunTime = 0;
       timeToRunRecipe = 0;
       return;

@@ -47,6 +47,14 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .define('B', TLXBlocks.CASING_WOODEN.get())
         .unlockedBy(getHasName(TLXItems.STEEL_INGOT.get()), has(TLXTags.I.STEEL_INGOT))
         .save(pw);
+      ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.MACHINE_CASING_ALUMINIUM.get())
+              .pattern("AAA")
+              .pattern("ABA")
+              .pattern("AAA")
+              .define('A', TLXItems.ALUMINIUM_PLATE.get())
+              .define('B', TLXBlocks.CASING_WOODEN.get())
+              .unlockedBy(getHasName(TLXItems.ALUMINIUM_PLATE.get()), has(TLXItems.ALUMINIUM_PLATE.get()))
+              .save(pw);
     ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.CASING_WOODEN.get())
         .pattern("PPP")
         .pattern("ISI")
@@ -76,6 +84,17 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .requires(TLXItems.SIMPLE_HAMMER.get())
         .unlockedBy(getHasName(TLXItems.SIMPLE_HAMMER.get()), has(TLXItems.SIMPLE_HAMMER.get()))
         .save(pw, new ResourceLocation(MODID, "steel_plate_simple_hammer"));
+      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.ALUMINIUM_PLATE.get())
+              .requires(TLXItems.ALUMINIUM_INGOT.get())
+              .requires(TLXItems.SIMPLE_HAMMER.get())
+              .unlockedBy(getHasName(TLXItems.ALUMINIUM_INGOT.get()), has(TLXItems.ALUMINIUM_INGOT.get()))
+              .save(pw, new ResourceLocation(MODID, "aluminium_plate_simple_hammer"));
+      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.COPPER_WIRE.get())
+              .requires(Items.COPPER_INGOT)
+              .requires(TLXItems.WIRECUTTER.get())
+              .unlockedBy(getHasName(TLXItems.WIRECUTTER.get()), has(TLXItems.WIRECUTTER.get()))
+              .save(pw, new ResourceLocation(MODID, "copper_wire_wirecutter"));
+
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.STEEL_DUST.get())
         .requires(TLXTags.I.IRON_DUST)
         .requires(TLXTags.I.CARBON_BASE_DUST)

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "techlitex:item/processing_core_t2"
+    "layer0": "techlitex:item/aluminium_plate"
   }
 }

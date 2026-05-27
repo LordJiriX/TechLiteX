@@ -2,6 +2,7 @@ package io.github.lordjirix.techlitex.loader;
 
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
+import io.github.lordjirix.techlitex.common.item.EItem;
 import io.github.lordjirix.techlitex.common.item.ItemGameModeSwapper;
 import io.github.lordjirix.techlitex.common.item.ItemMultiTool;
 import io.github.lordjirix.techlitex.common.item.SimpleDurableItem;
@@ -34,10 +35,10 @@ public class TLXItems {
       ITEMS.register("diamond_drill", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> LASER_CORE =
       ITEMS.register("laser_core", () -> new Item(new Item.Properties()));
-  public static final RegistryObject<Item> PROCESSING_CORE_T1 =
-      ITEMS.register("processing_core_t1", () -> new Item(new Item.Properties()));
-  public static final RegistryObject<Item> PROCESSING_CORE_T2 =
-      ITEMS.register("processing_core_t2", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> PROCESSOR =
+      ITEMS.register("processor", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> INTEGRATED_PROCESSOR =
+      ITEMS.register("integrated_processor", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> STEEL_DUST =
       ITEMS.register("steel_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> STEEL_INGOT =
@@ -54,6 +55,9 @@ public class TLXItems {
   public static final RegistryObject<Item> SIMPLE_HAMMER =
       ITEMS.register(
           "simple_hammer", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
+    public static final RegistryObject<Item> WIRECUTTER =
+            ITEMS.register(
+                    "wirecutter", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
   public static final RegistryObject<Item> TIME_NUGGET =
       ITEMS.register("time_nugget", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> TIME_INGOT =
@@ -68,11 +72,25 @@ public class TLXItems {
       ITEMS.register("coal_coke", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> COKE_OVEN_BRICK =
       ITEMS.register("coke_oven_brick", () -> new Item(new Item.Properties()));
+  // PLATES
   public static final RegistryObject<Item> STEEL_PLATE =
       ITEMS.register("steel_plate", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_PLATE =
+            ITEMS.register("diamond_plate", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ALUMINIUM_PLATE =
+            ITEMS.register("aluminium_plate", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> COAL_COKE_DUST =
       ITEMS.register("coke_coal_dust", () -> new Item(new Item.Properties()));
-
+  // SAWBLADES
+    public static final RegistryObject<Item> DIAMOND_SAWBLADE =
+            ITEMS.register("diamond_sawblade", () -> new EItem(new Item.Properties(),new String[]{"Tier: diamond"}));
+    public static final RegistryObject<Item> NETHERITE_SAWBLADE =
+            ITEMS.register("netherite_sawblade", () -> new Item(new Item.Properties()));
+    // WIRES
+    public static final RegistryObject<Item> COPPER_WIRE =
+            ITEMS.register("copper_wire", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_WIRE =
+            ITEMS.register("gold_wire", () -> new Item(new Item.Properties()));
   public static void init(IEventBus bus) {
     ITEMS.register(bus);
   }

@@ -31,8 +31,8 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
   public int timeToRunRecipe = 0;
   public int currentRunTime = 0;
   public int energyPerTick = 0;
-    public int xTimeToRunRecipe = 1;
-    public int xRfUsage = 1;
+  public int xTimeToRunRecipe = 1;
+  public int xRfUsage = 1;
   private final ItemStackHandler inventory =
       new ItemStackHandler(10) {
         @Override
@@ -46,17 +46,16 @@ public class GreenHouseBlockEntity extends BlockEntity implements IRecipeRunnabl
 
   public GreenHouseBlockEntity(BlockPos pos, BlockState pBlockState) {
     super(TLXBlockEntitys.GREENHOUSE_BLOCK_ENTITY.get(), pos, pBlockState);
-      // maybe need rework
-      if (pBlockState.getBlock() == TLXBlocks.GREENHOUSE_BLOCK_1.get()) {
-          this.xRfUsage = 1;
-          this.xTimeToRunRecipe = 1;
-      }
-      if (pBlockState.getBlock() == TLXBlocks.GREENHOUSE_BLOCK_2.get()) {
-          this.xRfUsage = 4;
-          this.xTimeToRunRecipe = 2;
-      }
+    // maybe need rework
+    if (pBlockState.getBlock() == TLXBlocks.GREENHOUSE_BLOCK_1.get()) {
+      this.xRfUsage = 1;
+      this.xTimeToRunRecipe = 1;
+    }
+    if (pBlockState.getBlock() == TLXBlocks.GREENHOUSE_BLOCK_2.get()) {
+      this.xRfUsage = 4;
+      this.xTimeToRunRecipe = 2;
+    }
   }
-
 
   @Override
   public @NotNull <T> LazyOptional<T> getCapability(

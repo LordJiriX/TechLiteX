@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "techlitex:copper_wire_wirecutter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wirecutter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "techlitex:wirecutter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wirecutter",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "techlitex:copper_wire_wirecutter"
+    ]
+  },
+  "sends_telemetry_event": false
+}

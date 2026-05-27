@@ -28,8 +28,8 @@ public class TLXData {
               TLXItems.BEDROCKIUM_DRILL,
               TLXItems.DIAMOND_DRILL,
               TLXItems.LASER_CORE,
-              TLXItems.PROCESSING_CORE_T1,
-              TLXItems.PROCESSING_CORE_T2,
+              //TLXItems.PROCESSOR,
+              //TLXItems.INTEGRATED_PROCESSOR,
               TLXItems.BEDROCKIUM_DUST,
               TLXItems.STEEL_DUST,
               TLXItems.STEEL_INGOT,
@@ -45,21 +45,23 @@ public class TLXData {
               TLXItems.SIMPLE_HAMMER,
               ALUMINIUM_INGOT,
               ALUMINIUM_DUST,
-              CLAY_DUST));
+              CLAY_DUST,DIAMOND_SAWBLADE,COPPER_WIRE,ALUMINIUM_PLATE,WIRECUTTER));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
           List.of(
               TLXBlocks.BEDROCK_MINER_BLOCK,
               TLXBlocks.ELEVATOR_BLOCK,
-              TLXBlocks.GREENHOUSE_BLOCK_1,TLXBlocks.GREENHOUSE_BLOCK_2,
+              TLXBlocks.GREENHOUSE_BLOCK_1,
+              TLXBlocks.GREENHOUSE_BLOCK_2,
               TLXBlocks.TIME_COMPRESSOR_BLOCK_1,
-              TLXBlocks.GRINDER_BLOCK_1,TLXBlocks.GRINDER_BLOCK_2,
+              TLXBlocks.GRINDER_BLOCK_1,
+              TLXBlocks.GRINDER_BLOCK_2,
               TLXBlocks.MACHINE_CASING_STEEL,
               TLXBlocks.COKE_OVEN_BLOCK,
               TLXBlocks.COKE_OVEN_BRICK_BLOCK,
               TLXBlocks.COKE_OVEN_FIREBOX,
-              TLXBlocks.CASING_WOODEN));
+              TLXBlocks.CASING_WOODEN,TLXBlocks.MACHINE_CASING_ALUMINIUM));
   public static ArrayList<RegistryObject<Block>> allDefJadeProvider =
       new ArrayList<>(
           List.of(

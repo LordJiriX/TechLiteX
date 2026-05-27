@@ -48,8 +48,9 @@ public class TimeCompressorBlockEntity extends BlockEntity
 
   public void tick() {
     if (level == null || level.isClientSide()) return;
-    if (inventory.getStackInSlot(0).getCount() == 64) {
+    if (inventory.getStackInSlot(0).getCount() >= inventory.getStackInSlot(0).getMaxStackSize()) {
       currentRunTime = 0;
+      timeToRunRecipe = 0;
       return;
     }
     if (energy.getEnergyStored() < energyPerTick) return;
