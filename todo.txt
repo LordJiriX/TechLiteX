@@ -3,4 +3,6 @@
  -
 
      *   CONTENT   *
- - Add todo
+ - Add Separator (to get Aluminium only rn)   {}
+ - Add Aluminum chain   {}
+ - Add recipes   {}
