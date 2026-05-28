@@ -33,5 +33,9 @@ public class TLXItemTagGen extends ItemTagsProvider {
     this.tag(TLXTags.I.STEEL_PLATE).add(TLXItems.STEEL_PLATE.get());
     this.tag(TLXTags.I.COAL_COKE).add(TLXItems.COAL_COKE.get());
     this.tag(TLXTags.I.COAL_COKE_DUST).add(TLXItems.COAL_COKE_DUST.get());
+    this.tag(TLXTags.I.ALUMINIUM_DUST).add(TLXItems.ALUMINIUM_DUST.get());
+    this.tag(TLXTags.I.ALUMINIUM_INGOT).add(TLXItems.ALUMINIUM_INGOT.get());
+    this.tag(TLXTags.I.ALUMINIUM_PLATE).add(TLXItems.ALUMINIUM_PLATE.get());
+    this.tag(TLXTags.I.PROCESSOR_I).add(TLXItems.PROCESSOR.get());
   }
 }

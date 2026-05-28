@@ -50,7 +50,8 @@ public class TLXData {
               COPPER_WIRE,
               ALUMINIUM_PLATE,
               WIRECUTTER,
-              BASIC_BOARD,REDSTONE_BOARD));
+              BASIC_BOARD,
+              REDSTONE_BOARD));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(

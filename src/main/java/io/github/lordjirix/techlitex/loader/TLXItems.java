@@ -43,8 +43,8 @@ public class TLXItems {
   // ELECTRONICS COMPONENTS
   public static final RegistryObject<Item> BASIC_BOARD =
       ITEMS.register("basic_board", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> REDSTONE_BOARD =
-            ITEMS.register("redstone_board", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> REDSTONE_BOARD =
+      ITEMS.register("redstone_board", () -> new Item(new Item.Properties()));
   //
   public static final RegistryObject<Item> STEEL_DUST =
       ITEMS.register("steel_dust", () -> new Item(new Item.Properties()));
