@@ -9,6 +9,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import org.jetbrains.annotations.NotNull;
 
 public class CokeOvenMenu extends AbstractContainerMenu {
 
@@ -22,7 +23,13 @@ public class CokeOvenMenu extends AbstractContainerMenu {
     super(TLXMenus.COKE_OVEN_MENU.get(), id);
     this.handler = handler;
     this.addSlot(new SlotItemHandler(handler, 0, 40, 37));
-    this.addSlot(new SlotItemHandler(handler, 1, 112, 37));
+    this.addSlot(
+        new SlotItemHandler(handler, 1, 112, 37) {
+          @Override
+          public boolean mayPlace(@NotNull ItemStack stack) {
+            return false;
+          }
+        });
     addPlayerInventory(playerInv);
     addPlayerHotbar(playerInv);
   }
@@ -52,7 +59,7 @@ public class CokeOvenMenu extends AbstractContainerMenu {
     if (slot == null || !slot.hasItem()) return ItemStack.EMPTY;
     ItemStack stack = slot.getItem();
     ItemStack copy = stack.copy();
-    int machineSlots = 1;
+    int machineSlots = 2;
     if (index < machineSlots) {
       if (!this.moveItemStackTo(stack, machineSlots, this.slots.size(), true)) {
         return ItemStack.EMPTY;

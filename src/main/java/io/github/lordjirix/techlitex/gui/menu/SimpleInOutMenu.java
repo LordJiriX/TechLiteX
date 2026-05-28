@@ -9,6 +9,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import org.jetbrains.annotations.NotNull;
 
 public class SimpleInOutMenu extends AbstractContainerMenu {
 
@@ -22,7 +23,13 @@ public class SimpleInOutMenu extends AbstractContainerMenu {
     super(TLXMenus.SIMPLE_INOUT_MENU.get(), id);
     this.handler = handler;
     this.addSlot(new SlotItemHandler(handler, 0, 24, 35));
-    this.addSlot(new SlotItemHandler(handler, 1, 80, 35));
+    this.addSlot(
+        new SlotItemHandler(handler, 1, 80, 35) {
+          @Override
+          public boolean mayPlace(@NotNull ItemStack stack) {
+            return false;
+          }
+        });
 
     addPlayerInventory(playerInv);
     addPlayerHotbar(playerInv);
@@ -53,7 +60,7 @@ public class SimpleInOutMenu extends AbstractContainerMenu {
     if (slot == null || !slot.hasItem()) return ItemStack.EMPTY;
     ItemStack stack = slot.getItem();
     ItemStack copy = stack.copy();
-    int machineSlots = 1;
+    int machineSlots = 2;
     if (index < machineSlots) {
       if (!this.moveItemStackTo(stack, machineSlots, this.slots.size(), true)) {
         return ItemStack.EMPTY;
