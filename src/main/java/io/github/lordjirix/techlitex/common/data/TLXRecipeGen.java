@@ -82,7 +82,7 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .pattern("WSW")
         .define('W', TLXItems.COPPER_WIRE.get())
         .define('S', TLXItems.DIAMOND_SAWBLADE.get())
-        .define('P', TLXItems.PROCESSOR.get())
+        .define('P', TLXTags.I.PROCESSOR_I)
         .define('B', TLXBlocks.MACHINE_CASING_STEEL.get())
         .unlockedBy(getHasName(TLXItems.PROCESSOR.get()), has(TLXItems.PROCESSOR.get()))
         .save(pw);
@@ -92,7 +92,7 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .pattern("WDW")
         .define('W', TLXItems.COPPER_WIRE.get())
         .define('S', TLXItems.DIAMOND_SAWBLADE.get())
-        .define('P', TLXItems.PROCESSOR.get())
+        .define('P', TLXTags.I.PROCESSOR_I)
         .define('D', Blocks.DIRT)
         .define('B', TLXBlocks.MACHINE_CASING_STEEL.get())
         .unlockedBy(getHasName(TLXItems.PROCESSOR.get()), has(TLXItems.PROCESSOR.get()))
@@ -122,12 +122,12 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .unlockedBy(getHasName(TLXItems.SIMPLE_GRINDER.get()), has(TLXItems.SIMPLE_GRINDER.get()))
         .save(pw, new ResourceLocation(MODID, "charcoal_dust_simple_grinder"));
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.STEEL_PLATE.get())
-        .requires(TLXItems.STEEL_INGOT.get())
+        .requires(TLXTags.I.STEEL_INGOT)
         .requires(TLXItems.SIMPLE_HAMMER.get())
         .unlockedBy(getHasName(TLXItems.SIMPLE_HAMMER.get()), has(TLXItems.SIMPLE_HAMMER.get()))
         .save(pw, new ResourceLocation(MODID, "steel_plate_simple_hammer"));
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.ALUMINIUM_PLATE.get())
-        .requires(TLXItems.ALUMINIUM_INGOT.get())
+        .requires(TLXTags.I.ALUMINIUM_INGOT)
         .requires(TLXItems.SIMPLE_HAMMER.get())
         .unlockedBy(getHasName(TLXItems.ALUMINIUM_INGOT.get()), has(TLXItems.ALUMINIUM_INGOT.get()))
         .save(pw, new ResourceLocation(MODID, "aluminium_plate_simple_hammer"));

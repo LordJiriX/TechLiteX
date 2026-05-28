@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "techlitex:steel_ingot"
+      "tag": "forge:ingots/steel"
     },
     {
       "item": "techlitex:simple_hammer"

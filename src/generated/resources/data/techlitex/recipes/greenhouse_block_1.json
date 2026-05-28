@@ -9,7 +9,7 @@
       "item": "minecraft:dirt"
     },
     "P": {
-      "item": "techlitex:processor"
+      "tag": "techlitex:processors/_t1"
     },
     "S": {
       "item": "techlitex:diamond_sawblade"
