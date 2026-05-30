@@ -1,5 +1,6 @@
 package io.github.lordjirix.techlitex.common.block;
 
+import io.github.lordjirix.techlitex.api.util.TU;
 import io.github.lordjirix.techlitex.common.entity.GrinderBlockEntity;
 import java.util.List;
 import net.minecraft.core.BlockPos;
@@ -67,5 +68,6 @@ public class GrinderBlock extends Block implements EntityBlock {
       ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     pTooltip.add(Component.literal("Dusty time!"));
+    TU.addRecipeVoidTimeWhenInvFull(pTooltip);
   }
 }

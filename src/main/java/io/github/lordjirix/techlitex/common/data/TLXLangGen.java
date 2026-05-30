@@ -58,5 +58,7 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.GRINDER_BLOCK_1.get()), "Grinder I");
     add(new ItemStack(TLXBlocks.CASING_WOODEN.get()), "Casing Wooden");
     add(new ItemStack(TLXBlocks.MACHINE_CASING_STEEL.get()), "Machine Casing Steel");
+    // tooltips
+    add("tooltip.tlx.machine.recipe_voiding", "§4Void items when inventory is full§r");
   }
 }

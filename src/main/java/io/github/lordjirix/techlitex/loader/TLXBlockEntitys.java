@@ -54,6 +54,13 @@ public class TLXBlockEntitys {
           () ->
               BlockEntityType.Builder.of(CokeOvenBlockEntity::new, TLXBlocks.COKE_OVEN_BLOCK.get())
                   .build(null));
+  public static final RegistryObject<BlockEntityType<SeparatorBlockEntity>> SEPARATOR_BLOCK_ENTITY =
+      BLOCK_ENTITIES.register(
+          "separator_block",
+          () ->
+              BlockEntityType.Builder.of(
+                      SeparatorBlockEntity::new, TLXBlocks.SEPARATOR_BLOCK_1.get())
+                  .build(null));
 
   public static void init(IEventBus bus) {
     BLOCK_ENTITIES.register(bus);

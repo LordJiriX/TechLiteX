@@ -54,6 +54,8 @@ public class TLXItems {
       ITEMS.register("iron_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> CLAY_DUST =
       ITEMS.register("clay_dust", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> CARBON_DUST =
+      ITEMS.register("carbon_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> ALUMINIUM_DUST =
       ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> SIMPLE_GRINDER =

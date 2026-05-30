@@ -4,6 +4,7 @@ import static io.github.lordjirix.techlitex.loader.TLXItems.*;
 
 import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
 import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
+import io.github.lordjirix.techlitex.api.data.recipe.SeparatorRecipe;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import io.github.lordjirix.techlitex.loader.TLXItems;
 import java.util.ArrayList;
@@ -51,7 +52,8 @@ public class TLXData {
               ALUMINIUM_PLATE,
               WIRECUTTER,
               BASIC_BOARD,
-              REDSTONE_BOARD));
+              REDSTONE_BOARD,
+              CARBON_DUST));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
@@ -68,7 +70,8 @@ public class TLXData {
               TLXBlocks.COKE_OVEN_BRICK_BLOCK,
               TLXBlocks.COKE_OVEN_FIREBOX,
               TLXBlocks.CASING_WOODEN,
-              TLXBlocks.MACHINE_CASING_ALUMINIUM));
+              TLXBlocks.MACHINE_CASING_ALUMINIUM,
+              TLXBlocks.SEPARATOR_BLOCK_1));
   public static ArrayList<RegistryObject<Block>> allDefJadeProvider =
       new ArrayList<>(
           List.of(
@@ -162,6 +165,29 @@ public class TLXData {
           put(
               STEEL_PLATE.get(),
               new GrinderRecipe(new ItemStack[] {new ItemStack(STEEL_DUST.get())}, 40, 20 * 35));
+        }
+      };
+  public static HashMap<Item, SeparatorRecipe> separatorRecipes =
+      new HashMap<>() {
+        {
+          put(
+              TLXItems.CLAY_DUST.get(),
+              new SeparatorRecipe(
+                  CLAY_DUST.get(),
+                  9,
+                  new ItemStack[] {new ItemStack(Items.BRICK, 9)},
+                  40,
+                  20 * 15));
+          put(
+              STEEL_DUST.get(),
+              new SeparatorRecipe(
+                  STEEL_DUST.get(),
+                  1,
+                  new ItemStack[] {
+                    new ItemStack(CARBON_DUST.get(), 1), new ItemStack(IRON_DUST.get())
+                  },
+                  40,
+                  20 * 15));
         }
       };
 }

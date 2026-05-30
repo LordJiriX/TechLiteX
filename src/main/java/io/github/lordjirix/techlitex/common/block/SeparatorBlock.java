@@ -1,10 +1,8 @@
 package io.github.lordjirix.techlitex.common.block;
 
-import io.github.lordjirix.techlitex.Config;
 import io.github.lordjirix.techlitex.api.util.TU;
-import io.github.lordjirix.techlitex.common.entity.GreenHouseBlockEntity;
+import io.github.lordjirix.techlitex.common.entity.SeparatorBlockEntity;
 import java.util.List;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -26,26 +24,14 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
-public class BlockGreenHouse extends Block implements EntityBlock {
-  public BlockGreenHouse(Properties properties) {
+public class SeparatorBlock extends Block implements EntityBlock {
+  public SeparatorBlock(Properties properties) {
     super(properties);
   }
 
   @Override
-  public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-    return new GreenHouseBlockEntity(pos, state);
-  }
-
-  @Override
-  public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
-      Level level, BlockState state, BlockEntityType<T> type) {
-    return level.isClientSide
-        ? null
-        : (lvl, pos, st, be) -> {
-          if (be instanceof GreenHouseBlockEntity tbe) {
-            tbe.tick();
-          }
-        };
+  public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+    return new SeparatorBlockEntity(pPos, pState);
   }
 
   @Override
@@ -66,15 +52,22 @@ public class BlockGreenHouse extends Block implements EntityBlock {
   }
 
   @Override
+  public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(
+      Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+    return pLevel.isClientSide
+        ? null
+        : (lvl, pos, st, be) -> {
+          if (be instanceof SeparatorBlockEntity tbe) {
+            tbe.tick();
+          }
+        };
+  }
+
+  @Override
   public void appendHoverText(
       ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-    pTooltip.add(Component.literal("Tree farm 3000§r"));
-    if (Screen.hasShiftDown()) {
-      pTooltip.add(Component.literal("§2Energy: §1" + Config.greenHouseRfUsage + " §rRF/t§r"));
-      return;
-    }
-    pTooltip.add(Component.literal("press §o§lSHIFT§r for more info§r"));
     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+    pTooltip.add(Component.literal("Split it up!"));
     TU.addRecipeVoidTimeWhenInvFull(pTooltip);
   }
 }

@@ -60,6 +60,13 @@ public class TLXBlocks {
               new GrinderBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
+  public static final RegistryObject<Block> SEPARATOR_BLOCK_1 =
+      createBlock(
+          "separator_block_1",
+          () ->
+              new SeparatorBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+
   public static final RegistryObject<Block> COKE_OVEN_BLOCK =
       createBlock(
           "coke_oven_block",

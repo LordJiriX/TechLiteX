@@ -29,7 +29,8 @@ public class TLXItemTagGen extends ItemTagsProvider {
 
     this.tag(TLXTags.I.CARBON_BASE_DUST)
         .add(TLXItems.COAL_DUST.get())
-        .add(TLXItems.CHARCOAL_DUST.get());
+        .add(TLXItems.CHARCOAL_DUST.get())
+        .add(TLXItems.CARBON_DUST.get());
     this.tag(TLXTags.I.STEEL_PLATE).add(TLXItems.STEEL_PLATE.get());
     this.tag(TLXTags.I.COAL_COKE).add(TLXItems.COAL_COKE.get());
     this.tag(TLXTags.I.COAL_COKE_DUST).add(TLXItems.COAL_COKE_DUST.get());

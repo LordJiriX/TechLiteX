@@ -35,5 +35,6 @@
   "item.techlitex.steel_plate": "Steel Plate",
   "item.techlitex.time_ingot": "Time Ingot",
   "item.techlitex.time_nugget": "Time Nugget",
-  "itemGroup.techlitex.techlitex_tab": "TechLiteX"
+  "itemGroup.techlitex.techlitex_tab": "TechLiteX",
+  "tooltip.tlx.machine.recipe_voiding": "§4Void items when inventory is full§r"
 }
