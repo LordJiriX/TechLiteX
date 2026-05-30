@@ -61,6 +61,6 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.MACHINE_CASING_STEEL.get()), "Machine Casing Steel");
     // tooltips
     add("tooltip.tlx.machine.recipe_voiding", "§4Void items when inventory is full§r");
-    add(TD.Tooltip.SEPARATOR_TOOLTIP_MAIN,"Where Compounds Come Undone");
+    add(TD.Tooltip.SEPARATOR_TOOLTIP_MAIN, "Where Compounds Come Undone");
   }
 }

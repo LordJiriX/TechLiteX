@@ -26,7 +26,6 @@ public class TLXBlocks {
               new BlockBedrockMiner(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
-
   public static final RegistryObject<Block> GREENHOUSE_BLOCK_1 =
       createBlock(
           "greenhouse_1",
