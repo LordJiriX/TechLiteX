@@ -36,6 +36,8 @@
   "item.techlitex.time_ingot": "Time Ingot",
   "item.techlitex.time_nugget": "Time Nugget",
   "itemGroup.techlitex.techlitex_tab": "TechLiteX",
+  "tooltip.techlitex.cokeoven.main": "Cokee Time!",
+  "tooltip.techlitex.multiblock.is_multiblock": "MultiBlock",
   "tooltip.techlitex.separator.main": "Where Compounds Come Undone",
   "tooltip.tlx.machine.recipe_voiding": "§4Void items when inventory is full§r"
 }

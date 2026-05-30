@@ -1,6 +1,7 @@
 package io.github.lordjirix.techlitex.common.block;
 
 import io.github.lordjirix.techlitex.api.block.BaseBlock;
+import io.github.lordjirix.techlitex.api.data.TD;
 import io.github.lordjirix.techlitex.common.entity.CokeOvenBlockEntity;
 import java.util.List;
 import net.minecraft.client.gui.screens.Screen;
@@ -75,28 +76,21 @@ public class CokeOvenBlock extends BaseBlock implements EntityBlock {
       ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     if (Screen.hasShiftDown()) {
-      pTooltip.add(Component.literal(" B "));
-      pTooltip.add(Component.literal("BFB"));
-      pTooltip.add(Component.literal(" B "));
-      pTooltip.add(Component.literal(" - "));
-      pTooltip.add(Component.literal(" C "));
-      pTooltip.add(Component.literal(" - "));
-      pTooltip.add(Component.literal(" B "));
-      pTooltip.add(Component.literal(" - "));
-      pTooltip.add(Component.literal(" C = Coke Oven Block "));
-      pTooltip.add(Component.literal(" F = Coke Oven Firebox "));
-      pTooltip.add(Component.literal(" B = Coke Oven Bricks Block"));
+      pTooltip.add(Component.literal("Structure: (3x3x3)"));
+      pTooltip.add(Component.literal("- Shell: Coke Oven Bricks (3×3×3 solid cube)"));
+      pTooltip.add(Component.literal("- Core: Firebox in the center"));
+      pTooltip.add(Component.literal("- Controller: placed on outer surface of the structure"));
       return;
     }
     if (Screen.hasControlDown()) {
       pTooltip.add(Component.literal("Require: "));
       pTooltip.add(Component.literal("- Coke Oven Block 1x "));
       pTooltip.add(Component.literal("- Coke Oven Firebox 1x "));
-      pTooltip.add(Component.literal("- Coke Oven Bricks Block 5x "));
+      pTooltip.add(Component.literal("- Coke Oven Bricks Block 25x "));
       return;
     }
-    pTooltip.add(Component.literal("Cokee Time!"));
-    pTooltip.add(Component.literal("Multiblock"));
+    pTooltip.add(Component.translatable(TD.Tooltip.COKEOVEN_TOOLTIP_MAIN));
+    pTooltip.add(Component.translatable(TD.Tooltip.MB_ISMULTIBLOCK));
     pTooltip.add(Component.literal("[SHIFT] - [CTRL]"));
   }
 }

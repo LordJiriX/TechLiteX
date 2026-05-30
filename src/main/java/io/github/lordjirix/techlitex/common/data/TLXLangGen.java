@@ -62,5 +62,7 @@ public class TLXLangGen extends LanguageProvider {
     // tooltips
     add("tooltip.tlx.machine.recipe_voiding", "§4Void items when inventory is full§r");
     add(TD.Tooltip.SEPARATOR_TOOLTIP_MAIN, "Where Compounds Come Undone");
+    add(TD.Tooltip.COKEOVEN_TOOLTIP_MAIN, "Cokee Time!");
+    add(TD.Tooltip.MB_ISMULTIBLOCK, "MultiBlock");
   }
 }

@@ -1,6 +1,7 @@
 package io.github.lordjirix.techlitex.common.entity;
 
 import io.github.lordjirix.techlitex.Config;
+import io.github.lordjirix.techlitex.common.block.CokeOvenBlock;
 import io.github.lordjirix.techlitex.gui.menu.CokeOvenMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
@@ -111,17 +112,35 @@ public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
     if (level == null) return false;
     Block brick = TLXBlocks.COKE_OVEN_BRICK_BLOCK.get();
     Block firebox = TLXBlocks.COKE_OVEN_FIREBOX.get();
-    if (!level.getBlockState(pos.below()).is(firebox)) return false;
-    BlockPos[] requiredBricks =
-        new BlockPos[] {
-          pos.above(),
-          pos.offset(0, -1, 1),
-          pos.offset(1, -1, 0),
-          pos.offset(0, -1, -1),
-          pos.offset(-1, -1, 0)
-        };
-    for (BlockPos p : requiredBricks) {
-      if (!level.getBlockState(p).is(brick)) return false;
+
+    BlockPos center = pos.relative(getBlockState().getValue(CokeOvenBlock.FACING).getOpposite());
+    for (int x = -1; x <= 1; x++) {
+      for (int y = -1; y <= 1; y++) {
+        for (int z = -1; z <= 1; z++) {
+          BlockPos checkPos = center.offset(x, y, z);
+          System.out.println(checkPos + " -> " + level.getBlockState(checkPos).getBlock());
+          if (checkPos.equals(pos)) {
+            continue;
+          }
+          if (x == 0 && y == 0 && z == 0) {
+            if (!checkBlock(firebox, checkPos)) {
+              return false;
+            }
+          } else {
+            if (!checkBlock(brick, checkPos)) {
+              return false;
+            }
+          }
+        }
+      }
+    }
+
+    return true;
+  }
+
+  private boolean checkBlock(Block block, BlockPos pos) {
+    if (level.getBlockState(pos).getBlock() != block) {
+      return false;
     }
     return true;
   }
