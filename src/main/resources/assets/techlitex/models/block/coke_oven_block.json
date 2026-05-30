@@ -1,11 +1,9 @@
 {
-  "parent": "block/cube",
+  "parent": "minecraft:block/orientable",
   "textures": {
-    "north": "techlitex:block/coke_oven_block",
-    "south": "techlitex:block/coke_oven_block",
-    "east": "techlitex:block/coke_oven_block",
-    "west": "techlitex:block/coke_oven_block",
-    "up": "techlitex:block/coke_oven_brick_block",
-    "down": "techlitex:block/coke_oven_brick_block"
+    "front": "techlitex:block/coke_oven_block",
+    "side": "techlitex:block/coke_oven_brick_block",
+    "top": "techlitex:block/coke_oven_brick_block",
+    "bottom": "techlitex:block/coke_oven_brick_block"
   }
 }

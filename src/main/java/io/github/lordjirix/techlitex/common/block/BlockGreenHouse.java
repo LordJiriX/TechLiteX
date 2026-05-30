@@ -1,6 +1,7 @@
 package io.github.lordjirix.techlitex.common.block;
 
 import io.github.lordjirix.techlitex.Config;
+import io.github.lordjirix.techlitex.api.block.BaseBlock;
 import io.github.lordjirix.techlitex.api.util.TU;
 import io.github.lordjirix.techlitex.common.entity.GreenHouseBlockEntity;
 import java.util.List;
@@ -26,7 +27,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
-public class BlockGreenHouse extends Block implements EntityBlock {
+public class BlockGreenHouse extends BaseBlock implements EntityBlock {
   public BlockGreenHouse(Properties properties) {
     super(properties);
   }

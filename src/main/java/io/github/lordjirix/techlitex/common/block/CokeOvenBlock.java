@@ -1,5 +1,6 @@
 package io.github.lordjirix.techlitex.common.block;
 
+import io.github.lordjirix.techlitex.api.block.BaseBlock;
 import io.github.lordjirix.techlitex.common.entity.CokeOvenBlockEntity;
 import java.util.List;
 import net.minecraft.client.gui.screens.Screen;
@@ -24,7 +25,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
-public class CokeOvenBlock extends Block implements EntityBlock {
+public class CokeOvenBlock extends BaseBlock implements EntityBlock {
   public CokeOvenBlock(Properties properties) {
     super(properties);
   }

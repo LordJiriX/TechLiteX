@@ -1,9 +1,11 @@
 
      *   IMPROVE   *
- -
+ - split item handlers into in and out   {}
+ - add MachineBlock class to do all work   {}
+ - GreenHouse front texture   {}
 
      *   CONTENT   *
- - Add Separator (to get Aluminium only rn)   {}
+ - Add Separator (to get Aluminium only rn)   {Y}
  - Add Aluminum chain   {}
  - Add recipes   {}
  - Sawblades [Dia,Netherite,...]   {}

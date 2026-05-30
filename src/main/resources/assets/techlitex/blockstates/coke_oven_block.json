@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "techlitex:block/coke_oven_block" }
+    "facing=north": { "model": "techlitex:block/coke_oven_block" },
+    "facing=east":  { "model": "techlitex:block/coke_oven_block", "y": 90 },
+    "facing=south": { "model": "techlitex:block/coke_oven_block", "y": 180 },
+    "facing=west":  { "model": "techlitex:block/coke_oven_block", "y": 270 }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "techlitex:block/separator_1_front",
+    "side": "techlitex:block/machine_casing_steel",
+    "top": "techlitex:block/machine_casing_steel",
+    "bottom": "techlitex:block/machine_casing_steel"
+  }
+}
