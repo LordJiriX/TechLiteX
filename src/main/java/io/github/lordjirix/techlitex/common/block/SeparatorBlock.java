@@ -1,6 +1,7 @@
 package io.github.lordjirix.techlitex.common.block;
 
 import io.github.lordjirix.techlitex.api.block.BaseBlock;
+import io.github.lordjirix.techlitex.api.data.TD;
 import io.github.lordjirix.techlitex.api.util.TU;
 import io.github.lordjirix.techlitex.common.entity.SeparatorBlockEntity;
 import java.util.List;
@@ -68,7 +69,7 @@ public class SeparatorBlock extends BaseBlock implements EntityBlock {
   public void appendHoverText(
       ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-    pTooltip.add(Component.literal("Split it up!"));
+    pTooltip.add(Component.translatable(TD.Tooltip.SEPARATOR_TOOLTIP_MAIN));
     TU.addRecipeVoidTimeWhenInvFull(pTooltip);
   }
 }

@@ -1,5 +1,6 @@
 package io.github.lordjirix.techlitex.common.data;
 
+import io.github.lordjirix.techlitex.api.data.TD;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import io.github.lordjirix.techlitex.loader.TLXItems;
 import net.minecraft.data.PackOutput;
@@ -60,5 +61,6 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.MACHINE_CASING_STEEL.get()), "Machine Casing Steel");
     // tooltips
     add("tooltip.tlx.machine.recipe_voiding", "§4Void items when inventory is full§r");
+    add(TD.Tooltip.SEPARATOR_TOOLTIP_MAIN,"Where Compounds Come Undone");
   }
 }
