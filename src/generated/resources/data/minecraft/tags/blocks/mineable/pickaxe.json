@@ -2,17 +2,17 @@
   "values": [
     "techlitex:bedrock_miner_block",
     "techlitex:elevator_block",
-    "techlitex:greenhouse_block_1",
-    "techlitex:greenhouse_block_2",
+    "techlitex:greenhouse_1",
+    "techlitex:greenhouse_2",
     "techlitex:time_compressor_block_1",
-    "techlitex:grinder_block_1",
-    "techlitex:grinder_block_2",
+    "techlitex:grinder_1",
+    "techlitex:grinder_2",
     "techlitex:machine_casing_steel",
     "techlitex:coke_oven_block",
     "techlitex:coke_oven_brick_block",
     "techlitex:coke_oven_firebox",
     "techlitex:casing_wooden",
     "techlitex:machine_casing_aluminium",
-    "techlitex:separator_block_1"
+    "techlitex:separator_1"
   ]
 }

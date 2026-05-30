@@ -20,11 +20,6 @@ public class TLXItems {
       ITEMS.register("multi_tool", () -> new ItemMultiTool(new Item.Properties()));
   public static final RegistryObject<Item> GAME_MODE_SWAPPER =
       ITEMS.register("game_mode_swapper", () -> new ItemGameModeSwapper(new Item.Properties()));
-  /*public static final RegistryObject<Item> EXAMPLE_LOOTBAG =
-  ITEMS.register(
-      "example_lootbag",
-      () -> new ItemLootBag(new Item.Properties(), TLXData.exampleLootbagDrops));*/
-
   public static final RegistryObject<Item> BEDROCKIUM_DUST =
       ITEMS.register("bedrockium_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> BEDROCKIUM_INGOT =

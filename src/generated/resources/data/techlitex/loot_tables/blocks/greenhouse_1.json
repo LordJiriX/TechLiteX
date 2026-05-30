@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "techlitex:greenhouse_block_1"
+          "name": "techlitex:greenhouse_1"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "techlitex:blocks/greenhouse_block_1"
+  "random_sequence": "techlitex:blocks/greenhouse_1"
 }

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "techlitex:grinder_block_1"
+        "recipe": "techlitex:grinder_1"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "techlitex:grinder_block_1"
+      "techlitex:grinder_1"
     ]
   },
   "sends_telemetry_event": false

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "techlitex:separator_block_1"
+          "name": "techlitex:grinder_1"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "techlitex:blocks/separator_block_1"
+  "random_sequence": "techlitex:blocks/grinder_1"
 }

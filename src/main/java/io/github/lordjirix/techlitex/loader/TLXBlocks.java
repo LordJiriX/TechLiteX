@@ -18,22 +18,24 @@ public class TLXBlocks {
 
   public static final DeferredRegister<Block> BLOCKS =
       DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-
+  // TO REMOVE
   public static final RegistryObject<Block> BEDROCK_MINER_BLOCK =
       createBlock(
           "bedrock_miner_block",
           () ->
               new BlockBedrockMiner(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+
+
   public static final RegistryObject<Block> GREENHOUSE_BLOCK_1 =
       createBlock(
-          "greenhouse_block_1",
+          "greenhouse_1",
           () ->
               new BlockGreenHouse(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
   public static final RegistryObject<Block> GREENHOUSE_BLOCK_2 =
       createBlock(
-          "greenhouse_block_2",
+          "greenhouse_2",
           () ->
               new BlockGreenHouse(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
@@ -49,20 +51,20 @@ public class TLXBlocks {
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
   public static final RegistryObject<Block> GRINDER_BLOCK_1 =
       createBlock(
-          "grinder_block_1",
+          "grinder_1",
           () ->
               new GrinderBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
   public static final RegistryObject<Block> GRINDER_BLOCK_2 =
       createBlock(
-          "grinder_block_2",
+          "grinder_2",
           () ->
               new GrinderBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
   public static final RegistryObject<Block> SEPARATOR_BLOCK_1 =
       createBlock(
-          "separator_block_1",
+          "separator_1",
           () ->
               new SeparatorBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));

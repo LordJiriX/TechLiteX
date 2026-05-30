@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "techlitex:greenhouse_block_1"
+        "recipe": "techlitex:greenhouse_1"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "techlitex:greenhouse_block_1"
+      "techlitex:greenhouse_1"
     ]
   },
   "sends_telemetry_event": false
