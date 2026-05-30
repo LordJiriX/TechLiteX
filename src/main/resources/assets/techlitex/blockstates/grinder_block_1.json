@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "techlitex:block/grinder_block_1" }
+    "facing=north": { "model": "techlitex:block/block_grinder_1" },
+    "facing=east":  { "model": "techlitex:block/block_grinder_1", "y": 90 },
+    "facing=south": { "model": "techlitex:block/block_grinder_1", "y": 180 },
+    "facing=west":  { "model": "techlitex:block/block_grinder_1", "y": 270 }
   }
 }
