@@ -131,7 +131,7 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .requires(TLXItems.SIMPLE_HAMMER.get())
         .unlockedBy(getHasName(TLXItems.ALUMINIUM_INGOT.get()), has(TLXItems.ALUMINIUM_INGOT.get()))
         .save(pw, new ResourceLocation(MODID, "aluminium_plate_simple_hammer"));
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.COPPER_WIRE.get())
+    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.COPPER_WIRE.get(), 2)
         .requires(Items.COPPER_INGOT)
         .requires(TLXItems.WIRECUTTER.get())
         .unlockedBy(getHasName(TLXItems.WIRECUTTER.get()), has(TLXItems.WIRECUTTER.get()))

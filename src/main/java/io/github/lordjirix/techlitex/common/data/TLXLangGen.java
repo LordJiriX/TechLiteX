@@ -45,6 +45,13 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.ALUMINIUM_INGOT.get(), "Aluminium Ingot");
     add(TLXItems.ALUMINIUM_DUST.get(), "Aluminium Dust");
     add(TLXItems.CLAY_DUST.get(), "Clay Dust");
+    add(TLXItems.CARBON_DUST.get(), "Carbon Dust");
+    add(TLXItems.ALUMINIUM_PLATE.get(), "Aluminium Plate");
+    // electronics
+    add(TLXItems.BASIC_BOARD.get(), "Basic Board");
+    add(TLXItems.REDSTONE_BOARD.get(), "Redstone Board");
+    add(TLXItems.COPPER_WIRE.get(), "Copper Wire");
+    add(TLXItems.DIAMOND_SAWBLADE.get(), "Diamond Sawblade");
 
     // tools
     add(TLXItems.MULTI_TOOL.get(), "Multi Tool");
@@ -57,8 +64,11 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.COKE_OVEN_BRICK_BLOCK.get()), "Coke Oven Bricks");
     add(new ItemStack(TLXBlocks.COKE_OVEN_FIREBOX.get()), "Coke Oven Firebox");
     add(new ItemStack(TLXBlocks.GRINDER_BLOCK_1.get()), "Grinder I");
+    add(new ItemStack(TLXBlocks.GRINDER_BLOCK_2.get()), "Grinder II");
+    add(new ItemStack(TLXBlocks.SEPARATOR_BLOCK_1.get()), "Separator I");
     add(new ItemStack(TLXBlocks.CASING_WOODEN.get()), "Casing Wooden");
     add(new ItemStack(TLXBlocks.MACHINE_CASING_STEEL.get()), "Machine Casing Steel");
+    add(new ItemStack(TLXBlocks.MACHINE_CASING_ALUMINIUM.get()), "Machine Casing Aluminium");
     // tooltips
     add("tooltip.tlx.machine.recipe_voiding", "§4Void items when inventory is full§r");
     add(TD.Tooltip.SEPARATOR_TOOLTIP_MAIN, "Where Compounds Come Undone");

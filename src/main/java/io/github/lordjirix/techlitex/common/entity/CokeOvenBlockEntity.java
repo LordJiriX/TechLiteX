@@ -118,7 +118,6 @@ public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
       for (int y = -1; y <= 1; y++) {
         for (int z = -1; z <= 1; z++) {
           BlockPos checkPos = center.offset(x, y, z);
-          System.out.println(checkPos + " -> " + level.getBlockState(checkPos).getBlock());
           if (checkPos.equals(pos)) {
             continue;
           }
