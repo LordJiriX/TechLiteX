@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:clay_ball"
+    },
+    "I": {
+      "tag": "forge:ingots"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CIC",
+    "CCC"
+  ],
+  "result": {
+    "item": "techlitex:raw_brick_form"
+  },
+  "show_notification": true
+}

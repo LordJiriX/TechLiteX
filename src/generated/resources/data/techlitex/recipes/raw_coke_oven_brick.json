@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:clay_ball"
+    },
+    "F": {
+      "item": "techlitex:brick_form"
+    },
+    "S": {
+      "item": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "CSC",
+    "SFS",
+    "CSC"
+  ],
+  "result": {
+    "count": 4,
+    "item": "techlitex:raw_coke_oven_brick"
+  },
+  "show_notification": true
+}

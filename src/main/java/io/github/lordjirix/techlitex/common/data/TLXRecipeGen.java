@@ -1,12 +1,12 @@
 package io.github.lordjirix.techlitex.common.data;
 
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
+import static io.github.lordjirix.techlitex.loader.TLXItems.*;
 
 import io.github.lordjirix.techlitex.common.data.tag.TLXTags;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import io.github.lordjirix.techlitex.loader.TLXBlocks.*;
 import io.github.lordjirix.techlitex.loader.TLXItems;
-import io.github.lordjirix.techlitex.loader.TLXItems.*;
 import java.util.function.Consumer;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -106,6 +106,23 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .define('S', Blocks.STONE)
         .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
         .save(pw);
+    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RAW_BRICK_FORM.get())
+        .pattern("CCC")
+        .pattern("CIC")
+        .pattern("CCC")
+        .define('C', Items.CLAY_BALL)
+        .define('I', TLXTags.I.ANY_INGOT)
+        .unlockedBy(getHasName(Items.CLAY_BALL), has(Items.CLAY_BALL))
+        .save(pw);
+    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RAW_COKE_OVEN_BRICK.get(), 4)
+        .pattern("CSC")
+        .pattern("SFS")
+        .pattern("CSC")
+        .define('C', Items.CLAY_BALL)
+        .define('S', Blocks.SAND)
+        .define('F', BRICK_FORM.get())
+        .unlockedBy(getHasName(BRICK_FORM.get()), has(BRICK_FORM.get()))
+        .save(pw);
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.IRON_DUST.get())
         .requires(Items.IRON_INGOT)
         .requires(TLXItems.SIMPLE_GRINDER.get())
@@ -193,5 +210,21 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
             20 * 16)
         .unlockedBy(getHasName(TLXItems.STEEL_DUST.get()), has(TLXItems.STEEL_DUST.get()))
         .save(pw, new ResourceLocation(MODID, "smelting/steel_ingot_from_dust"));
+    SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(RAW_BRICK_FORM.get()),
+            RecipeCategory.MISC,
+            BRICK_FORM.get(),
+            1.0f,
+            20 * 10)
+        .unlockedBy(getHasName(RAW_BRICK_FORM.get()), has(RAW_BRICK_FORM.get()))
+        .save(pw);
+    SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(RAW_COKE_OVEN_BRICK.get()),
+            RecipeCategory.MISC,
+            COKE_OVEN_BRICK.get(),
+            1.0f,
+            20 * 10)
+        .unlockedBy(getHasName(RAW_COKE_OVEN_BRICK.get()), has(RAW_COKE_OVEN_BRICK.get()))
+        .save(pw);
   }
 }

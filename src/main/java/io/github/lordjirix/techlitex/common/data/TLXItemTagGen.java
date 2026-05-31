@@ -1,6 +1,7 @@
 package io.github.lordjirix.techlitex.common.data;
 
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
+import static io.github.lordjirix.techlitex.loader.TLXItems.*;
 
 import io.github.lordjirix.techlitex.common.data.tag.TLXTags;
 import io.github.lordjirix.techlitex.loader.TLXItems;
@@ -38,5 +39,6 @@ public class TLXItemTagGen extends ItemTagsProvider {
     this.tag(TLXTags.I.ALUMINIUM_INGOT).add(TLXItems.ALUMINIUM_INGOT.get());
     this.tag(TLXTags.I.ALUMINIUM_PLATE).add(TLXItems.ALUMINIUM_PLATE.get());
     this.tag(TLXTags.I.PROCESSOR_I).add(TLXItems.PROCESSOR.get());
+    this.tag(TLXTags.I.ANY_INGOT).add(ALUMINIUM_INGOT.get()).add(STEEL_INGOT.get());
   }
 }

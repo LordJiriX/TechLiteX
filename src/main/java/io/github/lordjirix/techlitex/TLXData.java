@@ -1,5 +1,6 @@
 package io.github.lordjirix.techlitex;
 
+import static io.github.lordjirix.techlitex.loader.TLXBlocks.*;
 import static io.github.lordjirix.techlitex.loader.TLXItems.*;
 
 import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
@@ -53,25 +54,31 @@ public class TLXData {
               WIRECUTTER,
               BASIC_BOARD,
               REDSTONE_BOARD,
-              CARBON_DUST));
+              CARBON_DUST,
+              BRICK_FORM,
+              RAW_BRICK_FORM,
+              RAW_COKE_OVEN_BRICK));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
           List.of(
+              /* NVM */
               TLXBlocks.BEDROCK_MINER_BLOCK,
               TLXBlocks.ELEVATOR_BLOCK,
+              /* MACHINES */
               TLXBlocks.GREENHOUSE_BLOCK_1,
               TLXBlocks.GREENHOUSE_BLOCK_2,
               TLXBlocks.TIME_COMPRESSOR_BLOCK_1,
               TLXBlocks.GRINDER_BLOCK_1,
               TLXBlocks.GRINDER_BLOCK_2,
-              TLXBlocks.MACHINE_CASING_STEEL,
+              TLXBlocks.SEPARATOR_BLOCK_1,
               TLXBlocks.COKE_OVEN_BLOCK,
+              /* JUST BLOCKS*/
+              TLXBlocks.MACHINE_CASING_STEEL,
               TLXBlocks.COKE_OVEN_BRICK_BLOCK,
               TLXBlocks.COKE_OVEN_FIREBOX,
               TLXBlocks.CASING_WOODEN,
-              TLXBlocks.MACHINE_CASING_ALUMINIUM,
-              TLXBlocks.SEPARATOR_BLOCK_1));
+              TLXBlocks.MACHINE_CASING_ALUMINIUM));
   public static ArrayList<RegistryObject<Block>> allDefJadeProvider =
       new ArrayList<>(
           List.of(

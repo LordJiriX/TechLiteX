@@ -27,6 +27,8 @@ public class TLXTags {
         ItemTags.create(new ResourceLocation("forge", "ingots/steel"));
     public static final TagKey<Item> ALUMINIUM_INGOT =
         ItemTags.create(new ResourceLocation("forge", "ingots/aluminium"));
+    public static final TagKey<Item> ANY_INGOT =
+        ItemTags.create(new ResourceLocation("forge", "ingots"));
 
     // PLATES
     public static final TagKey<Item> STEEL_PLATE =

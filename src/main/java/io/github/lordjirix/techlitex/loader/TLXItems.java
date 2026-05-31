@@ -53,6 +53,7 @@ public class TLXItems {
       ITEMS.register("carbon_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> ALUMINIUM_DUST =
       ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
+  // TOOLS
   public static final RegistryObject<Item> SIMPLE_GRINDER =
       ITEMS.register(
           "simple_grinder", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
@@ -62,6 +63,10 @@ public class TLXItems {
   public static final RegistryObject<Item> WIRECUTTER =
       ITEMS.register(
           "wirecutter", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
+  public static final RegistryObject<Item> BRICK_FORM =
+      ITEMS.register(
+          "brick_form", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
+  //
   public static final RegistryObject<Item> TIME_NUGGET =
       ITEMS.register("time_nugget", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> TIME_INGOT =
@@ -76,6 +81,8 @@ public class TLXItems {
       ITEMS.register("coal_coke", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> COKE_OVEN_BRICK =
       ITEMS.register("coke_oven_brick", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> RAW_COKE_OVEN_BRICK =
+      ITEMS.register("raw_coke_oven_brick", () -> new Item(new Item.Properties()));
   // PLATES
   public static final RegistryObject<Item> STEEL_PLATE =
       ITEMS.register("steel_plate", () -> new Item(new Item.Properties()));
@@ -94,9 +101,16 @@ public class TLXItems {
       ITEMS.register("netherite_sawblade", () -> new Item(new Item.Properties()));
   // WIRES
   public static final RegistryObject<Item> COPPER_WIRE =
-      ITEMS.register("copper_wire", () -> new Item(new Item.Properties()));
+      ITEMS.register(
+          "copper_wire",
+          () -> new EItem(new Item.Properties(), new String[] {"§4This not transfer power"}));
   public static final RegistryObject<Item> GOLD_WIRE =
-      ITEMS.register("gold_wire", () -> new Item(new Item.Properties()));
+      ITEMS.register(
+          "gold_wire",
+          () -> new EItem(new Item.Properties(), new String[] {"§4This not transfer power"}));
+  // MISC
+  public static final RegistryObject<Item> RAW_BRICK_FORM =
+      ITEMS.register("raw_brick_form", () -> new Item(new Item.Properties()));
 
   public static void init(IEventBus bus) {
     ITEMS.register(bus);
