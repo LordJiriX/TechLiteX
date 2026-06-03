@@ -69,10 +69,6 @@ public class TimeCompressorBlock extends Block implements EntityBlock {
   public void appendHoverText(
       ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
     pTooltip.add(Component.literal("Time for solid time!"));
-    if (Screen.hasShiftDown()) {
-      pTooltip.add(Component.literal("§2Energy: §1" + Config.timeCompressorRfUsage + " §rRF/t§r"));
-    }
-    pTooltip.add(Component.literal("press §o§lSHIFT§r for more info§r"));
     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
   }
 }

@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
+/* TO REMOVE */
 
 public class BlockBedrockMiner extends Block implements EntityBlock {
 
@@ -54,11 +55,6 @@ public class BlockBedrockMiner extends Block implements EntityBlock {
   public void appendHoverText(
       ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
     pTooltip.add(Component.literal("Stronger then §nSteve§r"));
-    if (Screen.hasShiftDown()) {
-      pTooltip.add(Component.literal("§2Energy: §1" + Config.bedrockMinerRfUsage + " §rRF/t§r"));
-      return;
-    }
-    pTooltip.add(Component.literal("press §o§lSHIFT§r for more info§r"));
     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
   }
 

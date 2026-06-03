@@ -69,11 +69,6 @@ public class BlockGreenHouse extends BaseBlock implements EntityBlock {
   public void appendHoverText(
       ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
     pTooltip.add(Component.literal("Tree farm 3000§r"));
-    if (Screen.hasShiftDown()) {
-      pTooltip.add(Component.literal("§2Energy: §1" + Config.greenHouseRfUsage + " §rRF/t§r"));
-      return;
-    }
-    pTooltip.add(Component.literal("press §o§lSHIFT§r for more info§r"));
     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     TU.addRecipeVoidTimeWhenInvFull(pTooltip);
   }
