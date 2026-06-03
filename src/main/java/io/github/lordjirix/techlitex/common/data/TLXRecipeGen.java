@@ -148,6 +148,11 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .requires(TLXItems.SIMPLE_HAMMER.get())
         .unlockedBy(getHasName(TLXItems.ALUMINIUM_INGOT.get()), has(TLXItems.ALUMINIUM_INGOT.get()))
         .save(pw, new ResourceLocation(MODID, "aluminium_plate_simple_hammer"));
+      ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, IRON_PLATE.get())
+              .requires(Items.IRON_INGOT)
+              .requires(TLXItems.SIMPLE_HAMMER.get())
+              .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+              .save(pw, new ResourceLocation(MODID, "iron_plate_simple_hammer"));
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.COPPER_WIRE.get(), 2)
         .requires(Items.COPPER_INGOT)
         .requires(TLXItems.WIRECUTTER.get())
@@ -176,6 +181,11 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .define('F', Blocks.BLAST_FURNACE)
         .define('B', TLXItems.COKE_OVEN_BRICK.get())
         .define('I', Items.IRON_INGOT)
+
+
+            /*   SMELTING   */
+
+
         .unlockedBy(getHasName(TLXItems.COKE_OVEN_BRICK.get()), has(TLXItems.COKE_OVEN_BRICK.get()))
         .save(pw);
     SimpleCookingRecipeBuilder.smelting(

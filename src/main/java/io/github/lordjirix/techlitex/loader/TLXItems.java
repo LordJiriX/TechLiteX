@@ -40,19 +40,6 @@ public class TLXItems {
       ITEMS.register("basic_board", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> REDSTONE_BOARD =
       ITEMS.register("redstone_board", () -> new Item(new Item.Properties()));
-  //
-  public static final RegistryObject<Item> STEEL_DUST =
-      ITEMS.register("steel_dust", () -> new Item(new Item.Properties()));
-  public static final RegistryObject<Item> STEEL_INGOT =
-      ITEMS.register("steel_ingot", () -> new Item(new Item.Properties()));
-  public static final RegistryObject<Item> IRON_DUST =
-      ITEMS.register("iron_dust", () -> new Item(new Item.Properties()));
-  public static final RegistryObject<Item> CLAY_DUST =
-      ITEMS.register("clay_dust", () -> new Item(new Item.Properties()));
-  public static final RegistryObject<Item> CARBON_DUST =
-      ITEMS.register("carbon_dust", () -> new Item(new Item.Properties()));
-  public static final RegistryObject<Item> ALUMINIUM_DUST =
-      ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
   // TOOLS
   public static final RegistryObject<Item> SIMPLE_GRINDER =
       ITEMS.register(
@@ -71,6 +58,18 @@ public class TLXItems {
       ITEMS.register("time_nugget", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> TIME_INGOT =
       ITEMS.register("time_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_DUST =
+            ITEMS.register("steel_dust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_INGOT =
+            ITEMS.register("steel_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_DUST =
+            ITEMS.register("iron_dust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CLAY_DUST =
+            ITEMS.register("clay_dust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CARBON_DUST =
+            ITEMS.register("carbon_dust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ALUMINIUM_DUST =
+            ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> ALUMINIUM_INGOT =
       ITEMS.register("aluminium_ingot", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> COAL_DUST =
@@ -83,6 +82,8 @@ public class TLXItems {
       ITEMS.register("coke_oven_brick", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> RAW_COKE_OVEN_BRICK =
       ITEMS.register("raw_coke_oven_brick", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> COAL_COKE_DUST =
+            ITEMS.register("coke_coal_dust", () -> new Item(new Item.Properties()));
   // PLATES
   public static final RegistryObject<Item> STEEL_PLATE =
       ITEMS.register("steel_plate", () -> new Item(new Item.Properties()));
@@ -90,8 +91,9 @@ public class TLXItems {
       ITEMS.register("diamond_plate", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> ALUMINIUM_PLATE =
       ITEMS.register("aluminium_plate", () -> new Item(new Item.Properties()));
-  public static final RegistryObject<Item> COAL_COKE_DUST =
-      ITEMS.register("coke_coal_dust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_PLATE =
+            ITEMS.register("iron_plate", () -> new Item(new Item.Properties()));
+
   // SAWBLADES
   public static final RegistryObject<Item> DIAMOND_SAWBLADE =
       ITEMS.register(

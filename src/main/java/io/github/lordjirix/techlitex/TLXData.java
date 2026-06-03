@@ -43,7 +43,7 @@ public class TLXData {
               TLXItems.COAL_DUST,
               TLXItems.COKE_OVEN_BRICK,
               TLXItems.COAL_COKE,
-              TLXItems.STEEL_PLATE,
+              TLXItems.STEEL_PLATE,IRON_PLATE,
               TLXItems.SIMPLE_HAMMER,
               ALUMINIUM_INGOT,
               ALUMINIUM_DUST,
