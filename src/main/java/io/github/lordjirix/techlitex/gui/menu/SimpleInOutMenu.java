@@ -5,6 +5,8 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.ItemStackHandler;
@@ -14,14 +16,33 @@ import org.jetbrains.annotations.NotNull;
 public class SimpleInOutMenu extends AbstractContainerMenu {
 
   private final ItemStackHandler handler;
+  private ContainerData data;
 
   public SimpleInOutMenu(int id, Inventory inv, FriendlyByteBuf buf) {
-    this(id, inv, new ItemStackHandler(2));
-  }
+      super(TLXMenus.SIMPLE_INOUT_MENU.get(), id);
 
-  public SimpleInOutMenu(int id, Inventory playerInv, ItemStackHandler handler) {
+      this.handler = new ItemStackHandler(2);
+      this.data = new SimpleContainerData(2);
+
+      this.addSlot(new SlotItemHandler(handler, 0, 24, 35));
+      this.addSlot(
+              new SlotItemHandler(handler, 1, 80, 35) {
+                  @Override
+                  public boolean mayPlace(@NotNull ItemStack stack) {
+                      return false;
+                  }
+              });
+
+      addPlayerInventory(inv);
+      addPlayerHotbar(inv);
+
+      addDataSlots(this.data);
+  }
+  public SimpleInOutMenu(
+      int id, Inventory playerInv, ItemStackHandler handler, ContainerData data) {
     super(TLXMenus.SIMPLE_INOUT_MENU.get(), id);
     this.handler = handler;
+    this.data = data;
     this.addSlot(new SlotItemHandler(handler, 0, 24, 35));
     this.addSlot(
         new SlotItemHandler(handler, 1, 80, 35) {
@@ -33,6 +54,7 @@ public class SimpleInOutMenu extends AbstractContainerMenu {
 
     addPlayerInventory(playerInv);
     addPlayerHotbar(playerInv);
+    addDataSlots(data);
   }
 
   private void addPlayerInventory(Inventory inv) {
@@ -76,5 +98,32 @@ public class SimpleInOutMenu extends AbstractContainerMenu {
       slot.setChanged();
     }
     return copy;
+  }
+
+  public boolean isCrafting() {
+    return data.get(0) > 0;
+  }
+
+  public int getScaledProgress() {
+    int progress = data.get(0);
+    int maxProgress = data.get(1);
+    int arrowSize = 24;
+
+    return maxProgress > 0 ? progress * arrowSize / maxProgress : 0;
+  }
+
+  public int getScaledProgressVertical() {
+    int progress = data.get(0);
+    int maxProgress = data.get(1);
+
+    return maxProgress > 0 ? progress * 54 / maxProgress : 0;
+  }
+
+  public int getCurrentRunTime() {
+    return data.get(0);
+  }
+
+  public int getTimeToRunRecipe() {
+    return data.get(1);
   }
 }

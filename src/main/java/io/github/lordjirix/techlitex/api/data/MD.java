@@ -11,7 +11,7 @@ public class MD {
     SEPARATOR(SEPARATOR_BLOCK_ENTITY),
     TIME_COMPRESSOR(TIME_COMPRESSOR_BLOCK_ENTITY),
     BEDROCK_MINER(BEDROCK_MINER_BLOCK_ENTITY),
-    GREENHOUSE(GRINDER_BLOCK_ENTITY);
+    GREENHOUSE(GREENHOUSE_BLOCK_ENTITY);
     private final RegistryObject<? extends BlockEntityType<?>> blockEntityType;
 
     MachineType(RegistryObject<? extends BlockEntityType<?>> blockEntityType) {

@@ -16,6 +16,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -46,6 +47,35 @@ public class GrinderBlockEntity extends BlockEntity
         }
       };
   private final EnergyStorage energy = new EnergyStorage(100000, 1000, 1000) {};
+  private final ContainerData data =
+      new ContainerData() {
+        @Override
+        public int get(int index) {
+          return switch (index) {
+            case 0 -> currentRunTime;
+            case 1 -> timeToRunRecipe;
+            default -> 0;
+          };
+        }
+
+        @Override
+        public void set(int index, int value) {
+          switch (index) {
+            case 0 -> currentRunTime = value;
+            case 1 -> timeToRunRecipe = value;
+          }
+        }
+
+        @Override
+        public int getCount() {
+          return 2;
+        }
+      };
+
+  public ContainerData getData() {
+    return data;
+  }
+
   private final LazyOptional<IEnergyStorage> energyCap = LazyOptional.of(() -> energy);
   private final LazyOptional<IItemHandler> itemHandler = LazyOptional.of(() -> inventory);
 
@@ -155,7 +185,7 @@ public class GrinderBlockEntity extends BlockEntity
   @Override
   public @Nullable AbstractContainerMenu createMenu(
       int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-    return new SimpleInOutMenu(pContainerId, pPlayerInventory, inventory);
+    return new SimpleInOutMenu(pContainerId, pPlayerInventory, inventory, data);
   }
 
   public boolean hasRecipe(ItemStack stack) {
