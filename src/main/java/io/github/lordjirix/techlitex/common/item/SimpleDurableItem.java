@@ -23,8 +23,8 @@ public class SimpleDurableItem extends Item {
     return copy;
   }
 
-    @Override
-    public boolean isEnchantable(ItemStack pStack) {
-        return false;
-    }
+  @Override
+  public boolean isEnchantable(ItemStack pStack) {
+    return false;
+  }
 }

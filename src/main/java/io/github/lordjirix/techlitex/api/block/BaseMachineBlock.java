@@ -1,21 +1,12 @@
-package io.github.lordjirix.techlitex.common.block;
+package io.github.lordjirix.techlitex.api.block;
 
-import io.github.lordjirix.techlitex.Config;
-import io.github.lordjirix.techlitex.api.block.BaseBlock;
-import io.github.lordjirix.techlitex.api.util.TU;
-import io.github.lordjirix.techlitex.common.entity.GreenHouseBlockEntity;
-import java.util.List;
-import net.minecraft.client.gui.screens.Screen;
+import io.github.lordjirix.techlitex.api.data.MD;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -26,23 +17,29 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
-public class BlockGreenHouse extends BaseBlock implements EntityBlock {
-  public BlockGreenHouse(Properties properties) {
+public class BaseMachineBlock extends BaseBlock implements EntityBlock {
+
+  private MD.MachineType machineType;
+
+  public BaseMachineBlock(Properties properties, MD.MachineType machineType) {
     super(properties);
+    this.machineType = machineType;
   }
 
   @Override
-  public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-    return new GreenHouseBlockEntity(pos, state);
+  public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+    System.out.println(machineType.getBlockEntityType().getId());
+    return machineType.getBlockEntityType().get().create(pos, state);
   }
 
   @Override
-  public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
-      Level level, BlockState state, BlockEntityType<T> type) {
+  @SuppressWarnings("unchecked")
+  public <E extends BlockEntity> @Nullable BlockEntityTicker<E> getTicker(
+      Level level, BlockState state, BlockEntityType<E> blockEntityType) {
     return level.isClientSide
         ? null
         : (lvl, pos, st, be) -> {
-          if (be instanceof GreenHouseBlockEntity tbe) {
+          if (be instanceof IBlockEntityMachineBase tbe) {
             tbe.tick();
           }
         };
@@ -63,13 +60,5 @@ public class BlockGreenHouse extends BaseBlock implements EntityBlock {
       }
     }
     return InteractionResult.sidedSuccess(level.isClientSide);
-  }
-
-  @Override
-  public void appendHoverText(
-      ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-    pTooltip.add(Component.literal("Tree farm 3000§r"));
-    super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-    TU.addRecipeVoidTimeWhenInvFull(pTooltip);
   }
 }

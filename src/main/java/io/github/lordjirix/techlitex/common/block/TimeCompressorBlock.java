@@ -1,9 +1,7 @@
 package io.github.lordjirix.techlitex.common.block;
 
-import io.github.lordjirix.techlitex.Config;
 import io.github.lordjirix.techlitex.common.entity.TimeCompressorBlockEntity;
 import java.util.List;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;

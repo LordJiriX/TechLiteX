@@ -1,6 +1,7 @@
 package io.github.lordjirix.techlitex.common.entity;
 
 import io.github.lordjirix.techlitex.TLXData;
+import io.github.lordjirix.techlitex.api.block.IBlockEntityMachineBase;
 import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
 import io.github.lordjirix.techlitex.api.data.recipe.SeparatorRecipe;
 import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
@@ -27,7 +28,8 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class SeparatorBlockEntity extends BlockEntity implements IRecipeRunnable, MenuProvider {
+public class SeparatorBlockEntity extends BlockEntity
+    implements IRecipeRunnable, MenuProvider, IBlockEntityMachineBase {
   public int timeToRunRecipe = 0;
   public int currentRunTime = 0;
   public int energyPerTick = 0;

@@ -2,6 +2,8 @@ package io.github.lordjirix.techlitex.loader;
 
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
+import io.github.lordjirix.techlitex.api.block.BaseMachineBlock;
+import io.github.lordjirix.techlitex.api.data.MD;
 import io.github.lordjirix.techlitex.common.block.*;
 import java.util.function.Supplier;
 import net.minecraft.world.item.BlockItem;
@@ -30,14 +32,16 @@ public class TLXBlocks {
       createBlock(
           "greenhouse_1",
           () ->
-              new BlockGreenHouse(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+              new BaseMachineBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
+                  MD.MachineType.GREENHOUSE));
   public static final RegistryObject<Block> GREENHOUSE_BLOCK_2 =
       createBlock(
           "greenhouse_2",
           () ->
-              new BlockGreenHouse(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+              new BaseMachineBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
+                  MD.MachineType.GREENHOUSE));
   public static final RegistryObject<Block> ELEVATOR_BLOCK =
       createBlock(
           "elevator_block",
@@ -52,21 +56,24 @@ public class TLXBlocks {
       createBlock(
           "grinder_1",
           () ->
-              new GrinderBlock(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+              new BaseMachineBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
+                  MD.MachineType.GRINDER) {});
   public static final RegistryObject<Block> GRINDER_BLOCK_2 =
       createBlock(
           "grinder_2",
           () ->
-              new GrinderBlock(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+              new BaseMachineBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
+                  MD.MachineType.GRINDER) {});
 
   public static final RegistryObject<Block> SEPARATOR_BLOCK_1 =
       createBlock(
           "separator_1",
           () ->
-              new SeparatorBlock(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
+              new BaseMachineBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
+                  MD.MachineType.SEPARATOR) {});
 
   public static final RegistryObject<Block> COKE_OVEN_BLOCK =
       createBlock(

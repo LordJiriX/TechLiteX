@@ -1,10 +1,8 @@
 package io.github.lordjirix.techlitex.common.block;
 
-import io.github.lordjirix.techlitex.Config;
 import io.github.lordjirix.techlitex.common.entity.BedrockMinerBlockEntity;
 import io.github.lordjirix.techlitex.loader.TLXItems;
 import java.util.List;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -26,6 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
+
 /* TO REMOVE */
 
 public class BlockBedrockMiner extends Block implements EntityBlock {
