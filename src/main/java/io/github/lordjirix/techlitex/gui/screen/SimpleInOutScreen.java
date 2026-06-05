@@ -27,14 +27,14 @@ public class SimpleInOutScreen extends AbstractContainerScreen<SimpleInOutMenu> 
     int yo = topPos;
 
     guiGraphics.blit(TEXTURE, xo, yo, 0, 0, imageWidth, imageHeight);
+    int barWidth = 14;
+    int barHeight = 54;
+
+    int x = leftPos + 152;
+    int y = topPos + 16;
+    guiGraphics.fill(x, y, x + barWidth, y + barHeight, 0xFF202020);
 
     if (menu.isCrafting()) {
-      int barWidth = 14;
-      int barHeight = 54;
-
-      int x = leftPos + 152;
-      int y = topPos + 16;
-      guiGraphics.fill(x, y, x + barWidth, y + barHeight, 0xFF202020);
 
       int height = menu.getScaledProgressVertical();
 

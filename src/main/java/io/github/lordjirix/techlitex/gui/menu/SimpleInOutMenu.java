@@ -19,25 +19,26 @@ public class SimpleInOutMenu extends AbstractContainerMenu {
   private ContainerData data;
 
   public SimpleInOutMenu(int id, Inventory inv, FriendlyByteBuf buf) {
-      super(TLXMenus.SIMPLE_INOUT_MENU.get(), id);
+    super(TLXMenus.SIMPLE_INOUT_MENU.get(), id);
 
-      this.handler = new ItemStackHandler(2);
-      this.data = new SimpleContainerData(2);
+    this.handler = new ItemStackHandler(2);
+    this.data = new SimpleContainerData(2);
 
-      this.addSlot(new SlotItemHandler(handler, 0, 24, 35));
-      this.addSlot(
-              new SlotItemHandler(handler, 1, 80, 35) {
-                  @Override
-                  public boolean mayPlace(@NotNull ItemStack stack) {
-                      return false;
-                  }
-              });
+    this.addSlot(new SlotItemHandler(handler, 0, 24, 35));
+    this.addSlot(
+        new SlotItemHandler(handler, 1, 80, 35) {
+          @Override
+          public boolean mayPlace(@NotNull ItemStack stack) {
+            return false;
+          }
+        });
 
-      addPlayerInventory(inv);
-      addPlayerHotbar(inv);
+    addPlayerInventory(inv);
+    addPlayerHotbar(inv);
 
-      addDataSlots(this.data);
+    addDataSlots(this.data);
   }
+
   public SimpleInOutMenu(
       int id, Inventory playerInv, ItemStackHandler handler, ContainerData data) {
     super(TLXMenus.SIMPLE_INOUT_MENU.get(), id);
