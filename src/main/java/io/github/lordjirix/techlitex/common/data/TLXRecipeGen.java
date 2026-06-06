@@ -123,6 +123,22 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .define('F', BRICK_FORM.get())
         .unlockedBy(getHasName(BRICK_FORM.get()), has(BRICK_FORM.get()))
         .save(pw);
+    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DIAMOND_SAWBLADE.get())
+        .pattern(" P ")
+        .pattern("PDP")
+        .pattern(" P ")
+        .define('D', Items.DIAMOND)
+        .define('P', DIAMOND_PLATE.get())
+        .unlockedBy(getHasName(DIAMOND_PLATE.get()), has(DIAMOND_PLATE.get()))
+        .save(pw);
+    SmithingTransformRecipeBuilder.smithing(
+            Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+            Ingredient.of(DIAMOND_SAWBLADE.get()),
+            Ingredient.of(Items.NETHERITE_INGOT),
+            RecipeCategory.TOOLS,
+            NETHERITE_SAWBLADE.get())
+        .unlocks("has_diamond_sawblade", has(DIAMOND_SAWBLADE.get()))
+        .save(pw, new ResourceLocation("diamond_sawblade"));
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TLXItems.IRON_DUST.get())
         .requires(Items.IRON_INGOT)
         .requires(TLXItems.SIMPLE_GRINDER.get())

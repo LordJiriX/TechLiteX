@@ -100,7 +100,9 @@ public class TLXItems {
           "diamond_sawblade",
           () -> new EItem(new Item.Properties(), new String[] {"Tier: diamond"}));
   public static final RegistryObject<Item> NETHERITE_SAWBLADE =
-      ITEMS.register("netherite_sawblade", () -> new Item(new Item.Properties()));
+      ITEMS.register(
+          "netherite_sawblade",
+          () -> new EItem(new Item.Properties(), new String[] {"Tier: netherite"}));
   // WIRES
   public static final RegistryObject<Item> COPPER_WIRE =
       ITEMS.register(

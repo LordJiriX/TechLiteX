@@ -58,7 +58,8 @@ public class TLXData {
               CARBON_DUST,
               BRICK_FORM,
               RAW_BRICK_FORM,
-              RAW_COKE_OVEN_BRICK));
+              RAW_COKE_OVEN_BRICK,
+              NETHERITE_SAWBLADE));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
