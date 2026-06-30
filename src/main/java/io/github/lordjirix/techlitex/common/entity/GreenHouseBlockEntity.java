@@ -3,7 +3,6 @@ package io.github.lordjirix.techlitex.common.entity;
 import io.github.lordjirix.techlitex.TLXData;
 import io.github.lordjirix.techlitex.api.block.IBlockEntityMachineBase;
 import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
-import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
 import io.github.lordjirix.techlitex.api.data.recipe.MultiOutRecipe;
 import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
@@ -186,12 +185,12 @@ public class GreenHouseBlockEntity extends BlockEntity
     return new MultipleOutSlotMenu(id, inv, inventory, data);
   }
 
-    private @Nullable MultiOutRecipe getRecipe(ItemStack stack) {
-        for (MultiOutRecipe recipe : TLXData.greenHouseRecipes) {
-            if (ItemStack.isSameItem(stack, new ItemStack(recipe.getInput(),recipe.getInputCount()))) {
-                return recipe;
-            }
-        }
-        return null;
+  private @Nullable MultiOutRecipe getRecipe(ItemStack stack) {
+    for (MultiOutRecipe recipe : TLXData.greenHouseRecipes) {
+      if (ItemStack.isSameItem(stack, new ItemStack(recipe.getInput(), recipe.getInputCount()))) {
+        return recipe;
+      }
     }
+    return null;
+  }
 }

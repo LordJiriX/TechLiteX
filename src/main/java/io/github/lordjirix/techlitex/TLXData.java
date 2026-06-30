@@ -3,14 +3,12 @@ package io.github.lordjirix.techlitex;
 import static io.github.lordjirix.techlitex.loader.TLXBlocks.*;
 import static io.github.lordjirix.techlitex.loader.TLXItems.*;
 
-import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
 import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
 import io.github.lordjirix.techlitex.api.data.recipe.MultiOutRecipe;
 import io.github.lordjirix.techlitex.api.data.recipe.SeparatorRecipe;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import io.github.lordjirix.techlitex.loader.TLXItems;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -96,122 +94,107 @@ public class TLXData {
   // Recipes data
   public static final List<MultiOutRecipe> greenHouseRecipes =
       List.of(
-              new MultiOutRecipe(
-                      Items.OAK_SAPLING,
-                  1,
-                    new ItemStack[] {
-                    new ItemStack(Items.OAK_LOG, 8),
-                    new ItemStack(Items.OAK_LEAVES, 4),
-                    new ItemStack(Items.APPLE, 1)
-                  },
-                  60,
-                  20*20),
-              new MultiOutRecipe(
-                      Items.SPRUCE_SAPLING,
-                  1,
-                  new ItemStack[] {
-                    new ItemStack(Items.SPRUCE_LOG, 12)
-                          , new ItemStack(Items.SPRUCE_LEAVES, 4)
-                  },
-                  60,
-                  20*20),
-              new MultiOutRecipe(
-                      Items.BIRCH_SAPLING,1,
-                  new ItemStack[] {
-                    new ItemStack(Items.BIRCH_LOG, 6), new ItemStack(Items.BIRCH_LEAVES, 4)
-                  },
-                  60,
-                  20*20),
-              new MultiOutRecipe(
-                      Items.JUNGLE_SAPLING,
-                  1,
-                  new ItemStack[] {
-                    new ItemStack(Items.JUNGLE_LOG, 16), new ItemStack(Items.JUNGLE_LEAVES, 8)
-                  },
-                  60,
-                  20*20),
-              new MultiOutRecipe(
-                      Items.ACACIA_SAPLING,1,
-                  new ItemStack[] {
-                    new ItemStack(Items.ACACIA_LOG, 8), new ItemStack(Items.ACACIA_LEAVES, 4)
-                  },
-                  60,
-                  20*20),
-              new MultiOutRecipe(
-                      Items.DARK_OAK_SAPLING,1,
-                  new ItemStack[] {
-                    new ItemStack(Items.DARK_OAK_LOG, 10), new ItemStack(Items.DARK_OAK_LEAVES, 4)
-                  },
-                  60,
-                  20*20),
-              new MultiOutRecipe(
-                      Items.WHEAT_SEEDS,
-                      1,
-                      new ItemStack[]{
-                              new ItemStack(Items.WHEAT,3),new ItemStack(Items.WHEAT_SEEDS,4)
-                      }
-                      ,30,20*10
-              )
-          );
-    public static final List<GrinderRecipe> grinderRecipes = List.of(
-            new GrinderRecipe(
-                    new ItemStack(Items.COAL),
-                    new ItemStack[] { new ItemStack(COAL_DUST.get()) },
-                    40,
-                    20 * 20
-            ),
-            new GrinderRecipe(
-                    new ItemStack(Items.CHARCOAL),
-                    new ItemStack[] { new ItemStack(CHARCOAL_DUST.get()) },
-                    40,
-                    20 * 20
-            ),
-            new GrinderRecipe(
-                    new ItemStack(Items.IRON_INGOT),
-                    new ItemStack[] { new ItemStack(IRON_DUST.get()) },
-                    40,
-                    20 * 30
-            ),
-            new GrinderRecipe(
-                    new ItemStack(COAL_COKE.get()),
-                    new ItemStack[] { new ItemStack(COAL_COKE_DUST.get()) },
-                    40,
-                    20 * 30
-            ),
-            new GrinderRecipe(
-                    new ItemStack(ALUMINIUM_INGOT.get()),
-                    new ItemStack[] { new ItemStack(ALUMINIUM_DUST.get()) },
-                    40,
-                    20 * 15
-            ),
-            new GrinderRecipe(
-                    new ItemStack(STEEL_INGOT.get()),
-                    new ItemStack[] { new ItemStack(STEEL_DUST.get()) },
-                    40,
-                    20 * 35
-            ),
-            new GrinderRecipe(
-                    new ItemStack(STEEL_PLATE.get()),
-                    new ItemStack[] { new ItemStack(STEEL_DUST.get()) },
-                    40,
-                    20 * 35
-            )
-    );
+          new MultiOutRecipe(
+              Items.OAK_SAPLING,
+              1,
+              new ItemStack[] {
+                new ItemStack(Items.OAK_LOG, 8),
+                new ItemStack(Items.OAK_LEAVES, 4),
+                new ItemStack(Items.APPLE, 1)
+              },
+              60,
+              20 * 20),
+          new MultiOutRecipe(
+              Items.SPRUCE_SAPLING,
+              1,
+              new ItemStack[] {
+                new ItemStack(Items.SPRUCE_LOG, 12), new ItemStack(Items.SPRUCE_LEAVES, 4)
+              },
+              60,
+              20 * 20),
+          new MultiOutRecipe(
+              Items.BIRCH_SAPLING,
+              1,
+              new ItemStack[] {
+                new ItemStack(Items.BIRCH_LOG, 6), new ItemStack(Items.BIRCH_LEAVES, 4)
+              },
+              60,
+              20 * 20),
+          new MultiOutRecipe(
+              Items.JUNGLE_SAPLING,
+              1,
+              new ItemStack[] {
+                new ItemStack(Items.JUNGLE_LOG, 16), new ItemStack(Items.JUNGLE_LEAVES, 8)
+              },
+              60,
+              20 * 20),
+          new MultiOutRecipe(
+              Items.ACACIA_SAPLING,
+              1,
+              new ItemStack[] {
+                new ItemStack(Items.ACACIA_LOG, 8), new ItemStack(Items.ACACIA_LEAVES, 4)
+              },
+              60,
+              20 * 20),
+          new MultiOutRecipe(
+              Items.DARK_OAK_SAPLING,
+              1,
+              new ItemStack[] {
+                new ItemStack(Items.DARK_OAK_LOG, 10), new ItemStack(Items.DARK_OAK_LEAVES, 4)
+              },
+              60,
+              20 * 20),
+          new MultiOutRecipe(
+              Items.WHEAT_SEEDS,
+              1,
+              new ItemStack[] {new ItemStack(Items.WHEAT, 3), new ItemStack(Items.WHEAT_SEEDS, 4)},
+              30,
+              20 * 10));
+  public static final List<GrinderRecipe> grinderRecipes =
+      List.of(
+          new GrinderRecipe(
+              new ItemStack(Items.COAL),
+              new ItemStack[] {new ItemStack(COAL_DUST.get())},
+              40,
+              20 * 20),
+          new GrinderRecipe(
+              new ItemStack(Items.CHARCOAL),
+              new ItemStack[] {new ItemStack(CHARCOAL_DUST.get())},
+              40,
+              20 * 20),
+          new GrinderRecipe(
+              new ItemStack(Items.IRON_INGOT),
+              new ItemStack[] {new ItemStack(IRON_DUST.get())},
+              40,
+              20 * 30),
+          new GrinderRecipe(
+              new ItemStack(COAL_COKE.get()),
+              new ItemStack[] {new ItemStack(COAL_COKE_DUST.get())},
+              40,
+              20 * 30),
+          new GrinderRecipe(
+              new ItemStack(ALUMINIUM_INGOT.get()),
+              new ItemStack[] {new ItemStack(ALUMINIUM_DUST.get())},
+              40,
+              20 * 15),
+          new GrinderRecipe(
+              new ItemStack(STEEL_INGOT.get()),
+              new ItemStack[] {new ItemStack(STEEL_DUST.get())},
+              40,
+              20 * 35),
+          new GrinderRecipe(
+              new ItemStack(STEEL_PLATE.get()),
+              new ItemStack[] {new ItemStack(STEEL_DUST.get())},
+              40,
+              20 * 35));
   public static List<MultiOutRecipe> separatorRecipes =
       List.of(
-              new SeparatorRecipe(
-                  CLAY_DUST.get(),
-                  9,
-                  new ItemStack[] {new ItemStack(Items.BRICK, 9)},
-                  40,
-                  20 * 15),
-              new SeparatorRecipe(
-                  STEEL_DUST.get(),
-                  1,
-                  new ItemStack[] {
-                    new ItemStack(CARBON_DUST.get(), 1), new ItemStack(IRON_DUST.get())
-                  },
-                  40,
-                  20 * 15)
-        );
+          new SeparatorRecipe(
+              CLAY_DUST.get(), 9, new ItemStack[] {new ItemStack(Items.BRICK, 9)}, 40, 20 * 15),
+          new SeparatorRecipe(
+              STEEL_DUST.get(),
+              1,
+              new ItemStack[] {new ItemStack(CARBON_DUST.get(), 1), new ItemStack(IRON_DUST.get())},
+              40,
+              20 * 15));
 }

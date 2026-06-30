@@ -3,7 +3,7 @@ package io.github.lordjirix.techlitex.api.data.recipe;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class SeparatorRecipe extends MultiOutRecipe{
+public class SeparatorRecipe extends MultiOutRecipe {
 
   private final Item input;
   private final int inputCount;
@@ -14,7 +14,7 @@ public class SeparatorRecipe extends MultiOutRecipe{
   private final int timePerRecipe;
 
   public SeparatorRecipe(Item input, int inputCount, ItemStack[] output, int rf, int time) {
-      super(input,inputCount,output,rf,time);
+    super(input, inputCount, output, rf, time);
     this.input = input;
     this.inputCount = inputCount;
     this.output = output;

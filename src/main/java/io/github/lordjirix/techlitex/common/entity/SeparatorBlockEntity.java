@@ -3,9 +3,7 @@ package io.github.lordjirix.techlitex.common.entity;
 import io.github.lordjirix.techlitex.TLXData;
 import io.github.lordjirix.techlitex.api.block.IBlockEntityMachineBase;
 import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
-import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
 import io.github.lordjirix.techlitex.api.data.recipe.MultiOutRecipe;
-import io.github.lordjirix.techlitex.api.data.recipe.SeparatorRecipe;
 import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
@@ -211,12 +209,12 @@ public class SeparatorBlockEntity extends BlockEntity
     }
     return true;
   }*/
-    private @Nullable MultiOutRecipe getRecipe(ItemStack stack) {
-        for (MultiOutRecipe recipe : TLXData.separatorRecipes) {
-            if (ItemStack.isSameItem(stack, new ItemStack(recipe.getInput(),recipe.getInputCount()))) {
-                return recipe;
-            }
-        }
-        return null;
+  private @Nullable MultiOutRecipe getRecipe(ItemStack stack) {
+    for (MultiOutRecipe recipe : TLXData.separatorRecipes) {
+      if (ItemStack.isSameItem(stack, new ItemStack(recipe.getInput(), recipe.getInputCount()))) {
+        return recipe;
+      }
     }
+    return null;
+  }
 }
