@@ -34,14 +34,14 @@ public class TLXBlocks {
           () ->
               new BaseMachineBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
-                  MD.MachineType.GREENHOUSE));
+                  MD.MachineType.GREENHOUSE,1));
   public static final RegistryObject<Block> GREENHOUSE_BLOCK_2 =
       createBlock(
           "greenhouse_2",
           () ->
               new BaseMachineBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
-                  MD.MachineType.GREENHOUSE));
+                  MD.MachineType.GREENHOUSE,2));
   public static final RegistryObject<Block> ELEVATOR_BLOCK =
       createBlock(
           "elevator_block",
@@ -58,14 +58,14 @@ public class TLXBlocks {
           () ->
               new BaseMachineBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
-                  MD.MachineType.GRINDER) {});
+                  MD.MachineType.GRINDER,1) {});
   public static final RegistryObject<Block> GRINDER_BLOCK_2 =
       createBlock(
           "grinder_2",
           () ->
               new BaseMachineBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
-                  MD.MachineType.GRINDER) {});
+                  MD.MachineType.GRINDER,2) {});
 
   public static final RegistryObject<Block> SEPARATOR_BLOCK_1 =
       createBlock(
@@ -73,7 +73,7 @@ public class TLXBlocks {
           () ->
               new BaseMachineBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
-                  MD.MachineType.SEPARATOR) {});
+                  MD.MachineType.SEPARATOR,1) {});
 
   public static final RegistryObject<Block> COKE_OVEN_BLOCK =
       createBlock(

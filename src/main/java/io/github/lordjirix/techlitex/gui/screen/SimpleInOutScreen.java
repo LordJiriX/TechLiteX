@@ -63,5 +63,6 @@ public class SimpleInOutScreen extends AbstractContainerScreen<SimpleInOutMenu> 
       guiGraphics.renderTooltip(
           font, List.of(Component.literal(percent + "%")), Optional.empty(), mouseX, mouseY);
     }
+      renderTooltip(guiGraphics, mouseX, mouseY);
   }
 }

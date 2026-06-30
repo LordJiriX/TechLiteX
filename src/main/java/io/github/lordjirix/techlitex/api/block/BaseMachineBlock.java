@@ -2,11 +2,15 @@ package io.github.lordjirix.techlitex.api.block;
 
 import io.github.lordjirix.techlitex.api.data.MD;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -17,13 +21,17 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 public class BaseMachineBlock extends BaseBlock implements EntityBlock {
 
   private MD.MachineType machineType;
+  private int lvl;
 
-  public BaseMachineBlock(Properties properties, MD.MachineType machineType) {
+  public BaseMachineBlock(Properties properties, MD.MachineType machineType,int lvl) {
     super(properties);
     this.machineType = machineType;
+    this.lvl = lvl;
   }
 
   @Override
@@ -61,4 +69,18 @@ public class BaseMachineBlock extends BaseBlock implements EntityBlock {
     }
     return InteractionResult.sidedSuccess(level.isClientSide);
   }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+        int speed_factor = 1;
+        int energy_usage = 1;
+        if (lvl == 2) {
+            speed_factor = 2;
+            energy_usage = 4;
+        }
+        pTooltip.add(Component.literal("type: " + machineType.getName()));
+        pTooltip.add(Component.literal("speed: base/" + speed_factor));
+        pTooltip.add(Component.literal("energy: base*" + energy_usage));
+        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+    }
 }

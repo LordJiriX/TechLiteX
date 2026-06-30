@@ -7,7 +7,11 @@ import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
 import io.github.lordjirix.techlitex.gui.menu.SimpleInOutMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -38,7 +42,7 @@ public class GrinderBlockEntity extends BlockEntity
   public int energyPerTick = 0;
   public int xTimeToRunRecipe = 1;
   public int xRfUsage = 1;
-  public HashMap<Item, GrinderRecipe> recipes = TLXData.grinderRecipes;
+  public List<GrinderRecipe> recipes = TLXData.grinderRecipes;
   private final ItemStackHandler inventory =
       new ItemStackHandler(2) {
         @Override
@@ -108,34 +112,34 @@ public class GrinderBlockEntity extends BlockEntity
       timeToRunRecipe = 0;
       return;
     }
-    if (!hasRecipe(inventory.getStackInSlot(0))) {
-      currentRunTime = 0;
-      timeToRunRecipe = 0;
-      return;
-    }
 
-    GrinderRecipe recipe = recipes.get(inventory.getStackInSlot(0).getItem());
-    if (recipe == null) {
-      return;
-    }
-    energyPerTick = recipe.getRFPerTick() * xRfUsage;
-    timeToRunRecipe = recipe.getTimePerRecipe() / xTimeToRunRecipe;
-    energy.extractEnergy(energyPerTick, false);
-    currentRunTime++;
-    if (currentRunTime >= timeToRunRecipe) {
-      ItemStack[] output = null;
-      try {
-        output = recipes.get(inventory.getStackInSlot(0).getItem()).getOutput();
-      } catch (Exception e) {
+      GrinderRecipe recipe = getRecipe(inventory.getStackInSlot(0));
+
+      if (recipe == null) {
+          return;
       }
-      for (int i = 0; i < output.length; i++) {
-        inventory.insertItem(i + 1, output[i].copy(), false);
+
+      energyPerTick = recipe.getRFPerTick() * xRfUsage;
+      timeToRunRecipe = recipe.getTimePerRecipe() / xTimeToRunRecipe;
+
+      energy.extractEnergy(energyPerTick, false);
+      currentRunTime++;
+
+      if (currentRunTime >= timeToRunRecipe) {
+
+          for (ItemStack output : recipe.getOutput()) {
+              inventory.insertItem(
+                      1,
+                      output.copy(),
+                      false
+              );
+          }
+
+          inventory.extractItem(0, 1, false);
+
+          currentRunTime = 0;
+          timeToRunRecipe = 0;
       }
-      inventory.extractItem(0, 1, false);
-      currentRunTime = 0;
-      timeToRunRecipe = 0;
-      return;
-    }
   }
 
   @Override
@@ -188,10 +192,6 @@ public class GrinderBlockEntity extends BlockEntity
     return new SimpleInOutMenu(pContainerId, pPlayerInventory, inventory, data);
   }
 
-  public boolean hasRecipe(ItemStack stack) {
-    if (stack == null || stack.isEmpty()) return false;
-    return recipes.containsKey(stack.getItem());
-  }
 
   @Override
   public int getTimeToRunRecipe() {
@@ -203,8 +203,17 @@ public class GrinderBlockEntity extends BlockEntity
     return currentRunTime;
   }
 
-  @Override
-  public int getRFPerTick() {
-    return energyPerTick;
-  }
+  private @Nullable GrinderRecipe getRecipe(ItemStack stack) {
+        for (GrinderRecipe recipe : TLXData.grinderRecipes) {
+            if (ItemStack.isSameItem(stack, recipe.getInput())) {
+                return recipe;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public int getRFPerTick() {
+        return energyPerTick;
+    }
 }

@@ -64,5 +64,6 @@ public class MultipleInOutSlotScreen extends AbstractContainerScreen<MultipleOut
       guiGraphics.renderTooltip(
           font, List.of(Component.literal(percent + "%")), Optional.empty(), mouseX, mouseY);
     }
+      renderTooltip(guiGraphics, mouseX, mouseY);
   }
 }

@@ -1,16 +1,20 @@
 package io.github.lordjirix.techlitex.api.data.recipe;
 
+import io.github.lordjirix.techlitex.api.data.MD;
 import net.minecraft.world.item.ItemStack;
 
-public class GrinderRecipe {
-  ItemStack[] output;
-  private int RFPerTick;
-  private int timePerRecipe;
+public class GrinderRecipe extends SimpleInOutRecipeBase{
+    private final ItemStack input;
+    private final ItemStack[] output;
+    private final int timePerRecipe;
+    private final int rfPerTick;
 
-  public GrinderRecipe(ItemStack[] output, int rf, int time) {
+    public GrinderRecipe(ItemStack input,ItemStack[] output, int rf, int time) {
+      super(output, rf, time, MD.MachineType.GRINDER);
     this.output = output;
-    this.RFPerTick = rf;
+    this.rfPerTick = rf;
     this.timePerRecipe = time;
+    this.input = input;
   }
 
   public ItemStack[] getOutput() {
@@ -18,14 +22,14 @@ public class GrinderRecipe {
   }
 
   public int getRFPerTick() {
-    return RFPerTick;
+    return rfPerTick;
   }
 
   public int getTimePerRecipe() {
     return timePerRecipe;
   }
-
-  public void setOutput(ItemStack[] output) {
-    this.output = output;
+  public ItemStack getInput() {
+        return input;
   }
+
 }

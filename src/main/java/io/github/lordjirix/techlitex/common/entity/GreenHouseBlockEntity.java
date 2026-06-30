@@ -4,6 +4,7 @@ import io.github.lordjirix.techlitex.TLXData;
 import io.github.lordjirix.techlitex.api.block.IBlockEntityMachineBase;
 import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
 import io.github.lordjirix.techlitex.api.data.recipe.GreenHouseRecipe;
+import io.github.lordjirix.techlitex.api.data.recipe.MultiOutRecipe;
 import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
@@ -118,13 +119,7 @@ public class GreenHouseBlockEntity extends BlockEntity
       timeToRunRecipe = 0;
       return;
     }
-    if (!hasRecipe(inventory.getStackInSlot(0))) {
-      currentRunTime = 0;
-      timeToRunRecipe = 0;
-      return;
-    }
-
-    GreenHouseRecipe recipe = TLXData.greenHouseRecipes.get(inventory.getStackInSlot(0).getItem());
+    MultiOutRecipe recipe = getRecipe(inventory.getStackInSlot(0));
     if (recipe == null) {
       return;
     }
@@ -133,17 +128,12 @@ public class GreenHouseBlockEntity extends BlockEntity
     energy.extractEnergy(energyPerTick, false);
     currentRunTime++;
     if (currentRunTime >= timeToRunRecipe) {
-      ItemStack[] output = null;
-      try {
-        output = TLXData.greenHouseRecipes.get(inventory.getStackInSlot(0).getItem()).getOutput();
-      } catch (Exception e) {
-      }
+      ItemStack[] output = recipe.getOutput();
       for (int i = 0; i < output.length; i++) {
         inventory.insertItem(i + 1, output[i].copy(), false);
       }
       currentRunTime = 0;
       timeToRunRecipe = 0;
-      return;
     }
   }
 
@@ -196,8 +186,12 @@ public class GreenHouseBlockEntity extends BlockEntity
     return new MultipleOutSlotMenu(id, inv, inventory, data);
   }
 
-  public boolean hasRecipe(ItemStack stack) {
-    if (stack == null || stack.isEmpty()) return false;
-    return TLXData.greenHouseRecipes.containsKey(stack.getItem());
-  }
+    private @Nullable MultiOutRecipe getRecipe(ItemStack stack) {
+        for (MultiOutRecipe recipe : TLXData.greenHouseRecipes) {
+            if (ItemStack.isSameItem(stack, new ItemStack(recipe.getInput(),recipe.getInputCount()))) {
+                return recipe;
+            }
+        }
+        return null;
+    }
 }

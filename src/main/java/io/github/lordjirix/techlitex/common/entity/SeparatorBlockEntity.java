@@ -3,6 +3,8 @@ package io.github.lordjirix.techlitex.common.entity;
 import io.github.lordjirix.techlitex.TLXData;
 import io.github.lordjirix.techlitex.api.block.IBlockEntityMachineBase;
 import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
+import io.github.lordjirix.techlitex.api.data.recipe.GrinderRecipe;
+import io.github.lordjirix.techlitex.api.data.recipe.MultiOutRecipe;
 import io.github.lordjirix.techlitex.api.data.recipe.SeparatorRecipe;
 import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
@@ -118,13 +120,13 @@ public class SeparatorBlockEntity extends BlockEntity
       timeToRunRecipe = 0;
       return;
     }
-    if (!hasRecipe(inventory.getStackInSlot(0))) {
+    /*if (!hasRecipe(inventory.getStackInSlot(0))) {
       currentRunTime = 0;
       timeToRunRecipe = 0;
       return;
-    }
+    }*/
 
-    SeparatorRecipe recipe = TLXData.separatorRecipes.get(inventory.getStackInSlot(0).getItem());
+    MultiOutRecipe recipe = getRecipe(inventory.getStackInSlot(0));
     if (recipe == null) {
       return;
     }
@@ -133,11 +135,7 @@ public class SeparatorBlockEntity extends BlockEntity
     energy.extractEnergy(energyPerTick, false);
     currentRunTime++;
     if (currentRunTime >= timeToRunRecipe) {
-      ItemStack[] output = null;
-      try {
-        output = TLXData.separatorRecipes.get(inventory.getStackInSlot(0).getItem()).getOutput();
-      } catch (Exception e) {
-      }
+      ItemStack[] output = recipe.getOutput();
       for (int i = 0; i < output.length; i++) {
         inventory.insertItem(i + 1, output[i].copy(), false);
       }
@@ -199,7 +197,7 @@ public class SeparatorBlockEntity extends BlockEntity
     return new MultipleOutSlotMenu(id, inv, inventory, data);
   }
 
-  public boolean hasRecipe(ItemStack stack) {
+  /*public boolean hasRecipe(ItemStack stack) {
     if (stack == null || stack.isEmpty()) {
       return false;
     }
@@ -212,5 +210,13 @@ public class SeparatorBlockEntity extends BlockEntity
       return false;
     }
     return true;
-  }
+  }*/
+    private @Nullable MultiOutRecipe getRecipe(ItemStack stack) {
+        for (MultiOutRecipe recipe : TLXData.separatorRecipes) {
+            if (ItemStack.isSameItem(stack, new ItemStack(recipe.getInput(),recipe.getInputCount()))) {
+                return recipe;
+            }
+        }
+        return null;
+    }
 }
