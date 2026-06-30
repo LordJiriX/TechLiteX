@@ -3,7 +3,6 @@ package io.github.lordjirix.techlitex.compact.jade;
 import io.github.lordjirix.techlitex.api.block.BaseMachineBlock;
 import io.github.lordjirix.techlitex.common.block.*;
 import io.github.lordjirix.techlitex.common.entity.*;
-import io.github.lordjirix.techlitex.compact.jade.provider.BedrockMinerComponentProvider;
 import io.github.lordjirix.techlitex.compact.jade.provider.CokeOvenComponentProvider;
 import io.github.lordjirix.techlitex.compact.jade.provider.RecipeRunnableProvider;
 import snownee.jade.api.IWailaClientRegistration;
@@ -15,8 +14,6 @@ import snownee.jade.api.WailaPlugin;
 public class TLXJadePlugin implements IWailaPlugin {
   @Override
   public void register(IWailaCommonRegistration registration) {
-    registration.registerBlockDataProvider(
-        BedrockMinerComponentProvider.INSTANCE, BedrockMinerBlockEntity.class);
     registration.registerBlockDataProvider(
         RecipeRunnableProvider.INSTANCE, GreenHouseBlockEntity.class);
     registration.registerBlockDataProvider(
@@ -31,8 +28,6 @@ public class TLXJadePlugin implements IWailaPlugin {
 
   @Override
   public void registerClient(IWailaClientRegistration registration) {
-    registration.registerBlockComponent(
-        BedrockMinerComponentProvider.INSTANCE, BlockBedrockMiner.class);
     registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, BaseMachineBlock.class);
     registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, TimeCompressorBlock.class);
     registration.registerBlockComponent(CokeOvenComponentProvider.INSTANCE, CokeOvenBlock.class);

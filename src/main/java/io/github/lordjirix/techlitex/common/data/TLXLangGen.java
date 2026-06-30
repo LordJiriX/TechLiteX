@@ -61,7 +61,6 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.MULTI_TOOL.get(), "Multi Tool");
     add(TLXItems.SIMPLE_GRINDER.get(), "Simple Grinder");
     // blocks
-    add(new ItemStack(TLXBlocks.BEDROCK_MINER_BLOCK.get()), "Bedrock Miner");
     add(new ItemStack(TLXBlocks.GREENHOUSE_BLOCK_1.get()), "Green House I");
     add(new ItemStack(TLXBlocks.TIME_COMPRESSOR_BLOCK_1.get()), "Time Compressor I");
     add(new ItemStack(TLXBlocks.COKE_OVEN_BLOCK.get()), "Coke Oven");

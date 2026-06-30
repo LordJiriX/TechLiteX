@@ -63,9 +63,6 @@ public class TLXData {
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
           List.of(
-              /* NVM */
-              TLXBlocks.BEDROCK_MINER_BLOCK,
-              TLXBlocks.ELEVATOR_BLOCK,
               /* MACHINES */
               TLXBlocks.GREENHOUSE_BLOCK_1,
               TLXBlocks.GREENHOUSE_BLOCK_2,

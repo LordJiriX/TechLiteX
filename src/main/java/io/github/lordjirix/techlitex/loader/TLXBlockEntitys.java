@@ -13,14 +13,6 @@ public class TLXBlockEntitys {
   public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
       DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MODID);
 
-  public static final RegistryObject<BlockEntityType<BedrockMinerBlockEntity>>
-      BEDROCK_MINER_BLOCK_ENTITY =
-          BLOCK_ENTITIES.register(
-              "bedrock_miner_block",
-              () ->
-                  BlockEntityType.Builder.of(
-                          BedrockMinerBlockEntity::new, TLXBlocks.BEDROCK_MINER_BLOCK.get())
-                      .build(null));
   public static final RegistryObject<BlockEntityType<GreenHouseBlockEntity>>
       GREENHOUSE_BLOCK_ENTITY =
           BLOCK_ENTITIES.register(

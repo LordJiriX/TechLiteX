@@ -20,13 +20,6 @@ public class TLXBlocks {
 
   public static final DeferredRegister<Block> BLOCKS =
       DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-  // TO REMOVE
-  public static final RegistryObject<Block> BEDROCK_MINER_BLOCK =
-      createBlock(
-          "bedrock_miner_block",
-          () ->
-              new BlockBedrockMiner(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f)));
 
   public static final RegistryObject<Block> GREENHOUSE_BLOCK_1 =
       createBlock(
@@ -44,10 +37,6 @@ public class TLXBlocks {
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(4.0f),
                   MD.MachineType.GREENHOUSE,
                   2));
-  public static final RegistryObject<Block> ELEVATOR_BLOCK =
-      createBlock(
-          "elevator_block",
-          () -> new BlockElevator(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
   public static final RegistryObject<Block> TIME_COMPRESSOR_BLOCK_1 =
       createBlock(
           "time_compressor_block_1",
