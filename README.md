@@ -1,6 +1,6 @@
 # TechLiteX
 # _TODO: make this mod working_
-## NOTE: *this mod is rn alfa "in-dev" pre version *
+## NOTE: *this mod is now in alfa mode "in-dev" pre version *
 Mod about adding tech to MC
 ## NOTE2:
 This mod not contains (yet):
@@ -13,6 +13,6 @@ State:
  - need some useful machines
 
 Check out
-[Latest updates](https://www.instagram.com/lordjirix_f85g5ad6a54fd/)
+[Latest updates](https://bsky.app/profile/lordjirix.bsky.social)
 
 Oh sh*t i hate writing readme
