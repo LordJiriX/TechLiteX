@@ -7,6 +7,7 @@ import io.github.lordjirix.techlitex.common.item.ItemGameModeSwapper;
 import io.github.lordjirix.techlitex.common.item.ItemMultiTool;
 import io.github.lordjirix.techlitex.common.item.SimpleDurableItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,9 +33,40 @@ public class TLXItems {
       ITEMS.register("laser_core", () -> new Item(new Item.Properties()));
   // ELECTRONICS
   public static final RegistryObject<Item> PROCESSOR =
-      ITEMS.register("processor", () -> new Item(new Item.Properties()));
+      ITEMS.register("processor", () -> new Item(new Item.Properties())); // I
+  public static final RegistryObject<Item> DOUBLE_LAYERED_PROCESSOR =
+      ITEMS.register("double_layered_processor", () -> new Item(new Item.Properties())); // II
   public static final RegistryObject<Item> INTEGRATED_PROCESSOR =
-      ITEMS.register("integrated_processor", () -> new Item(new Item.Properties()));
+      ITEMS.register("integrated_processor", () -> new Item(new Item.Properties())); // I
+  public static final RegistryObject<Item> INTEGRATED_ARRAY =
+      ITEMS.register("integrated_array", () -> new Item(new Item.Properties())); // II
+  public static final RegistryObject<Item> NANO_PROCESSOR =
+      ITEMS.register("nano_processor", () -> new Item(new Item.Properties())); // III
+  /*public static final RegistryObject<Item> NANO_MAINFRAME =
+  ITEMS.register("nano_mainframe", () -> new Item(new Item.Properties())); // III*/
+  public static final RegistryObject<Item> QUANTUM_PROCESSOR =
+      ITEMS.register("quantum_processor", () -> new Item(new Item.Properties())); // IV
+  /* public static final RegistryObject<Item> QUANTUM_MAINFRAME =
+          ITEMS.register("quantum_mainframe", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> QUANTUM_MICROCHIP =
+          ITEMS.register("quantum_microchip", () -> new Item(new Item.Properties()));*/
+  public static final RegistryObject<Item> PICO_CHIP =
+      ITEMS.register("pico_chip", () -> new Item(new Item.Properties())); // V
+  public static final RegistryObject<Item> FEMTO_CHIP =
+      ITEMS.register("femto_chip", () -> new Item(new Item.Properties())); // VI
+  public static final RegistryObject<Item> ARTIFICIAL_CHIP =
+      ITEMS.register(
+          "artificial_chip",
+          () ->
+              new Item(new Item.Properties()) {
+                @Override
+                public boolean isFoil(ItemStack pStack) {
+                  return true;
+                }
+              }); // VII
+  public static final RegistryObject<Item> UNIVERSAL_CHIP =
+      ITEMS.register("universal_chip", () -> new Item(new Item.Properties())); // ALL
+
   // ELECTRONICS COMPONENTS
   public static final RegistryObject<Item> BASIC_BOARD =
       ITEMS.register("basic_board", () -> new Item(new Item.Properties()));

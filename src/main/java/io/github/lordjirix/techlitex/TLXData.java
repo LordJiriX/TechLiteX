@@ -58,7 +58,11 @@ public class TLXData {
               BRICK_FORM,
               RAW_BRICK_FORM,
               RAW_COKE_OVEN_BRICK,
-              NETHERITE_SAWBLADE));
+              NETHERITE_SAWBLADE,
+              QUANTUM_PROCESSOR,
+              NANO_PROCESSOR,
+              DOUBLE_LAYERED_PROCESSOR,
+              ARTIFICIAL_CHIP));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
