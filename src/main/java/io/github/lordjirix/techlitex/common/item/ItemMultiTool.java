@@ -7,8 +7,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -74,17 +72,6 @@ public class ItemMultiTool extends Item {
             new ItemStack(block));
     world.addFreshEntity(drop);
     ctx.getItemInHand().hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(ctx.getHand()));
-    return InteractionResult.SUCCESS;
-  }
-
-  @Override
-  public InteractionResult interactLivingEntity(
-      ItemStack p_41398_, Player p_41399_, LivingEntity p_41400_, InteractionHand p_41401_) {
-    if (p_41399_.level().isClientSide) {
-      return InteractionResult.SUCCESS;
-    }
-    DamageSource source = p_41400_.level().damageSources().generic();
-    p_41400_.hurt(source, Float.POSITIVE_INFINITY);
     return InteractionResult.SUCCESS;
   }
 
