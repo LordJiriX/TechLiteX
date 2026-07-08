@@ -34,7 +34,7 @@ import org.slf4j.Logger;
 public class TechLiteX {
 
   public static final String MODID = "techlitex";
-  public static final String VERSION = "0.0-indev";
+  public static final String VERSION = "0.0-preview";
   private static final Logger LOGGER = LogUtils.getLogger();
   public static final DeferredRegister<Block> BLOCKS =
       DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
@@ -44,7 +44,7 @@ public class TechLiteX {
 
   public static final RegistryObject<CreativeModeTab> TECHLITEX_TAB =
       CREATIVE_MODE_TABS.register(
-          "techlitex_tab".toLowerCase(),
+          "techlitex_tab",
           () ->
               CreativeModeTab.builder()
                   .withTabsBefore(CreativeModeTabs.COMBAT)
@@ -85,8 +85,14 @@ public class TechLiteX {
   private void commonSetup(final FMLCommonSetupEvent event) {
     LOGGER.info(
         "----------------------------------------------------------------------------------------");
-    LOGGER.warn(
-        "MODID: " + MODID + ":" + VERSION + " is in INDEV verion expect bugs and missing content!");
+    LOGGER.info(
+        "                                       TechLiteX                                       ");
+    LOGGER.warn("  - This mod is in development, expect bugs and crashes!");
+    LOGGER.warn("  - Mod is missing a lot of content");
+    LOGGER.warn("  - Thanks for using TechLiteX preview version!");
+    LOGGER.info(
+        "----------------------------------------------------------------------------------------");
+    LOGGER.info("--- Please report bugs to github: https://github.com/LordJiriX/TechLiteX/issues");
     LOGGER.info(
         "----------------------------------------------------------------------------------------");
   }
