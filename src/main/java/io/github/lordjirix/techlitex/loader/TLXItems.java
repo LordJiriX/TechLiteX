@@ -2,10 +2,7 @@ package io.github.lordjirix.techlitex.loader;
 
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
-import io.github.lordjirix.techlitex.common.item.EItem;
-import io.github.lordjirix.techlitex.common.item.ItemGameModeSwapper;
-import io.github.lordjirix.techlitex.common.item.ItemMultiTool;
-import io.github.lordjirix.techlitex.common.item.SimpleDurableItem;
+import io.github.lordjirix.techlitex.common.item.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,6 +16,8 @@ public class TLXItems {
 
   public static final RegistryObject<Item> MULTI_TOOL =
       ITEMS.register("multi_tool", () -> new ItemMultiTool(new Item.Properties()));
+  public static final RegistryObject<Item> CREATIVE_SWORD =
+      ITEMS.register("creative_sword", () -> new CreativeSwordItem(new Item.Properties()));
   public static final RegistryObject<Item> GAME_MODE_SWAPPER =
       ITEMS.register("game_mode_swapper", () -> new ItemGameModeSwapper(new Item.Properties()));
   public static final RegistryObject<Item> BEDROCKIUM_DUST =

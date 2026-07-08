@@ -62,7 +62,8 @@ public class TLXData {
               QUANTUM_PROCESSOR,
               NANO_PROCESSOR,
               DOUBLE_LAYERED_PROCESSOR,
-              ARTIFICIAL_CHIP));
+              ARTIFICIAL_CHIP,
+              CREATIVE_SWORD));
 
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
