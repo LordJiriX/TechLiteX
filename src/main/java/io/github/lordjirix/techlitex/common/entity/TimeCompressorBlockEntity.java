@@ -1,6 +1,5 @@
 package io.github.lordjirix.techlitex.common.entity;
 
-import io.github.lordjirix.techlitex.Config;
 import io.github.lordjirix.techlitex.api.block.IBlockEntityMachineBase;
 import io.github.lordjirix.techlitex.api.block.IRecipeRunnable;
 import io.github.lordjirix.techlitex.gui.menu.SimpleOneMenu;
@@ -27,11 +26,12 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+// TODO: Remove
 public class TimeCompressorBlockEntity extends BlockEntity
     implements MenuProvider, IRecipeRunnable, IBlockEntityMachineBase {
-  public int timeToRunRecipe = Config.timePerTimeNugget;
+  public int timeToRunRecipe = 200;
   public int currentRunTime = 0;
-  public int energyPerTick = Config.timeCompressorRfUsage;
+  public int energyPerTick = 40;
   private final ItemStackHandler inventory =
       new ItemStackHandler(1) {
         @Override
