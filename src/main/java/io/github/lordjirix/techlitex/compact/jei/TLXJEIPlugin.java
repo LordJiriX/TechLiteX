@@ -60,5 +60,7 @@ public class TLXJEIPlugin implements IModPlugin {
         new ItemStack(TLXBlocks.SEPARATOR_BLOCK_1.get()), MultiInOutCategory.Separator.TYPE_B);
     registration.addRecipeCatalyst(
         new ItemStack(TLXBlocks.GREENHOUSE_BLOCK_1.get()), MultiInOutCategory.Greenhouse.TYPE_A);
+    registration.addRecipeCatalyst(
+        new ItemStack(TLXBlocks.GREENHOUSE_BLOCK_2.get()), MultiInOutCategory.Greenhouse.TYPE_A);
   }
 }

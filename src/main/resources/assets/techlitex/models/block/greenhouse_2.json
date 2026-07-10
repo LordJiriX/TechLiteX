@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "techlitex:block/greenhouse_2_front",
+    "side": "techlitex:block/machine_casing_aluminium",
+    "top": "techlitex:block/machine_casing_aluminium",
+    "bottom": "techlitex:block/machine_casing_aluminium"
+  }
+}
