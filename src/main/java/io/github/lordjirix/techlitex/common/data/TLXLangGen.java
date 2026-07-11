@@ -48,6 +48,8 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.CARBON_DUST.get(), "Carbon Dust");
     add(TLXItems.ALUMINIUM_PLATE.get(), "Aluminium Plate");
     add(TLXItems.RAW_COKE_OVEN_BRICK.get(), "Raw Coke Oven Brick");
+    add(TLXItems.LITHIUM_DUST.get(), "Lithium Dust");
+    add(TLXItems.SODIUM_DUST.get(), "Sodium Dust");
     // electronics
     add(TLXItems.BASIC_BOARD.get(), "Basic Board");
     add(TLXItems.REDSTONE_BOARD.get(), "Redstone Board");

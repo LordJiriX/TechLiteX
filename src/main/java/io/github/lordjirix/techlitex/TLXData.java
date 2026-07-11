@@ -63,8 +63,7 @@ public class TLXData {
               NANO_PROCESSOR,
               DOUBLE_LAYERED_PROCESSOR,
               ARTIFICIAL_CHIP,
-              CREATIVE_SWORD));
-
+              CREATIVE_SWORD,LITHIUM_DUST,SODIUM_DUST));
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
           List.of(
@@ -192,7 +191,7 @@ public class TLXData {
   public static List<MultiOutRecipe> separatorRecipes =
       List.of(
           new SeparatorRecipe(
-              CLAY_DUST.get(), 9, new ItemStack[] {new ItemStack(Items.BRICK, 9)}, 40, 20 * 15),
+              CLAY_DUST.get(), 9, new ItemStack[] {new ItemStack(ALUMINIUM_DUST.get(), 1),new ItemStack(LITHIUM_DUST.get(), 3),new ItemStack(SODIUM_DUST.get(), 4)}, 40, 20 * 15),
           new SeparatorRecipe(
               STEEL_DUST.get(),
               1,
