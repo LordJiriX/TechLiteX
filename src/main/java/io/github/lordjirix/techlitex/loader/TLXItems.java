@@ -100,10 +100,10 @@ public class TLXItems {
       ITEMS.register("clay_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> CARBON_DUST =
       ITEMS.register("carbon_dust", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> LITHIUM_DUST =
-            ITEMS.register("lithium_dust", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SODIUM_DUST =
-            ITEMS.register("sodium_dust", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> LITHIUM_DUST =
+      ITEMS.register("lithium_dust", () -> new Item(new Item.Properties()));
+  public static final RegistryObject<Item> SODIUM_DUST =
+      ITEMS.register("sodium_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> ALUMINIUM_DUST =
       ITEMS.register("aluminium_dust", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> ALUMINIUM_INGOT =

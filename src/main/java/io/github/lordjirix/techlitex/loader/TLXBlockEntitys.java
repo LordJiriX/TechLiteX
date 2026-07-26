@@ -54,6 +54,16 @@ public class TLXBlockEntitys {
                       SeparatorBlockEntity::new, TLXBlocks.SEPARATOR_BLOCK_1.get())
                   .build(null));
 
+  public static final RegistryObject<BlockEntityType<BatteryBoxEntity>> BATTERYBOX_BLOCK_ENTITY =
+      BLOCK_ENTITIES.register(
+          "batterybox_block",
+          () ->
+              BlockEntityType.Builder.of(
+                      BatteryBoxEntity::new,
+                      TLXBlocks.BATTERY_BOX_I.get(),
+                      TLXBlocks.BATTERY_BOX_II.get())
+                  .build(null));
+
   public static void init(IEventBus bus) {
     BLOCK_ENTITIES.register(bus);
   }
