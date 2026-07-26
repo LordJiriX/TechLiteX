@@ -1,5 +1,6 @@
 package io.github.lordjirix.techlitex.common.entity;
 
+import io.github.lordjirix.techlitex.api.wrench.IWrenchableEntity;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,10 +13,11 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.EnergyStorage;
 import net.minecraftforge.energy.IEnergyStorage;
 
-public class BatteryBoxEntity extends BlockEntity {
-  private final int capacity = 100000;
-  private final int maxIO = 1000;
-  private final EnergyStorage energy =
+public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity {
+  private final int capacity = 50_000;
+  private final int maxIO = 250;
+  public byte outputSide = 0;
+  public EnergyStorage energy =
       new EnergyStorage(capacity, maxIO, maxIO) {
         @Override
         public boolean canExtract() {
@@ -36,13 +38,33 @@ public class BatteryBoxEntity extends BlockEntity {
      */
   }
 
-  public void tick() {}
+  public void tick() {
+    if (level == null || level.isClientSide()) {
+      return;
+    }
+    BatteryBoxEntity entity = (BatteryBoxEntity) level.getBlockEntity(worldPosition);
+    BlockEntity targetBlockEntity = level.getBlockEntity(worldPosition.relative(Direction.from3DDataValue(outputSide)));
+    for (Direction dir : Direction.values()) {
+      if (targetBlockEntity == null) {
+        return;
+      }
+      targetBlockEntity
+          .getCapability(ForgeCapabilities.ENERGY, dir)
+          .ifPresent(
+              cap -> {
+                int amount = energy.extractEnergy(maxIO, true);
+
+                int accepted = cap.receiveEnergy(amount, false);
+
+                energy.extractEnergy(accepted, false);
+              });
+    }
+  }
 
   @Override
   public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
-
     if (cap == ForgeCapabilities.ENERGY) {
-      return LazyOptional.of(() -> energy).cast();
+      return energyCap.cast();
     }
 
     return super.getCapability(cap, side);
@@ -60,6 +82,7 @@ public class BatteryBoxEntity extends BlockEntity {
     if (pTag.contains("energy")) {
       energy.deserializeNBT(pTag.get("energy"));
     }
+    outputSide = pTag.getByte("outputSide");
   }
 
   @Override
@@ -70,6 +93,16 @@ public class BatteryBoxEntity extends BlockEntity {
   @Override
   protected void saveAdditional(CompoundTag pTag) {
     pTag.put("energy", energy.serializeNBT());
+    pTag.putByte("outputSide", outputSide);
     super.saveAdditional(pTag);
   }
+
+    @Override
+    public byte getSide() {
+        return outputSide;
+    }
+    @Override
+    public void setSide(byte side) {
+      outputSide = side;
+    }
 }

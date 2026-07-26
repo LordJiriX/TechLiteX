@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "techlitex:block/battery_box_1",
+    "side": "techlitex:block/battery_box_1",
+    "top": "techlitex:block/machine_casing_copper",
+    "bottom": "techlitex:block/machine_casing_copper"
+  }
+}

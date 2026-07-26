@@ -65,7 +65,7 @@ public class TLXData {
               ARTIFICIAL_CHIP,
               CREATIVE_SWORD,
               LITHIUM_DUST,
-              SODIUM_DUST));
+              SODIUM_DUST,WRENCH,SMALL_BATTERY));
   public static final ArrayList<RegistryObject<Block>> allBlockItemsList =
       new ArrayList<>(
           List.of(
@@ -82,17 +82,13 @@ public class TLXData {
               TLXBlocks.COKE_OVEN_BRICK_BLOCK,
               TLXBlocks.COKE_OVEN_FIREBOX,
               TLXBlocks.CASING_WOODEN,
-              TLXBlocks.MACHINE_CASING_ALUMINIUM));
+              TLXBlocks.MACHINE_CASING_ALUMINIUM,BATTERY_BOX_I,BATTERY_BOX_II,MACHINE_CASING_COPPER));
   public static ArrayList<RegistryObject<Block>> allDefJadeProvider =
       new ArrayList<>(
           List.of(
               TLXBlocks.GREENHOUSE_BLOCK_1,
               TLXBlocks.GRINDER_BLOCK_1,
               TLXBlocks.TIME_COMPRESSOR_BLOCK_1));
-
-  // Lootbags data
-  public static List<Item> exampleLootbagDrops =
-      List.of(Items.COAL, Items.IRON_INGOT, Items.DIAMOND, Items.TORCH);
 
   // Recipes data
   public static final List<MultiOutRecipe> greenHouseRecipes =

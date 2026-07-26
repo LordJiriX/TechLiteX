@@ -26,15 +26,6 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
   @SuppressWarnings("removal")
   @Override
   protected void buildRecipes(Consumer<FinishedRecipe> pw) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXItems.BEDROCKIUM_DRILL.get())
-        .pattern(" B ")
-        .pattern("SSB")
-        .pattern(" B ")
-        .define('S', Items.STICK)
-        .define('B', TLXItems.BEDROCKIUM_INGOT.get())
-        .unlockedBy(
-            getHasName(TLXItems.BEDROCKIUM_INGOT.get()), has(TLXItems.BEDROCKIUM_DUST.get()))
-        .save(pw);
     ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXItems.SIMPLE_GRINDER.get())
         .pattern(" I ")
         .pattern("SIS")
@@ -97,6 +88,24 @@ public class TLXRecipeGen extends RecipeProvider implements IConditionBuilder {
         .define('B', TLXBlocks.MACHINE_CASING_STEEL.get())
         .unlockedBy(getHasName(TLXItems.PROCESSOR.get()), has(TLXItems.PROCESSOR.get()))
         .save(pw);
+      ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.BATTERY_BOX_I.get())
+              .pattern(" W ")
+              .pattern(" B ")
+              .pattern(" C ")
+              .define('W', TLXItems.COPPER_WIRE.get())
+              .define('B', SMALL_BATTERY.get())
+              .define('C', TLXBlocks.MACHINE_CASING_COPPER.get())
+              .unlockedBy(getHasName(SMALL_BATTERY.get()), has(SMALL_BATTERY.get()))
+              .save(pw);
+      ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.BATTERY_BOX_II.get())
+              .pattern(" W ")
+              .pattern("BBB")
+              .pattern(" C ")
+              .define('W', TLXItems.COPPER_WIRE.get())
+              .define('B', SMALL_BATTERY.get())
+              .define('C', TLXBlocks.MACHINE_CASING_STEEL.get())
+              .unlockedBy(getHasName(SMALL_BATTERY.get()), has(SMALL_BATTERY.get()))
+              .save(pw);
     ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TLXBlocks.CASING_WOODEN.get())
         .pattern("PPP")
         .pattern("ISI")

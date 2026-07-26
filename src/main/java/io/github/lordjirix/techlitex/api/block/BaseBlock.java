@@ -1,5 +1,6 @@
 package io.github.lordjirix.techlitex.api.block;
 
+import io.github.lordjirix.techlitex.api.wrench.IWrenchMinable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -13,7 +14,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import org.jetbrains.annotations.Nullable;
 
-public class BaseBlock extends Block {
+public class BaseBlock extends Block implements IWrenchMinable {
   public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
   public BaseBlock(Properties pProperties) {

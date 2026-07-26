@@ -7,6 +7,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.data.LanguageProvider;
 
+import static io.github.lordjirix.techlitex.loader.TLXItems.*;
+
 public class TLXLangGen extends LanguageProvider {
   public TLXLangGen(PackOutput gen, String modid, String locale) {
     super(gen, modid, locale);
@@ -19,7 +21,7 @@ public class TLXLangGen extends LanguageProvider {
     add("config.jade.plugin_techlitex.recipe_runner_base", "Recipe Runner (Base)");
     add("itemGroup.techlitex.techlitex_tab", "TechLiteX");
     add("config.jade.plugin_techlitex.coke_oven_jade", "Coke Oven");
-
+    add("config.jade.plugin_techlitex.batterybox", "BatteryBox");
     // MAIN
 
     // materials
@@ -55,6 +57,7 @@ public class TLXLangGen extends LanguageProvider {
     add(TLXItems.REDSTONE_BOARD.get(), "Redstone Board");
     add(TLXItems.COPPER_WIRE.get(), "Copper Wire");
     add(TLXItems.DIAMOND_SAWBLADE.get(), "Diamond Sawblade");
+    add(SMALL_BATTERY.get(), "Small Battery");
     // misc
     add(TLXItems.BRICK_FORM.get(), "Brick Form");
     add(TLXItems.RAW_BRICK_FORM.get(), "Raw Brick Form");
@@ -62,6 +65,7 @@ public class TLXLangGen extends LanguageProvider {
     // tools
     add(TLXItems.MULTI_TOOL.get(), "Multi Tool");
     add(TLXItems.SIMPLE_GRINDER.get(), "Simple Grinder");
+    add(WRENCH.get(), "Wrench");
     // blocks
     add(new ItemStack(TLXBlocks.GREENHOUSE_BLOCK_1.get()), "Green House I");
     add(new ItemStack(TLXBlocks.GREENHOUSE_BLOCK_2.get()), "Green House II");
@@ -72,9 +76,12 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.GRINDER_BLOCK_1.get()), "Grinder I");
     add(new ItemStack(TLXBlocks.GRINDER_BLOCK_2.get()), "Grinder II");
     add(new ItemStack(TLXBlocks.SEPARATOR_BLOCK_1.get()), "Separator I");
+    add(new ItemStack(TLXBlocks.BATTERY_BOX_I.get()), "Battery Box I");
+    add(new ItemStack(TLXBlocks.BATTERY_BOX_II.get()), "Battery Box II");
     add(new ItemStack(TLXBlocks.CASING_WOODEN.get()), "Casing Wooden");
     add(new ItemStack(TLXBlocks.MACHINE_CASING_STEEL.get()), "Machine Casing Steel");
     add(new ItemStack(TLXBlocks.MACHINE_CASING_ALUMINIUM.get()), "Machine Casing Aluminium");
+    add(new ItemStack(TLXBlocks.MACHINE_CASING_COPPER.get()), "Machine Casing Copper");
     // tooltips
     add("tooltip.tlx.machine.recipe_voiding", "§4Void items when inventory is full§r");
     add(TD.Tooltip.SEPARATOR_TOOLTIP_MAIN, "Where Compounds Come Undone");

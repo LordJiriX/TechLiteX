@@ -67,11 +67,15 @@ public class TLXItems {
       ITEMS.register("universal_chip", () -> new Item(new Item.Properties())); // ALL
 
   // ELECTRONICS COMPONENTS
+  public static final RegistryObject<Item> SMALL_BATTERY =
+          ITEMS.register("small_battery", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> BASIC_BOARD =
       ITEMS.register("basic_board", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> REDSTONE_BOARD =
       ITEMS.register("redstone_board", () -> new Item(new Item.Properties()));
   // TOOLS
+  public static final RegistryObject<Item> WRENCH =
+          ITEMS.register("wrench", () -> new WrenchItem(new Item.Properties().durability(100)));
   public static final RegistryObject<Item> SIMPLE_GRINDER =
       ITEMS.register(
           "simple_grinder", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
