@@ -43,7 +43,8 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity {
       return;
     }
     BatteryBoxEntity entity = (BatteryBoxEntity) level.getBlockEntity(worldPosition);
-    BlockEntity targetBlockEntity = level.getBlockEntity(worldPosition.relative(Direction.from3DDataValue(outputSide)));
+    BlockEntity targetBlockEntity =
+        level.getBlockEntity(worldPosition.relative(Direction.from3DDataValue(outputSide)));
     for (Direction dir : Direction.values()) {
       if (targetBlockEntity == null) {
         return;
@@ -97,12 +98,13 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity {
     super.saveAdditional(pTag);
   }
 
-    @Override
-    public byte getSide() {
-        return outputSide;
-    }
-    @Override
-    public void setSide(byte side) {
-      outputSide = side;
-    }
+  @Override
+  public byte getSide() {
+    return outputSide;
+  }
+
+  @Override
+  public void setSide(byte side) {
+    outputSide = side;
+  }
 }

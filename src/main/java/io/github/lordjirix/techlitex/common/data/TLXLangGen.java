@@ -1,13 +1,13 @@
 package io.github.lordjirix.techlitex.common.data;
 
+import static io.github.lordjirix.techlitex.loader.TLXItems.*;
+
 import io.github.lordjirix.techlitex.api.data.TD;
 import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import io.github.lordjirix.techlitex.loader.TLXItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.data.LanguageProvider;
-
-import static io.github.lordjirix.techlitex.loader.TLXItems.*;
 
 public class TLXLangGen extends LanguageProvider {
   public TLXLangGen(PackOutput gen, String modid, String locale) {

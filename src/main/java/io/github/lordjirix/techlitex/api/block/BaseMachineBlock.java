@@ -1,9 +1,8 @@
 package io.github.lordjirix.techlitex.api.block;
 
 import io.github.lordjirix.techlitex.api.data.MD;
-import java.util.List;
-
 import io.github.lordjirix.techlitex.loader.TLXItems;
+import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -66,7 +65,7 @@ public class BaseMachineBlock extends BaseBlock implements EntityBlock {
       BlockEntity be = level.getBlockEntity(pos);
       ItemStack itemstack = player.getItemInHand(hand);
       if (itemstack != null && itemstack.getItem() == TLXItems.WRENCH.get()) {
-          return InteractionResult.PASS;
+        return InteractionResult.PASS;
       }
       if (be instanceof MenuProvider provider) {
         NetworkHooks.openScreen((ServerPlayer) player, provider, pos);

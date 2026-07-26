@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "techlitex:machine_casing_copper"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "techlitex:blocks/machine_casing_copper"
+}

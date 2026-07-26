@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "techlitex:small_battery"
+    },
+    "C": {
+      "item": "techlitex:machine_casing_copper"
+    },
+    "W": {
+      "item": "techlitex:copper_wire"
+    }
+  },
+  "pattern": [
+    " W ",
+    " B ",
+    " C "
+  ],
+  "result": {
+    "item": "techlitex:battery_box_1"
+  },
+  "show_notification": true
+}
