@@ -3,10 +3,7 @@ package io.github.lordjirix.techlitex;
 import static io.github.lordjirix.techlitex.loader.TLXItems.*;
 
 import com.mojang.logging.LogUtils;
-import io.github.lordjirix.techlitex.gui.screen.CokeOvenScreen;
-import io.github.lordjirix.techlitex.gui.screen.MultipleInOutSlotScreen;
-import io.github.lordjirix.techlitex.gui.screen.SimpleInOutScreen;
-import io.github.lordjirix.techlitex.gui.screen.SimpleOneScreen;
+import io.github.lordjirix.techlitex.gui.screen.*;
 import io.github.lordjirix.techlitex.loader.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.registries.Registries;
@@ -119,6 +116,7 @@ public class TechLiteX {
             MenuScreens.register(TLXMenus.SIMPLE_ONESLOT_MENU.get(), SimpleOneScreen::new);
             MenuScreens.register(TLXMenus.COKE_OVEN_MENU.get(), CokeOvenScreen::new);
             MenuScreens.register(TLXMenus.SIMPLE_INOUT_MENU.get(), SimpleInOutScreen::new);
+            MenuScreens.register(TLXMenus.BATTERYBOX_MENU.get(), BatteryBoxScreen::new);
           });
     }
   }

@@ -2,10 +2,7 @@ package io.github.lordjirix.techlitex.loader;
 
 import static io.github.lordjirix.techlitex.TechLiteX.MODID;
 
-import io.github.lordjirix.techlitex.gui.menu.CokeOvenMenu;
-import io.github.lordjirix.techlitex.gui.menu.MultipleOutSlotMenu;
-import io.github.lordjirix.techlitex.gui.menu.SimpleInOutMenu;
-import io.github.lordjirix.techlitex.gui.menu.SimpleOneMenu;
+import io.github.lordjirix.techlitex.gui.menu.*;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,4 +22,6 @@ public class TLXMenus {
       MENUS.register("coke_oven_menu", () -> IForgeMenuType.create(CokeOvenMenu::new));
   public static final RegistryObject<MenuType<SimpleInOutMenu>> SIMPLE_INOUT_MENU =
       MENUS.register("simple_inout_menu", () -> IForgeMenuType.create(SimpleInOutMenu::new));
+  public static final RegistryObject<MenuType<BatteryBoxMenu>> BATTERYBOX_MENU =
+      MENUS.register("batterybox_menu", () -> IForgeMenuType.create(BatteryBoxMenu::new));
 }

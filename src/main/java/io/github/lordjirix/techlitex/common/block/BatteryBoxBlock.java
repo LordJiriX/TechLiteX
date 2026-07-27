@@ -1,10 +1,16 @@
 package io.github.lordjirix.techlitex.common.block;
 
 import io.github.lordjirix.techlitex.common.entity.BatteryBoxEntity;
+import io.github.lordjirix.techlitex.loader.TLXItems;
 import java.util.List;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
@@ -15,6 +21,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
 public class BatteryBoxBlock extends Block implements EntityBlock {
@@ -38,6 +46,27 @@ public class BatteryBoxBlock extends Block implements EntityBlock {
             te.tick();
           }
         };
+  }
+
+  @Override
+  public InteractionResult use(
+      BlockState pState,
+      Level pLevel,
+      BlockPos pPos,
+      Player pPlayer,
+      InteractionHand pHand,
+      BlockHitResult pHit) {
+    if (!pLevel.isClientSide) {
+      BlockEntity be = pLevel.getBlockEntity(pPos);
+      ItemStack itemstack = pPlayer.getItemInHand(pHand);
+      if (itemstack != null && itemstack.getItem() == TLXItems.WRENCH.get()) {
+        return InteractionResult.PASS;
+      }
+      if (be instanceof MenuProvider provider) {
+        NetworkHooks.openScreen((ServerPlayer) pPlayer, provider, pPos);
+      }
+    }
+    return InteractionResult.sidedSuccess(pLevel.isClientSide);
   }
 
   @Override

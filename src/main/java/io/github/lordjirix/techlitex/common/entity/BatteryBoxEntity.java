@@ -1,10 +1,18 @@
 package io.github.lordjirix.techlitex.common.entity;
 
 import io.github.lordjirix.techlitex.api.wrench.IWrenchableEntity;
+import io.github.lordjirix.techlitex.gui.menu.BatteryBoxMenu;
 import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
+import io.github.lordjirix.techlitex.loader.TLXBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -12,10 +20,11 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.EnergyStorage;
 import net.minecraftforge.energy.IEnergyStorage;
+import org.jetbrains.annotations.Nullable;
 
-public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity {
-  private final int capacity = 50_000;
-  private final int maxIO = 250;
+public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, MenuProvider {
+  public int capacity = 50_000;
+  public int maxIO = 250;
   public byte outputSide = 0;
   public EnergyStorage energy =
       new EnergyStorage(capacity, maxIO, maxIO) {
@@ -29,10 +38,55 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity {
           return true;
         }
       };
+  public ContainerData data =
+      new ContainerData() {
+
+        @Override
+        public int get(int pIndex) {
+          switch (pIndex) {
+            case 0:
+              return energy.getEnergyStored();
+            case 1:
+              return energy.getMaxEnergyStored();
+            default:
+              return 0;
+          }
+        }
+
+        @Override
+        public void set(int pIndex, int pValue) {
+          // I don't need this
+        }
+
+        @Override
+        public int getCount() {
+          return 2;
+        }
+      };
   private final LazyOptional<IEnergyStorage> energyCap = LazyOptional.of(() -> energy);
 
   public BatteryBoxEntity(BlockPos pPos, BlockState pBlockState) {
     super(TLXBlockEntitys.BATTERYBOX_BLOCK_ENTITY.get(), pPos, pBlockState);
+    if (pBlockState.getBlock() == TLXBlocks.BATTERY_BOX_I.get()) {
+        this.maxIO = 250;
+        this.capacity = 50_000;
+      }
+    else if (pBlockState.getBlock() == TLXBlocks.BATTERY_BOX_II.get()) {
+        this.maxIO = 750;
+        this.capacity = 100_000;
+        energy = new EnergyStorage(capacity, maxIO, maxIO) {
+            @Override
+            public boolean canExtract() {
+                return true;
+            }
+
+            @Override
+            public boolean canReceive() {
+                return true;
+            }
+        };
+
+    }
     /*
      * ADD a pBlockState types to change capacity & maxIO
      */
@@ -106,5 +160,16 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity {
   @Override
   public void setSide(byte side) {
     outputSide = side;
+  }
+
+  @Override
+  public Component getDisplayName() {
+    return Component.literal("BatteryBox");
+  }
+
+  @Override
+  public @Nullable AbstractContainerMenu createMenu(
+      int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+    return new BatteryBoxMenu(pContainerId, pPlayerInventory, data);
   }
 }
