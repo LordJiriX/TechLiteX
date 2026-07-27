@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "techlitex:time_compressor_block_1"
+          "name": "techlitex:battery_box_creative"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "techlitex:blocks/time_compressor_block_1"
+  "random_sequence": "techlitex:blocks/battery_box_creative"
 }

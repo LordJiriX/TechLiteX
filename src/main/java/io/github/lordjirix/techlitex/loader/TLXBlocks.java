@@ -104,13 +104,20 @@ public class TLXBlocks {
           "battery_box_1",
           () ->
               new BatteryBoxBlock(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f)));
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f), false));
   public static final RegistryObject<Block> BATTERY_BOX_II =
       createBlock(
           "battery_box_2",
           () ->
               new BatteryBoxBlock(
-                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f)));
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f), false));
+
+  public static final RegistryObject<Block> BATTERY_BOX_CREATIVE =
+      createBlock(
+          "battery_box_creative",
+          () ->
+              new BatteryBoxBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f), true));
 
   private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> block) {
     RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "techlitex:block/battery_box_creative",
+    "side": "techlitex:block/battery_box_creative",
+    "top": "techlitex:block/machine_casing_creative",
+    "bottom": "techlitex:block/machine_casing_creative"
+  }
+}

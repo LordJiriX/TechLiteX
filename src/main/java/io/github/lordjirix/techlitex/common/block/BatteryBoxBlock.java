@@ -27,8 +27,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class BatteryBoxBlock extends Block implements EntityBlock {
 
-  public BatteryBoxBlock(Properties pProperties) {
+  private final boolean isCreative;
+
+  public BatteryBoxBlock(Properties pProperties, boolean isCreative) {
     super(pProperties);
+    this.isCreative = isCreative;
   }
 
   @Override
@@ -57,6 +60,9 @@ public class BatteryBoxBlock extends Block implements EntityBlock {
       InteractionHand pHand,
       BlockHitResult pHit) {
     if (!pLevel.isClientSide) {
+      if (isCreative) {
+        return InteractionResult.SUCCESS;
+      }
       BlockEntity be = pLevel.getBlockEntity(pPos);
       ItemStack itemstack = pPlayer.getItemInHand(pHand);
       if (itemstack.getItem() == TLXItems.WRENCH.get()) {

@@ -1,6 +1,7 @@
 {
   "block.techlitex.battery_box_1": "Battery Box I",
   "block.techlitex.battery_box_2": "Battery Box II",
+  "block.techlitex.battery_box_creative": "Battery Box Creative",
   "block.techlitex.casing_wooden": "Casing Wooden",
   "block.techlitex.coke_oven_block": "Coke Oven",
   "block.techlitex.coke_oven_brick_block": "Coke Oven Bricks",
@@ -13,7 +14,6 @@
   "block.techlitex.machine_casing_copper": "Machine Casing Copper",
   "block.techlitex.machine_casing_steel": "Machine Casing Steel",
   "block.techlitex.separator_1": "Separator I",
-  "block.techlitex.time_compressor_block_1": "Time Compressor I",
   "config.jade.plugin_techlitex.batterybox": "BatteryBox",
   "config.jade.plugin_techlitex.bedrock_miner": "Bedrock Miner",
   "config.jade.plugin_techlitex.coke_oven_jade": "Coke Oven",

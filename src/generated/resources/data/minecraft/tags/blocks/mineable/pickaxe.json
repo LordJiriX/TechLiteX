@@ -2,7 +2,6 @@
   "values": [
     "techlitex:greenhouse_1",
     "techlitex:greenhouse_2",
-    "techlitex:time_compressor_block_1",
     "techlitex:grinder_1",
     "techlitex:grinder_2",
     "techlitex:separator_1",
@@ -14,6 +13,7 @@
     "techlitex:machine_casing_aluminium",
     "techlitex:battery_box_1",
     "techlitex:battery_box_2",
+    "techlitex:battery_box_creative",
     "techlitex:machine_casing_copper"
   ]
 }

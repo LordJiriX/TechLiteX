@@ -29,6 +29,7 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, 
   public int capacity = 50_000;
   public int maxIO = 250;
   public byte outputSide = 0;
+  public boolean isCreative = false;
   public EnergyStorage energy =
       new EnergyStorage(capacity, maxIO, maxIO) {
         @Override
@@ -88,6 +89,22 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, 
               return true;
             }
           };
+    } else if (pBlockState.getBlock() == TLXBlocks.BATTERY_BOX_CREATIVE.get()) {
+      this.maxIO = Integer.MAX_VALUE;
+      this.capacity = Integer.MAX_VALUE;
+      this.isCreative = true;
+      energy =
+          new EnergyStorage(capacity, maxIO, maxIO) {
+            @Override
+            public boolean canExtract() {
+              return true;
+            }
+
+            @Override
+            public boolean canReceive() {
+              return true;
+            }
+          };
     }
     /*
      * ADD a pBlockState types to change capacity & maxIO
@@ -97,6 +114,9 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, 
   public void tick() {
     if (level == null || level.isClientSide()) {
       return;
+    }
+    if (isCreative && energy.getEnergyStored() == 0) {
+      energy.receiveEnergy(energy.getMaxEnergyStored(), false);
     }
     BatteryBoxEntity entity = (BatteryBoxEntity) level.getBlockEntity(worldPosition);
     BlockEntity targetBlockEntity =
@@ -115,6 +135,9 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, 
 
                 energy.extractEnergy(accepted, false);
               });
+    }
+    if (isCreative) {
+      energy.receiveEnergy(energy.getMaxEnergyStored(), false);
     }
   }
 
@@ -139,6 +162,7 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, 
     if (pTag.contains("energy")) {
       energy.deserializeNBT(pTag.get("energy"));
     }
+    isCreative = pTag.getBoolean("isCreative");
     outputSide = pTag.getByte("outputSide");
   }
 
@@ -151,6 +175,7 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, 
   protected void saveAdditional(CompoundTag pTag) {
     pTag.put("energy", energy.serializeNBT());
     pTag.putByte("outputSide", outputSide);
+    pTag.putBoolean("isCreative", isCreative);
     super.saveAdditional(pTag);
   }
 

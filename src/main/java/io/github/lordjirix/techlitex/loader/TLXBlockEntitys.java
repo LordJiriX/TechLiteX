@@ -53,7 +53,8 @@ public class TLXBlockEntitys {
               BlockEntityType.Builder.of(
                       BatteryBoxEntity::new,
                       TLXBlocks.BATTERY_BOX_I.get(),
-                      TLXBlocks.BATTERY_BOX_II.get())
+                      TLXBlocks.BATTERY_BOX_II.get(),
+                      TLXBlocks.BATTERY_BOX_CREATIVE.get())
                   .build(null));
 
   public static void init(IEventBus bus) {

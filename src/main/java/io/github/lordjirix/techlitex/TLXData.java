@@ -86,6 +86,7 @@ public class TLXData {
               TLXBlocks.MACHINE_CASING_ALUMINIUM,
               BATTERY_BOX_I,
               BATTERY_BOX_II,
+              BATTERY_BOX_CREATIVE,
               MACHINE_CASING_COPPER));
   // Recipes data
   public static final List<MultiOutRecipe> greenHouseRecipes =
