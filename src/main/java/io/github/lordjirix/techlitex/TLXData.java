@@ -74,7 +74,6 @@ public class TLXData {
               /* MACHINES */
               TLXBlocks.GREENHOUSE_BLOCK_1,
               TLXBlocks.GREENHOUSE_BLOCK_2,
-              TLXBlocks.TIME_COMPRESSOR_BLOCK_1,
               TLXBlocks.GRINDER_BLOCK_1,
               TLXBlocks.GRINDER_BLOCK_2,
               TLXBlocks.SEPARATOR_BLOCK_1,
@@ -88,13 +87,6 @@ public class TLXData {
               BATTERY_BOX_I,
               BATTERY_BOX_II,
               MACHINE_CASING_COPPER));
-  public static ArrayList<RegistryObject<Block>> allDefJadeProvider =
-      new ArrayList<>(
-          List.of(
-              TLXBlocks.GREENHOUSE_BLOCK_1,
-              TLXBlocks.GRINDER_BLOCK_1,
-              TLXBlocks.TIME_COMPRESSOR_BLOCK_1));
-
   // Recipes data
   public static final List<MultiOutRecipe> greenHouseRecipes =
       List.of(

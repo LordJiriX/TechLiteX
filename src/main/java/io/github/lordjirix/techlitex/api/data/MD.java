@@ -11,10 +11,7 @@ public class MD {
   public static enum MachineType {
     GRINDER(GRINDER_BLOCK_ENTITY, "Grinder", TLXBlocks.GRINDER_BLOCK_1),
     SEPARATOR(SEPARATOR_BLOCK_ENTITY, "Separator", TLXBlocks.SEPARATOR_BLOCK_1),
-    TIME_COMPRESSOR(
-        TIME_COMPRESSOR_BLOCK_ENTITY, "Time Compressor", TLXBlocks.TIME_COMPRESSOR_BLOCK_1),
-    GREENHOUSE(GREENHOUSE_BLOCK_ENTITY, "Greenhouse", TLXBlocks.GREENHOUSE_BLOCK_1),
-    ;
+    GREENHOUSE(GREENHOUSE_BLOCK_ENTITY, "Greenhouse", TLXBlocks.GREENHOUSE_BLOCK_1);
 
     private final RegistryObject<? extends BlockEntityType<?>> blockEntityType;
     private final String name;

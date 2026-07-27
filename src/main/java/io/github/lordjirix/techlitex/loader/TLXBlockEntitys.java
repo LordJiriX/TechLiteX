@@ -23,14 +23,6 @@ public class TLXBlockEntitys {
                           TLXBlocks.GREENHOUSE_BLOCK_1.get(),
                           TLXBlocks.GREENHOUSE_BLOCK_2.get())
                       .build(null));
-  public static final RegistryObject<BlockEntityType<TimeCompressorBlockEntity>>
-      TIME_COMPRESSOR_BLOCK_ENTITY =
-          BLOCK_ENTITIES.register(
-              "time_compressor_block",
-              () ->
-                  BlockEntityType.Builder.of(
-                          TimeCompressorBlockEntity::new, TLXBlocks.TIME_COMPRESSOR_BLOCK_1.get())
-                      .build(null));
   public static final RegistryObject<BlockEntityType<GrinderBlockEntity>> GRINDER_BLOCK_ENTITY =
       BLOCK_ENTITIES.register(
           "grinder_block",

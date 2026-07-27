@@ -69,7 +69,6 @@ public class TLXLangGen extends LanguageProvider {
     // blocks
     add(new ItemStack(TLXBlocks.GREENHOUSE_BLOCK_1.get()), "Green House I");
     add(new ItemStack(TLXBlocks.GREENHOUSE_BLOCK_2.get()), "Green House II");
-    add(new ItemStack(TLXBlocks.TIME_COMPRESSOR_BLOCK_1.get()), "Time Compressor I");
     add(new ItemStack(TLXBlocks.COKE_OVEN_BLOCK.get()), "Coke Oven");
     add(new ItemStack(TLXBlocks.COKE_OVEN_BRICK_BLOCK.get()), "Coke Oven Bricks");
     add(new ItemStack(TLXBlocks.COKE_OVEN_FIREBOX.get()), "Coke Oven Firebox");

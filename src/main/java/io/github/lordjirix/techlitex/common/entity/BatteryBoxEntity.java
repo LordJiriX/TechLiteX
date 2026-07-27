@@ -23,6 +23,9 @@ import net.minecraftforge.energy.IEnergyStorage;
 import org.jetbrains.annotations.Nullable;
 
 public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, MenuProvider {
+  /*
+   * TODO: Rework energy extraction
+   *  */
   public int capacity = 50_000;
   public int maxIO = 250;
   public byte outputSide = 0;
@@ -68,24 +71,23 @@ public class BatteryBoxEntity extends BlockEntity implements IWrenchableEntity, 
   public BatteryBoxEntity(BlockPos pPos, BlockState pBlockState) {
     super(TLXBlockEntitys.BATTERYBOX_BLOCK_ENTITY.get(), pPos, pBlockState);
     if (pBlockState.getBlock() == TLXBlocks.BATTERY_BOX_I.get()) {
-        this.maxIO = 250;
-        this.capacity = 50_000;
-      }
-    else if (pBlockState.getBlock() == TLXBlocks.BATTERY_BOX_II.get()) {
-        this.maxIO = 750;
-        this.capacity = 100_000;
-        energy = new EnergyStorage(capacity, maxIO, maxIO) {
+      this.maxIO = 250;
+      this.capacity = 50_000;
+    } else if (pBlockState.getBlock() == TLXBlocks.BATTERY_BOX_II.get()) {
+      this.maxIO = 750;
+      this.capacity = 100_000;
+      energy =
+          new EnergyStorage(capacity, maxIO, maxIO) {
             @Override
             public boolean canExtract() {
-                return true;
+              return true;
             }
 
             @Override
             public boolean canReceive() {
-                return true;
+              return true;
             }
-        };
-
+          };
     }
     /*
      * ADD a pBlockState types to change capacity & maxIO

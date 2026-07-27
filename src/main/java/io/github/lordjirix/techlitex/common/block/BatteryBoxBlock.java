@@ -59,7 +59,7 @@ public class BatteryBoxBlock extends Block implements EntityBlock {
     if (!pLevel.isClientSide) {
       BlockEntity be = pLevel.getBlockEntity(pPos);
       ItemStack itemstack = pPlayer.getItemInHand(pHand);
-      if (itemstack != null && itemstack.getItem() == TLXItems.WRENCH.get()) {
+      if (itemstack.getItem() == TLXItems.WRENCH.get()) {
         return InteractionResult.PASS;
       }
       if (be instanceof MenuProvider provider) {

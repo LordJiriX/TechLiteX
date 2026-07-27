@@ -18,8 +18,6 @@ public class TLXJadePlugin implements IWailaPlugin {
     registration.registerBlockDataProvider(
         RecipeRunnableProvider.INSTANCE, GreenHouseBlockEntity.class);
     registration.registerBlockDataProvider(
-        RecipeRunnableProvider.INSTANCE, TimeCompressorBlockEntity.class);
-    registration.registerBlockDataProvider(
         RecipeRunnableProvider.INSTANCE, GrinderBlockEntity.class);
     registration.registerBlockDataProvider(
         CokeOvenComponentProvider.INSTANCE, CokeOvenBlockEntity.class);
@@ -31,7 +29,6 @@ public class TLXJadePlugin implements IWailaPlugin {
   @Override
   public void registerClient(IWailaClientRegistration registration) {
     registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, BaseMachineBlock.class);
-    registration.registerBlockComponent(RecipeRunnableProvider.INSTANCE, TimeCompressorBlock.class);
     registration.registerBlockComponent(CokeOvenComponentProvider.INSTANCE, CokeOvenBlock.class);
     registration.registerBlockComponent(BatteryBoxProvider.INSTANCE, BatteryBoxBlock.class);
   }

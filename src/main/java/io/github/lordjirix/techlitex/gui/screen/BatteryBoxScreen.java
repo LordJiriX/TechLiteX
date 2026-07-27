@@ -49,7 +49,11 @@ public class BatteryBoxScreen extends AbstractContainerScreen<BatteryBoxMenu> {
       int energyStored = menu.getEnergyStored();
       int maxEnergyStored = menu.getMaxEnergyStored();
       guiGraphics.renderTooltip(
-          font, List.of(Component.literal(energyStored + "/" + maxEnergyStored + " RF")), Optional.empty(), mouseX, mouseY);
+          font,
+          List.of(Component.literal(energyStored + "/" + maxEnergyStored + " RF")),
+          Optional.empty(),
+          mouseX,
+          mouseY);
     }
     renderTooltip(guiGraphics, mouseX, mouseY);
   }

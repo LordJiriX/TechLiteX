@@ -26,7 +26,6 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-// TODO: Remake structure
 public class CokeOvenBlockEntity extends BlockEntity implements MenuProvider {
   public boolean isMultiblockValid = false;
   public int timeToRunRecipe = Config.timePerCokeOvenRecipe;

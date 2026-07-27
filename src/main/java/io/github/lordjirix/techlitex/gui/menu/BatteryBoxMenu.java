@@ -56,12 +56,10 @@ public class BatteryBoxMenu extends AbstractContainerMenu {
   public int getScaledProgress() {
     int energyStored = data.get(0);
     int maxEnergyStored = data.get(1);
-    int arrowSize = 25*2;
+    int arrowSize = 25 * 2;
 
     return maxEnergyStored > 0 ? energyStored * arrowSize / maxEnergyStored : 0;
   }
-
-
 
   public int getEnergyStored() {
     return data.get(0);
