@@ -41,7 +41,11 @@ public class WrenchItem extends Item {
       return InteractionResult.SUCCESS;
     }
     if (mode == 1) {
-      mode1task(pContext.getClickedPos(), pContext.getLevel(), pContext.getClickedFace());
+      mode1task(
+          pContext.getClickedPos(),
+          pContext.getLevel(),
+          pContext.getClickedFace(),
+          pContext.getPlayer());
       itemstack.hurtAndBreak(
           1, pContext.getPlayer(), (p) -> p.broadcastBreakEvent(pContext.getHand()));
       return InteractionResult.SUCCESS;
@@ -112,10 +116,11 @@ public class WrenchItem extends Item {
     }
   }
 
-  void mode1task(BlockPos pos, Level level, Direction direction) {
+  void mode1task(BlockPos pos, Level level, Direction direction, Player player) {
     BlockEntity blockEntity = level.getBlockEntity(pos);
     if (blockEntity instanceof IWrenchableEntity) {
       ((IWrenchableEntity) blockEntity).setSide((byte) direction.get3DDataValue());
+      player.displayClientMessage(Component.literal("Direction changed: " + direction), true);
     }
   }
 }

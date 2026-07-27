@@ -51,6 +51,7 @@ public class BatteryBoxBlock extends Block implements EntityBlock {
         };
   }
 
+  @SuppressWarnings("deprecation")
   @Override
   public InteractionResult use(
       BlockState pState,
@@ -60,13 +61,13 @@ public class BatteryBoxBlock extends Block implements EntityBlock {
       InteractionHand pHand,
       BlockHitResult pHit) {
     if (!pLevel.isClientSide) {
-      if (isCreative) {
-        return InteractionResult.SUCCESS;
-      }
       BlockEntity be = pLevel.getBlockEntity(pPos);
       ItemStack itemstack = pPlayer.getItemInHand(pHand);
       if (itemstack.getItem() == TLXItems.WRENCH.get()) {
         return InteractionResult.PASS;
+      }
+      if (isCreative) {
+        return InteractionResult.SUCCESS;
       }
       if (be instanceof MenuProvider provider) {
         NetworkHooks.openScreen((ServerPlayer) pPlayer, provider, pPos);
@@ -79,9 +80,15 @@ public class BatteryBoxBlock extends Block implements EntityBlock {
   public void appendHoverText(
       ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+    if (isCreative) {
+      pTooltip.add(Component.literal(" - INFINITE ENERGY -"));
+      pTooltip.add(Component.literal(" Note: Also has output side"));
+      return;
+    }
     if (Screen.hasShiftDown()) {
       pTooltip.add(Component.literal("Lose all energy when break"));
       pTooltip.add(Component.literal("Output Energy only from output side"));
+      return;
     }
     pTooltip.add(Component.literal("Energy Box!!!"));
     pTooltip.add(Component.literal("Store Energy"));
