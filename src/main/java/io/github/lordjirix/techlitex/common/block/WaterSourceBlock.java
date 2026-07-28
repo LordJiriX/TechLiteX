@@ -64,8 +64,8 @@ public class WaterSourceBlock extends Block implements EntityBlock {
       return InteractionResult.PASS;
     }
     ItemStack itemStack = pPlayer.getItemInHand(pHand);
-    if (itemStack.getItem() != Items.BUCKET) {
-      return InteractionResult.SUCCESS;
+    if (itemStack.getItem() != Items.BUCKET || itemStack.getItem() == Items.WATER_BUCKET) {
+      return InteractionResult.PASS;
     }
     BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
     if (blockEntity instanceof WaterSourceEntity be) {
