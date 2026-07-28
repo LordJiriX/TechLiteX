@@ -87,7 +87,8 @@ public class TLXData {
               BATTERY_BOX_I,
               BATTERY_BOX_II,
               BATTERY_BOX_CREATIVE,
-              MACHINE_CASING_COPPER));
+              MACHINE_CASING_COPPER,
+              WATER_SOURCE_I));
   // Recipes data
   public static final List<MultiOutRecipe> greenHouseRecipes =
       List.of(

@@ -78,6 +78,7 @@ public class TLXLangGen extends LanguageProvider {
     add(new ItemStack(TLXBlocks.BATTERY_BOX_I.get()), "Battery Box I");
     add(new ItemStack(TLXBlocks.BATTERY_BOX_II.get()), "Battery Box II");
     add(new ItemStack(TLXBlocks.BATTERY_BOX_CREATIVE.get()), "Battery Box Creative");
+    add(new ItemStack(TLXBlocks.WATER_SOURCE_I.get()), "Water Source I");
     add(new ItemStack(TLXBlocks.CASING_WOODEN.get()), "Casing Wooden");
     add(new ItemStack(TLXBlocks.MACHINE_CASING_STEEL.get()), "Machine Casing Steel");
     add(new ItemStack(TLXBlocks.MACHINE_CASING_ALUMINIUM.get()), "Machine Casing Aluminium");

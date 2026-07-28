@@ -118,6 +118,12 @@ public class TLXBlocks {
           () ->
               new BatteryBoxBlock(
                   BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f), true));
+  public static final RegistryObject<Block> WATER_SOURCE_I =
+      createBlock(
+          "water_source_1",
+          () ->
+              new WaterSourceBlock(
+                  BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.5f)));
 
   private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> block) {
     RegistryObject<T> toReturn = BLOCKS.register(name, block);

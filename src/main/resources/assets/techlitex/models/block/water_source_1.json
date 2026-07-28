@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "techlitex:block/water_source_1",
+    "side": "techlitex:block/water_source_1",
+    "top": "techlitex:block/machine_casing_steel",
+    "bottom": "techlitex:block/machine_casing_steel"
+  }
+}

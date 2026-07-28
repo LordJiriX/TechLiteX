@@ -56,6 +56,12 @@ public class TLXBlockEntitys {
                       TLXBlocks.BATTERY_BOX_II.get(),
                       TLXBlocks.BATTERY_BOX_CREATIVE.get())
                   .build(null));
+  public static final RegistryObject<BlockEntityType<WaterSourceEntity>> WATER_SOURCE_ENTITY =
+      BLOCK_ENTITIES.register(
+          "water_source_block",
+          () ->
+              BlockEntityType.Builder.of(WaterSourceEntity::new, TLXBlocks.WATER_SOURCE_I.get())
+                  .build(null));
 
   public static void init(IEventBus bus) {
     BLOCK_ENTITIES.register(bus);

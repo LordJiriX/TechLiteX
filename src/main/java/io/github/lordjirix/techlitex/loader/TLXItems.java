@@ -88,7 +88,6 @@ public class TLXItems {
   public static final RegistryObject<Item> BRICK_FORM =
       ITEMS.register(
           "brick_form", () -> new SimpleDurableItem(new Item.Properties().durability(64 * 2)));
-
   public static final RegistryObject<Item> TIME_NUGGET =
       ITEMS.register("time_nugget", () -> new Item(new Item.Properties()));
   public static final RegistryObject<Item> TIME_INGOT =
