@@ -50,7 +50,6 @@ public class WaterSourceBlock extends Block implements EntityBlock {
 
   /*
    * TODO: Add support for others items (like GT/Cell)
-   * TODO: Check if fluid is water
    *  */
   @Override
   public InteractionResult use(

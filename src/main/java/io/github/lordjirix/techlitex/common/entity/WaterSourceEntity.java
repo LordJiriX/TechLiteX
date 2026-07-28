@@ -4,6 +4,7 @@ import io.github.lordjirix.techlitex.loader.TLXBlockEntitys;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.block.RedstoneTorchBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
@@ -20,7 +21,15 @@ import org.jetbrains.annotations.Nullable;
 public class WaterSourceEntity extends BlockEntity {
   int waterRate = 5;
   int energyPerTick = 5;
-  public FluidTank tank = new FluidTank(4000);
+  public FluidTank tank = new FluidTank(4000) {
+      @Override
+      public int fill(FluidStack resource, FluidAction action) {
+          if (resource.getFluid() != Fluids.WATER) {
+              return 0;
+          }
+          return super.fill(resource, action);
+      }
+  };
   public EnergyStorage energy = new EnergyStorage(2000, 100, 100);
   LazyOptional<FluidTank> tankCap = LazyOptional.of(() -> tank);
   LazyOptional<EnergyStorage> energyCap = LazyOptional.of(() -> energy);
