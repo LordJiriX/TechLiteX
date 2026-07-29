@@ -63,16 +63,18 @@ public class WaterSourceBlock extends Block implements EntityBlock {
       return InteractionResult.PASS;
     }
     ItemStack itemStack = pPlayer.getItemInHand(pHand);
-    if (itemStack.getItem() != Items.BUCKET || itemStack.getItem() == Items.WATER_BUCKET) {
+    if (itemStack.getItem() == Items.WATER_BUCKET) {
+        return InteractionResult.SUCCESS;
+    }
+    if (itemStack.getItem() != Items.BUCKET) {
       return InteractionResult.PASS;
     }
+
     BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
     if (blockEntity instanceof WaterSourceEntity be) {
       if (be.tank.getFluidAmount() > 1000) {
         itemStack.shrink(1);
         be.tank.setFluid(new FluidStack(Fluids.WATER, be.tank.getFluidAmount() - 1000));
-
-        if (!pPlayer.getInventory().add(new ItemStack(Items.WATER_BUCKET))) {
           ItemEntity itemEntity =
               new ItemEntity(
                   pLevel,
@@ -82,7 +84,6 @@ public class WaterSourceBlock extends Block implements EntityBlock {
                   new ItemStack(Items.WATER_BUCKET));
           pLevel.addFreshEntity(itemEntity);
         }
-      }
     }
     return InteractionResult.SUCCESS;
   }
