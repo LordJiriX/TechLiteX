@@ -2,7 +2,7 @@ name: Auto Release
 
 on:
   schedule:
-    - cron: "0 0 */7 * *"
+    - cron: "0 0 */28 * *"
 
 jobs:
   build-and-release:
